@@ -1,0 +1,66 @@
+dateApplied: '2022-11-03 02:17:26'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667466652
+        to: 1667467043
+  -
+    message: 'Save super table block type for parent field “results”'
+    changed:
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.columnSuffix:
+        from: hidhznyq
+        to: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.instructions:
+        from: null
+        to: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.code:
+        from: null
+        to: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.initialRows:
+        from: 4
+        to: '4'
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.multiline:
+        from: null
+        to: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.columnSuffix:
+        from: subljbkd
+        to: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.instructions:
+        from: null
+        to: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.code:
+        from: null
+        to: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.initialRows:
+        from: 4
+        to: '4'
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.multiline:
+        from: null
+        to: ''
+  -
+    added:
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.0.0: 8a742068-2208-4c13-8497-72d296e63c4c
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.0.1.__assoc__.0.0: width
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.0.1.__assoc__.0.1: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.1.0: 137774b2-c4c3-4bc7-9390-c71a6f956c6c
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.1.1.__assoc__.0.0: width
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.columns.__assoc__.1.1.__assoc__.0.1: ''
+    message: 'Save field “results”'
+    changed:
+      fields.0d293b9c-108b-482c-b426-82982a729542.instructions:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.maxRows:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.minRows:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.selectionLabel:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.staticField:
+        from: null
+        to: '1'

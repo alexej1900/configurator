@@ -1,0 +1,950 @@
+2022-09-16 05:29:12 [-][3][16gehneelhfgmm66gqqmdi3arp][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Entry draft not found in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/EntryRevisionsController.php:252
+Stack trace:
+#0 [internal function]: craft\controllers\EntryRevisionsController->actionSaveDraft()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('save-draft', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('entry-revisions...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(596): craft\web\Application->runAction('entry-revisions...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(266): craft\web\Application->_processActionRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-09-16 05:29:11 [-][3][16gehneelhfgmm66gqqmdi3arp][info][application] $_GET = [
+    'p' => 'admin/actions/entry-revisions/save-draft'
+    'v' => '1663331351944'
+]
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'sectionId' => '1'
+    'sourceId' => '1087'
+    'title' => 'Küche'
+    'slug' => 'kitchen'
+    'author' => [
+        0 => '3'
+    ]
+    'postDate' => [
+        'date' => '9/7/2022'
+        'timezone' => 'America/Los_Angeles'
+        'time' => '2:20 AM'
+    ]
+    'expiryDate' => [
+        'date' => ''
+        'timezone' => 'America/Los_Angeles'
+        'time' => ''
+    ]
+    'enabled' => '1'
+    'notes' => ''
+    'fields' => [
+        'roomSettings' => [
+            'sortOrder' => [
+                0 => '4530'
+            ]
+            'blocks' => [
+                4530 => [
+                    'fields' => [
+                        'individualSolutionPrice' => [
+                            'locale' => 'en-US'
+                            'value' => ''
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    'modifiedDeltaNames' => [
+        0 => 'fields[roomSettings]'
+        1 => 'fields[roomSettings][blocks][4530][fields][individualSolutionPrice]'
+    ]
+    'draftId' => '11'
+    'provisional' => '1'
+    'draftName' => 'Draft 1'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:5:\"admin\";}'
+    'CraftSessionId' => '16gehneelhfgmm66gqqmdi3arp'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => '3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:159:\"[3,\"[\\\"_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe\\\",null,\\\"a05df007efcefe289414cd6d0e10e717\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    'bd62416aa8538ede709019a5e113eea5__auth_access' => [
+        0 => 'saveAssetInVolume:1'
+        1 => 'editStructure:1'
+        2 => 'previewDraft:1'
+        3 => 'previewElement:6'
+        4 => 'previewDraft:2'
+        5 => 'previewElement:14'
+        6 => 'previewDraft:3'
+        7 => 'previewDraft:4'
+        8 => 'previewDraft:5'
+        9 => 'previewElement:4'
+        10 => 'previewElement:34'
+        11 => 'previewElement:33'
+        12 => 'previewElement:32'
+        13 => 'previewElement:31'
+        14 => 'previewElement:30'
+        15 => 'previewDraft:6'
+        16 => 'previewDraft:7'
+        17 => 'previewDraft:8'
+        18 => 'previewDraft:9'
+        19 => 'previewDraft:10'
+        20 => 'previewDraft:11'
+        21 => 'previewElement:302'
+        22 => 'previewElement:29'
+        23 => 'graphql-schema:9a2148ef-460e-4908-bc18-c808ed380b6d'
+        24 => 'previewDraft:12'
+        25 => 'previewElement:1087'
+        26 => 'previewDraft:13'
+        27 => 'previewDraft:14'
+        28 => 'previewDraft:15'
+        29 => 'previewElement:28'
+        30 => 'previewElement:3493'
+        31 => 'previewElement:3494'
+        32 => 'saveAssetInVolume:4'
+        33 => 'previewElement:3495'
+        34 => 'previewElement:3496'
+        35 => 'previewElement:3748'
+        36 => 'previewElement:3749'
+        37 => 'previewElement:3750'
+        38 => 'previewElement:3751'
+        39 => 'previewElement:3752'
+        40 => 'previewElement:3753'
+        41 => 'previewElement:3754'
+        42 => 'previewElement:3755'
+        43 => 'previewElement:1230'
+        44 => 'previewElement:4435'
+        45 => 'previewElement:4441'
+        46 => 'previewElement:4440'
+        47 => 'previewElement:4439'
+        48 => 'previewElement:4438'
+        49 => 'previewElement:4437'
+        50 => 'previewElement:4436'
+        51 => 'previewElement:4434'
+        52 => 'previewElement:4433'
+        53 => 'previewElement:4432'
+        54 => 'previewElement:4431'
+        55 => 'previewElement:4430'
+        56 => 'previewElement:4429'
+        57 => 'previewElement:4428'
+        58 => 'previewElement:4427'
+        59 => 'previewElement:4426'
+        60 => 'previewElement:4425'
+        61 => 'previewElement:4424'
+        62 => 'previewElement:4423'
+    ]
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => 3
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1663334952
+    '__duration' => 3600
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?p=admin/actions/entry-revisions/save-draft&v=1663331351944'
+    'QUERY_STRING' => 'p=admin/actions/entry-revisions/save-draft&v=1663331351944'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=admin/actions/entry-revisions/save-draft&v=1663331351944'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '62432'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; CraftSessionId=16gehneelhfgmm66gqqmdi3arp; 1031b8c41dfff97a311a7ac99863bdc5_identity=3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B3%2C%22%5B%5C%22_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe%5C%22%2Cnull%2C%5C%22a05df007efcefe289414cd6d0e10e717%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=171c2a8cabecb971bf09e34e5926224e805d2f87e6db1d9304400208ec391330a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C0b699b0a7e94385fe703c3efae2e592eb51b45f5ea902cfb36bfc2897c3d0411j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C3%7C%242y%2413%24LG0I%2Fj9mbL0VAz7o%2FQICdOhVeIj0pnHDwAOo796Owp3IDFgt8.kB6%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://configurator:8888/admin/entries/rooms/1087-kitchen'
+    'HTTP_ORIGIN' => 'http://configurator:8888'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_X_REGISTERED_ASSET_BUNDLES' => ',craft\\web\\assets\\editentry\\EditEntryAsset,craft\\web\\assets\\cp\\CpAsset,craft\\web\\assets\\axios\\AxiosAsset,craft\\web\\assets\\d3\\D3Asset,craft\\web\\assets\\elementresizedetector\\ElementResizeDetectorAsset,craft\\web\\assets\\focusvisible\\FocusVisibleAsset,craft\\web\\assets\\garnish\\GarnishAsset,yii\\web\\JqueryAsset,craft\\web\\assets\\jquerytouchevents\\JqueryTouchEventsAsset,craft\\web\\assets\\velocity\\VelocityAsset,craft\\web\\assets\\jqueryui\\JqueryUiAsset,craft\\web\\assets\\jquerypayment\\JqueryPaymentAsset,craft\\web\\assets\\datepickeri18n\\DatepickerI18nAsset,craft\\web\\assets\\picturefill\\PicturefillAsset,craft\\web\\assets\\selectize\\SelectizeAsset,craft\\web\\assets\\fileupload\\FileUploadAsset,craft\\web\\assets\\xregexp\\XregexpAsset,craft\\web\\assets\\fabric\\FabricAsset,craft\\web\\assets\\iframeresizer\\IframeResizerAsset,craft\\web\\assets\\prismjs\\PrismJsAsset,verbb\\supertable\\assetbundles\\SuperTableAsset,verbb\\base\\assetbundles\\CpAsset,craft\\web\\assets\\matrix\\MatrixAsset,craft\\web\\assets\\timepicker\\TimepickerAsset'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_REGISTERED_JS_FILES' => ',http://configurator:8888/cpresources/bcda27ca/axios.min.js?v=1662106214,http://configurator:8888/cpresources/6b24178d/d3.js?v=1662106214,http://configurator:8888/cpresources/c6bba0ae/element-resize-detector.js?v=1662106214,http://configurator:8888/cpresources/8ce4c27f/focus-visible.js?v=1662106214,http://configurator:8888/cpresources/e92b0b5b/jquery.js?v=1662106214,http://configurator:8888/cpresources/62250b1e/jquery.mobile-events.js?v=1662106214,http://configurator:8888/cpresources/f8a4fc26/velocity.js?v=1662106214,http://configurator:8888/cpresources/5899000b/garnish.js?v=1662106214,http://configurator:8888/cpresources/b60d6783/jquery-ui.js?v=1662106214,http://configurator:8888/cpresources/e48353ce/jquery.payment.js?v=1662106214,http://configurator:8888/cpresources/658137dc/picturefill.js?v=1662106214,http://configurator:8888/cpresources/31ff1a58/selectize.js?v=1662106214,http://configurator:8888/cpresources/7d693622/jquery.fileupload.js?v=1662106214,http://configurator:8888/cpresources/3b935ed2/xregexp-all.js?v=1662106214,http://configurator:8888/cpresources/4ddfd435/fabric.js?v=1662106214,http://configurator:8888/cpresources/71ca0935/iframeResizer.js?v=1662106214,http://configurator:8888/cpresources/1cfd6cd2/js/Craft.min.js?v=1662106214,http://configurator:8888/cpresources/c7df9ac5/EntryTypeSwitcher.min.js?v=1662106533,http://configurator:8888/cpresources/60a30197/prism.js?v=1662106310,http://configurator:8888/cpresources/c6156ce/js/verbb-ui.js?v=1662106472,http://configurator:8888/cpresources/ac66527d/js/super-table.js?v=1662106472,http://configurator:8888/cpresources/4ed48061/MatrixInput.min.js?v=1662106571,http://configurator:8888/cpresources/46c06a7/jquery.timepicker.js?v=1662106333'
+    'CONTENT_LENGTH' => '1433'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1663331351.9486
+    'REQUEST_TIME' => 1663331351
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-09-16 05:29:22 [-][3][16gehneelhfgmm66gqqmdi3arp][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Draft not found in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/EntryRevisionsController.php:444
+Stack trace:
+#0 [internal function]: craft\controllers\EntryRevisionsController->actionPublishDraft()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('publish-draft', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('entry-revisions...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(596): craft\web\Application->runAction('entry-revisions...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(266): craft\web\Application->_processActionRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-09-16 05:29:22 [-][3][16gehneelhfgmm66gqqmdi3arp][info][application] $_GET = [
+    'p' => 'admin/entries/rooms/1087-kitchen'
+]
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'entry-revisions/publish-draft'
+    'redirect' => '158f33f6b1f936a2e61ad6da4831429c11213101993cccad8cb200edc34096e5entries/rooms'
+    'sectionId' => '1'
+    'sourceId' => '1087'
+    'title' => 'Küche'
+    'slug' => 'kitchen'
+    'author' => [
+        0 => '3'
+    ]
+    'postDate' => [
+        'date' => '9/7/2022'
+        'timezone' => 'America/Los_Angeles'
+        'time' => '2:20 AM'
+    ]
+    'expiryDate' => [
+        'date' => ''
+        'timezone' => 'America/Los_Angeles'
+        'time' => ''
+    ]
+    'enabled' => '1'
+    'notes' => ''
+    'fields' => [
+        'roomSettings' => [
+            'sortOrder' => [
+                0 => '4530'
+            ]
+            'blocks' => [
+                4530 => [
+                    'fields' => [
+                        'individualSolutionPrice' => [
+                            'locale' => 'en-US'
+                            'value' => ''
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    'modifiedDeltaNames' => [
+        0 => 'fields[roomSettings]'
+        1 => 'fields[roomSettings][blocks][4530][fields][individualSolutionPrice]'
+    ]
+    'draftId' => '11'
+    'provisional' => '1'
+    'draftName' => 'Draft 1'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:5:\"admin\";}'
+    'CraftSessionId' => '16gehneelhfgmm66gqqmdi3arp'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => '3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:159:\"[3,\"[\\\"_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe\\\",null,\\\"a05df007efcefe289414cd6d0e10e717\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    'bd62416aa8538ede709019a5e113eea5__auth_access' => [
+        0 => 'saveAssetInVolume:1'
+        1 => 'editStructure:1'
+        2 => 'previewDraft:1'
+        3 => 'previewElement:6'
+        4 => 'previewDraft:2'
+        5 => 'previewElement:14'
+        6 => 'previewDraft:3'
+        7 => 'previewDraft:4'
+        8 => 'previewDraft:5'
+        9 => 'previewElement:4'
+        10 => 'previewElement:34'
+        11 => 'previewElement:33'
+        12 => 'previewElement:32'
+        13 => 'previewElement:31'
+        14 => 'previewElement:30'
+        15 => 'previewDraft:6'
+        16 => 'previewDraft:7'
+        17 => 'previewDraft:8'
+        18 => 'previewDraft:9'
+        19 => 'previewDraft:10'
+        20 => 'previewDraft:11'
+        21 => 'previewElement:302'
+        22 => 'previewElement:29'
+        23 => 'graphql-schema:9a2148ef-460e-4908-bc18-c808ed380b6d'
+        24 => 'previewDraft:12'
+        25 => 'previewElement:1087'
+        26 => 'previewDraft:13'
+        27 => 'previewDraft:14'
+        28 => 'previewDraft:15'
+        29 => 'previewElement:28'
+        30 => 'previewElement:3493'
+        31 => 'previewElement:3494'
+        32 => 'saveAssetInVolume:4'
+        33 => 'previewElement:3495'
+        34 => 'previewElement:3496'
+        35 => 'previewElement:3748'
+        36 => 'previewElement:3749'
+        37 => 'previewElement:3750'
+        38 => 'previewElement:3751'
+        39 => 'previewElement:3752'
+        40 => 'previewElement:3753'
+        41 => 'previewElement:3754'
+        42 => 'previewElement:3755'
+        43 => 'previewElement:1230'
+        44 => 'previewElement:4435'
+        45 => 'previewElement:4441'
+        46 => 'previewElement:4440'
+        47 => 'previewElement:4439'
+        48 => 'previewElement:4438'
+        49 => 'previewElement:4437'
+        50 => 'previewElement:4436'
+        51 => 'previewElement:4434'
+        52 => 'previewElement:4433'
+        53 => 'previewElement:4432'
+        54 => 'previewElement:4431'
+        55 => 'previewElement:4430'
+        56 => 'previewElement:4429'
+        57 => 'previewElement:4428'
+        58 => 'previewElement:4427'
+        59 => 'previewElement:4426'
+        60 => 'previewElement:4425'
+        61 => 'previewElement:4424'
+        62 => 'previewElement:4423'
+    ]
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => 3
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1663334962
+    '__duration' => 3600
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/admin/entries/rooms/1087-kitchen'
+    'QUERY_STRING' => 'p=admin/entries/rooms/1087-kitchen'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=admin/entries/rooms/1087-kitchen'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '62477'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; CraftSessionId=16gehneelhfgmm66gqqmdi3arp; 1031b8c41dfff97a311a7ac99863bdc5_identity=3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B3%2C%22%5B%5C%22_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe%5C%22%2Cnull%2C%5C%22a05df007efcefe289414cd6d0e10e717%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=171c2a8cabecb971bf09e34e5926224e805d2f87e6db1d9304400208ec391330a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C0b699b0a7e94385fe703c3efae2e592eb51b45f5ea902cfb36bfc2897c3d0411j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C3%7C%242y%2413%24LG0I%2Fj9mbL0VAz7o%2FQICdOhVeIj0pnHDwAOo796Owp3IDFgt8.kB6%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://configurator:8888/admin/entries/rooms/1087-kitchen'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://configurator:8888'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_LENGTH' => '1577'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1663331362.0818
+    'REQUEST_TIME' => 1663331362
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-09-16 05:29:28 [-][3][16gehneelhfgmm66gqqmdi3arp][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Draft not found in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/EntryRevisionsController.php:444
+Stack trace:
+#0 [internal function]: craft\controllers\EntryRevisionsController->actionPublishDraft()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('publish-draft', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('entry-revisions...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(596): craft\web\Application->runAction('entry-revisions...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(266): craft\web\Application->_processActionRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-09-16 05:29:28 [-][3][16gehneelhfgmm66gqqmdi3arp][info][application] $_GET = [
+    'p' => 'admin/entries/rooms/1087-kitchen'
+]
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'entry-revisions/publish-draft'
+    'redirect' => '158f33f6b1f936a2e61ad6da4831429c11213101993cccad8cb200edc34096e5entries/rooms'
+    'sectionId' => '1'
+    'sourceId' => '1087'
+    'title' => 'Küche'
+    'slug' => 'kitchen'
+    'author' => [
+        0 => '3'
+    ]
+    'postDate' => [
+        'date' => '9/7/2022'
+        'timezone' => 'America/Los_Angeles'
+        'time' => '2:20 AM'
+    ]
+    'expiryDate' => [
+        'date' => ''
+        'timezone' => 'America/Los_Angeles'
+        'time' => ''
+    ]
+    'enabled' => '1'
+    'notes' => ''
+    'fields' => [
+        'roomSettings' => [
+            'sortOrder' => [
+                0 => '4530'
+            ]
+            'blocks' => [
+                4530 => [
+                    'fields' => [
+                        'individualSolutionPrice' => [
+                            'locale' => 'en-US'
+                            'value' => ''
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    'modifiedDeltaNames' => [
+        0 => 'fields[roomSettings]'
+        1 => 'fields[roomSettings][blocks][4530][fields][individualSolutionPrice]'
+    ]
+    'draftId' => '11'
+    'provisional' => '1'
+    'draftName' => 'Draft 1'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:5:\"admin\";}'
+    'CraftSessionId' => '16gehneelhfgmm66gqqmdi3arp'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => '3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:159:\"[3,\"[\\\"_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe\\\",null,\\\"a05df007efcefe289414cd6d0e10e717\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    'bd62416aa8538ede709019a5e113eea5__auth_access' => [
+        0 => 'saveAssetInVolume:1'
+        1 => 'editStructure:1'
+        2 => 'previewDraft:1'
+        3 => 'previewElement:6'
+        4 => 'previewDraft:2'
+        5 => 'previewElement:14'
+        6 => 'previewDraft:3'
+        7 => 'previewDraft:4'
+        8 => 'previewDraft:5'
+        9 => 'previewElement:4'
+        10 => 'previewElement:34'
+        11 => 'previewElement:33'
+        12 => 'previewElement:32'
+        13 => 'previewElement:31'
+        14 => 'previewElement:30'
+        15 => 'previewDraft:6'
+        16 => 'previewDraft:7'
+        17 => 'previewDraft:8'
+        18 => 'previewDraft:9'
+        19 => 'previewDraft:10'
+        20 => 'previewDraft:11'
+        21 => 'previewElement:302'
+        22 => 'previewElement:29'
+        23 => 'graphql-schema:9a2148ef-460e-4908-bc18-c808ed380b6d'
+        24 => 'previewDraft:12'
+        25 => 'previewElement:1087'
+        26 => 'previewDraft:13'
+        27 => 'previewDraft:14'
+        28 => 'previewDraft:15'
+        29 => 'previewElement:28'
+        30 => 'previewElement:3493'
+        31 => 'previewElement:3494'
+        32 => 'saveAssetInVolume:4'
+        33 => 'previewElement:3495'
+        34 => 'previewElement:3496'
+        35 => 'previewElement:3748'
+        36 => 'previewElement:3749'
+        37 => 'previewElement:3750'
+        38 => 'previewElement:3751'
+        39 => 'previewElement:3752'
+        40 => 'previewElement:3753'
+        41 => 'previewElement:3754'
+        42 => 'previewElement:3755'
+        43 => 'previewElement:1230'
+        44 => 'previewElement:4435'
+        45 => 'previewElement:4441'
+        46 => 'previewElement:4440'
+        47 => 'previewElement:4439'
+        48 => 'previewElement:4438'
+        49 => 'previewElement:4437'
+        50 => 'previewElement:4436'
+        51 => 'previewElement:4434'
+        52 => 'previewElement:4433'
+        53 => 'previewElement:4432'
+        54 => 'previewElement:4431'
+        55 => 'previewElement:4430'
+        56 => 'previewElement:4429'
+        57 => 'previewElement:4428'
+        58 => 'previewElement:4427'
+        59 => 'previewElement:4426'
+        60 => 'previewElement:4425'
+        61 => 'previewElement:4424'
+        62 => 'previewElement:4423'
+    ]
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => 3
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1663334968
+    '__duration' => 3600
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/admin/entries/rooms/1087-kitchen'
+    'QUERY_STRING' => 'p=admin/entries/rooms/1087-kitchen'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=admin/entries/rooms/1087-kitchen'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '62478'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=2085489034dc50c4d154c3072b8faf2a3ad351fe3372a82c60d4787f6f31f1d8a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; CraftSessionId=16gehneelhfgmm66gqqmdi3arp; 1031b8c41dfff97a311a7ac99863bdc5_identity=3e786a03825cfce0d5d10b70df84d69c96fb918b65352477aa1e46c47480cbc9a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B3%2C%22%5B%5C%22_UBkHxdFKKGqJhUx7dvfdeY1XWN39__opAgb8qoHTwezQjlJvOp6yCTKQ4ZBswzSV1Xc6dhvwP-GNPrv74hn-I3Fp610KXdEVRQe%5C%22%2Cnull%2C%5C%22a05df007efcefe289414cd6d0e10e717%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=171c2a8cabecb971bf09e34e5926224e805d2f87e6db1d9304400208ec391330a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C0b699b0a7e94385fe703c3efae2e592eb51b45f5ea902cfb36bfc2897c3d0411j9u6jBES2u5m-BbE24zOKQ6eJxSMJHcyLnLnnaIe%7C3%7C%242y%2413%24LG0I%2Fj9mbL0VAz7o%2FQICdOhVeIj0pnHDwAOo796Owp3IDFgt8.kB6%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://configurator:8888/admin/entries/rooms/1087-kitchen'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://configurator:8888'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_LENGTH' => '1577'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1663331368.6851
+    'REQUEST_TIME' => 1663331368
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-10-19 02:59:49 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: uploads/content/kitchen/front_0_back_0_cover_0.png in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/TemplatesController.php:94
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('uploads/content...', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('render', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('templates/rende...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(104): craft\web\Application->runAction('templates/rende...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(272): yii\web\Application->handleRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-10-19 02:59:48 [-][-][-][info][application] $_GET = [
+    'p' => 'uploads/content/kitchen/front_0_back_0_cover_0.png'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '57982'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1666173588.875
+    'REQUEST_TIME' => 1666173588
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-10-19 03:00:16 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: uploads/content/kitchen/front_0_back_0_cover_0.png in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/TemplatesController.php:94
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('uploads/content...', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('render', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('templates/rende...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(104): craft\web\Application->runAction('templates/rende...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(272): yii\web\Application->handleRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-10-19 03:00:16 [-][-][-][info][application] $_GET = [
+    'p' => 'uploads/content/kitchen/front_0_back_0_cover_0.png'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '58123'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1666173616.3155
+    'REQUEST_TIME' => 1666173616
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-10-19 03:01:13 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: uploads/content/kitchen/front_0_back_0_cover_0.png in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/TemplatesController.php:94
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('uploads/content...', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('render', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('templates/rende...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(104): craft\web\Application->runAction('templates/rende...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(272): yii\web\Application->handleRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-10-19 03:01:13 [-][-][-][info][application] $_GET = [
+    'p' => 'uploads/content/kitchen/front_0_back_0_cover_0.png'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=uploads/content/kitchen/front_0_back_0_cover_0.png'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '58383'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1666173673.1284
+    'REQUEST_TIME' => 1666173673
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]
+2022-10-19 03:01:22 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: uploads/content/living-room/parket_large_3_option_3.png in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/controllers/TemplatesController.php:94
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('uploads/content...', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('render', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(287): yii\base\Module->runAction('templates/rende...', Array)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(104): craft\web\Application->runAction('templates/rende...', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(272): yii\web\Application->handleRequest(Object(craft\web\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): craft\web\Application->handleRequest(Object(craft\web\Request))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(26): yii\base\Application->run()
+#9 {main}
+2022-10-19 03:01:22 [-][-][-][info][application] $_GET = [
+    'p' => 'uploads/content/living-room/parket_large_3_option_3.png'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php8.0.8.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'ORIG_PATH_INFO' => '/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php8.0.8.fcgi'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/uploads/content/living-room/parket_large_3_option_3.png'
+    'QUERY_STRING' => 'p=uploads/content/living-room/parket_large_3_option_3.png'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'p=uploads/content/living-room/parket_large_3_option_3.png'
+    'REDIRECT_URL' => '/index.php'
+    'REMOTE_PORT' => '58411'
+    'SCRIPT_FILENAME' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'configurator'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.13'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'configurator:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1666173682.1553
+    'REQUEST_TIME' => 1666173682
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]

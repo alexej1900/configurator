@@ -1,0 +1,153 @@
+dateApplied: '2022-11-03 02:10:55'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667463991
+        to: 1667466652
+  -
+    removed:
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.field: 0d293b9c-108b-482c-b426-82982a729542
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.fieldUid: eb7598d6-d2cb-43e8-9af8-f6affd223b10
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.instructions: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.label: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.required: false
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.tip: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.type: craft\fieldlayoutelements\CustomField
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.warning: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.0.width: 100
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.fieldUid: 0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.instructions: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.label: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.required: false
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.tip: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.type: craft\fieldlayoutelements\CustomField
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.warning: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.elements.1.width: 100
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.name: Content
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fieldLayouts.e2fb7ac0-881e-43cd-8448-1e98035193f2.tabs.0.sortOrder: 1
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.columnSuffix: ulpbpfwj
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.contentColumnType: text
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.fieldGroup: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.handle: usersettings
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.instructions: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.name: UserSettings
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.searchable: false
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.byteLimit: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.charLimit: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.code: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.columnType: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.initialRows: '4'
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.multiline: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.placeholder: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.settings.uiMode: normal
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.translationKeyFormat: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.translationMethod: none
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26.type: craft\fields\PlainText
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.columnSuffix: ivoscasz
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.contentColumnType: text
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.fieldGroup: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.handle: userid
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.instructions: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.name: UserId
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.searchable: false
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.byteLimit: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.charLimit: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.code: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.columnType: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.initialRows: '4'
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.multiline: ''
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.placeholder: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.settings.uiMode: normal
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.translationKeyFormat: null
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.translationMethod: none
+      superTableBlockTypes.54e6eebe-9435-423c-9476-6d4dddc0158c.fields.eb7598d6-d2cb-43e8-9af8-f6affd223b10.type: craft\fields\PlainText
+    message: 'Delete super table block type for parent field “results”'
+  -
+    added:
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.field: 0d293b9c-108b-482c-b426-82982a729542
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.fieldUid: 8a742068-2208-4c13-8497-72d296e63c4c
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.instructions: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.label: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.required: false
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.tip: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.type: craft\fieldlayoutelements\CustomField
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.warning: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.0.width: 100
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.fieldUid: 137774b2-c4c3-4bc7-9390-c71a6f956c6c
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.instructions: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.label: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.required: false
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.tip: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.type: craft\fieldlayoutelements\CustomField
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.warning: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.elements.1.width: 100
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.name: Content
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fieldLayouts.011b0394-b89c-4f9a-9a0e-cfc18e57dcc7.tabs.0.sortOrder: 1
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.columnSuffix: hidhznyq
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.contentColumnType: text
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.fieldGroup: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.handle: userid
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.instructions: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.name: userId
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.searchable: false
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.byteLimit: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.charLimit: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.code: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.columnType: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.initialRows: '4'
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.multiline: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.placeholder: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.settings.uiMode: normal
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.translationKeyFormat: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.translationMethod: none
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.8a742068-2208-4c13-8497-72d296e63c4c.type: craft\fields\PlainText
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.columnSuffix: subljbkd
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.contentColumnType: text
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.fieldGroup: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.handle: userdata
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.instructions: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.name: userData
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.searchable: false
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.byteLimit: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.charLimit: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.code: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.columnType: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.initialRows: '4'
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.multiline: ''
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.placeholder: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.settings.uiMode: normal
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.translationKeyFormat: null
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.translationMethod: none
+      superTableBlockTypes.f4427991-5363-43f1-bbbd-340a45d14358.fields.137774b2-c4c3-4bc7-9390-c71a6f956c6c.type: craft\fields\PlainText
+    message: 'Save super table block type for parent field “results”'
+  -
+    added:
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.fieldLayout: row
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.maxRows: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.minRows: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.placeholderKey: null
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.selectionLabel: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.staticField: ''
+    removed:
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.maxBlocks: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.minBlocks: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.propagationKeyFormat: null
+    message: 'Save field “results”'
+    changed:
+      fields.0d293b9c-108b-482c-b426-82982a729542.instructions:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.contentTable:
+        from: '{{%matrixcontent_results}}'
+        to: '{{%stc_results}}'
+      fields.0d293b9c-108b-482c-b426-82982a729542.type:
+        from: craft\fields\Matrix
+        to: verbb\supertable\fields\SuperTableField
+  -
+    added:
+      meta.__names__.8a742068-2208-4c13-8497-72d296e63c4c: userId
+  -
+    added:
+      meta.__names__.137774b2-c4c3-4bc7-9390-c71a6f956c6c: userData

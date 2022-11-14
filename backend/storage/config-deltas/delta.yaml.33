@@ -1,0 +1,32 @@
+dateApplied: '2022-11-03 03:10:25'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667470213
+        to: 1667470223
+  -
+    added:
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.columnSuffix: qmeyvzdu
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.contentColumnType: text
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.fieldGroup: f242347d-e6aa-4938-afd6-c792e6b82650
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.handle: resultEmail
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.instructions: ''
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.name: 'Result Email'
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.searchable: false
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.byteLimit: null
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.charLimit: null
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.code: ''
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.columnType: null
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.initialRows: '4'
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.multiline: ''
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.placeholder: null
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.settings.uiMode: normal
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.translationKeyFormat: null
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.translationMethod: none
+      fields.3ede28dd-2c0f-40e8-b559-d43fb81cea0a.type: craft\fields\PlainText
+    message: 'Save field “resultEmail”'
+  -
+    added:
+      meta.__names__.3ede28dd-2c0f-40e8-b559-d43fb81cea0a: 'Result Email'

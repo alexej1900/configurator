@@ -1,0 +1,435 @@
+2022-09-02 08:09:42 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-02 08:09:42 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-02 08:09:42 [-][-][-][error][craft\base\ApplicationTrait::getIsDbConnectionValid] There was a problem connecting to the database: Craft CMS can’t connect to the database with the credentials in config/db.php.
+2022-09-02 08:09:42 [-][-][-][error][craft\errors\DbConnectException] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:723
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(723): PDO->__construct('mysql:host=;dbn...', '', '', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(638): yii\db\Connection->createPdoInstance()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#7 [internal function]: {closure}()
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#20 [internal function]: yii\console\Application->__construct(Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:649
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#5 [internal function]: {closure}()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#18 [internal function]: yii\console\Application->__construct(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#25 {main}
+
+Next craft\errors\DbConnectException: Craft CMS can’t connect to the database with the credentials in config/db.php. in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php:173
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#4 [internal function]: {closure}()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#17 [internal function]: yii\console\Application->__construct(Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#24 {main}
+2022-09-02 08:09:42 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'aliaksei.badnarchuck'
+    'MallocNanoZone' => '0'
+    '__CFBundleIdentifier' => 'com.microsoft.VSCode'
+    'COMMAND_MODE' => 'unix2003'
+    'LOGNAME' => 'aliaksei.badnarchuck'
+    'PATH' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.MGfuFrVMNd/Listeners'
+    'SHELL' => '/bin/zsh'
+    'HOME' => '/Users/aliaksei.badnarchuck'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'TMPDIR' => '/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/'
+    'XPC_SERVICE_NAME' => '0'
+    'XPC_FLAGS' => '0x0'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'SHLVL' => '1'
+    'PWD' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend'
+    'OLDPWD' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig'
+    'HOMEBREW_PREFIX' => '/opt/homebrew'
+    'HOMEBREW_CELLAR' => '/opt/homebrew/Cellar'
+    'HOMEBREW_REPOSITORY' => '/opt/homebrew'
+    'MANPATH' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/share/man:/opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/share/man:/opt/homebrew/share/man:'
+    'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:'
+    'NVM_DIR' => '/Users/aliaksei.badnarchuck/.nvm'
+    'NVM_CD_FLAGS' => '-q'
+    'NVM_BIN' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin'
+    'NVM_INC' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/include/node'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.69.2'
+    'LANG' => 'en_GB.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => '/private/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/AppTranslocation/AC33B80E-6720-45C2-BEEE-AABA67879A9D/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => '/private/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/AppTranslocation/AC33B80E-6720-45C2-BEEE-AABA67879A9D/d/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => '--ms-enable-electron-run-as-node'
+    'VSCODE_GIT_ASKPASS_MAIN' => '/private/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/AppTranslocation/AC33B80E-6720-45C2-BEEE-AABA67879A9D/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/vscode-git-1698ccf855.sock'
+    'TERM' => 'xterm-256color'
+    '_' => '/opt/homebrew/bin/php'
+    'PHP_SELF' => 'craft'
+    'SCRIPT_NAME' => 'craft'
+    'SCRIPT_FILENAME' => 'craft'
+    'PATH_TRANSLATED' => 'craft'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1662106182.1672
+    'REQUEST_TIME' => 1662106182
+    'argv' => [
+        0 => 'craft'
+        1 => 'setup/security-key'
+    ]
+    'argc' => 2
+]
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\base\ApplicationTrait::getIsDbConnectionValid] There was a problem connecting to the database: Craft CMS can’t connect to the database with the credentials in config/db.php.
+2022-09-07 12:35:34 [-][-][-][error][craft\errors\DbConnectException] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:723
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(723): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(638): yii\db\Connection->createPdoInstance()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#7 [internal function]: {closure}()
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#20 [internal function]: yii\console\Application->__construct(Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:649
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#5 [internal function]: {closure}()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#18 [internal function]: yii\console\Application->__construct(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#25 {main}
+
+Next craft\errors\DbConnectException: Craft CMS can’t connect to the database with the credentials in config/db.php. in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php:173
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(314): craft\console\Application->getIsDbConnectionValid()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(675): craft\console\Application->getIsInstalled()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.php(244): craft\helpers\App::projectConfigConfig()
+#4 [internal function]: {closure}()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('projectConfig', true)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(158): yii\base\Module->get('projectConfig', true)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1313): craft\console\Application->get('projectConfig')
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1490): craft\console\Application->getProjectConfig()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1443): craft\console\Application->_setTimeZone()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(46): craft\console\Application->_preInit()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\console\Application->init()
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(90): yii\base\Application->__construct(Array)
+#17 [internal function]: yii\console\Application->__construct(Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\console\\A...', Array, Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\console\\A...', Array, Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/console.php(51): require('/Users/aliaksei...')
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(26): require('/Users/aliaksei...')
+#24 {main}
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\base\ApplicationTrait::getIsDbConnectionValid] There was a problem connecting to the database: Craft CMS can’t connect to the database with the credentials in config/db.php.
+2022-09-07 12:35:34 [-][-][-][error][craft\errors\DbConnectException] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:723
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(723): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(638): yii\db\Connection->createPdoInstance()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(73): craft\console\Application->getIsDbConnectionValid()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#8 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:649
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(73): craft\console\Application->getIsDbConnectionValid()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#6 {main}
+
+Next craft\errors\DbConnectException: Craft CMS can’t connect to the database with the credentials in config/db.php. in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php:173
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(834): craft\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(73): craft\console\Application->getIsDbConnectionValid()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#5 {main}
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\db\Connection::open] SQLSTATE[HY000] [2002] No such file or directory
+2022-09-07 12:35:34 [-][-][-][error][craft\errors\DbConnectException] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:723
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(723): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(638): yii\db\Connection->createPdoInstance()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1063): craft\db\Connection->open()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1050): yii\db\Connection->getMasterPdo()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php(700): yii\db\Connection->getSlavePdo()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(120): yii\db\Schema->getServerVersion()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(39): craft\helpers\Api::platformVersions()
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(121): craft\helpers\Api::headers()
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(85): craft\services\Api->request('GET', 'updates', Array)
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(615): craft\services\Api->getUpdates(Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(95): craft\console\controllers\UpdateController->_getUpdates()
+#12 [internal function]: craft\console\controllers\UpdateController->actionInfo()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('info', Array)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('info', Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(148): craft\console\Controller->runAction('info')
+#18 [internal function]: craft\console\controllers\UpdateController->actionUpdate(NULL)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('', Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('', Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): craft\console\Controller->runAction('', Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('update', Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(89): yii\console\Application->runAction('update', Array)
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#28 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php:649
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php(152): yii\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1063): craft\db\Connection->open()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1050): yii\db\Connection->getMasterPdo()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php(700): yii\db\Connection->getSlavePdo()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(120): yii\db\Schema->getServerVersion()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(39): craft\helpers\Api::platformVersions()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(121): craft\helpers\Api::headers()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(85): craft\services\Api->request('GET', 'updates', Array)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(615): craft\services\Api->getUpdates(Array)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(95): craft\console\controllers\UpdateController->_getUpdates()
+#10 [internal function]: craft\console\controllers\UpdateController->actionInfo()
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('info', Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('info', Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(148): craft\console\Controller->runAction('info')
+#16 [internal function]: craft\console\controllers\UpdateController->actionUpdate(NULL)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('', Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('', Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): craft\console\Controller->runAction('', Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('update', Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(89): yii\console\Application->runAction('update', Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#27 {main}
+
+Next craft\errors\DbConnectException: Craft CMS can’t connect to the database with the credentials in config/db.php. in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Connection.php:173
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1063): craft\db\Connection->open()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Connection.php(1050): yii\db\Connection->getMasterPdo()
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php(700): yii\db\Connection->getSlavePdo()
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(120): yii\db\Schema->getServerVersion()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/Api.php(39): craft\helpers\Api::platformVersions()
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(121): craft\helpers\Api::headers()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Api.php(85): craft\services\Api->request('GET', 'updates', Array)
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(615): craft\services\Api->getUpdates(Array)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(95): craft\console\controllers\UpdateController->_getUpdates()
+#9 [internal function]: craft\console\controllers\UpdateController->actionInfo()
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('info', Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('info', Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/controllers/UpdateController.php(148): craft\console\Controller->runAction('info')
+#15 [internal function]: craft\console\controllers\UpdateController->actionUpdate(NULL)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('', Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Controller.php(221): yii\console\Controller->runAction('', Array)
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(534): craft\console\Controller->runAction('', Array)
+#21 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('update', Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/console/Application.php(89): yii\console\Application->runAction('update', Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/console/Application.php(148): craft\console\Application->runAction('update', Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(craft\console\Request))
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/craft(27): yii\base\Application->run()
+#26 {main}
+2022-09-07 12:35:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'aliaksei.badnarchuck'
+    'MallocNanoZone' => '0'
+    '__CFBundleIdentifier' => 'com.microsoft.VSCode'
+    'COMMAND_MODE' => 'unix2003'
+    'LOGNAME' => 'aliaksei.badnarchuck'
+    'PATH' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.fOA1Jzqfgr/Listeners'
+    'SHELL' => '/bin/zsh'
+    'HOME' => '/Users/aliaksei.badnarchuck'
+    '__CF_USER_TEXT_ENCODING' => '0x1F6:0x0:0x0'
+    'TMPDIR' => '/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/'
+    'XPC_SERVICE_NAME' => '0'
+    'XPC_FLAGS' => '0x0'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'SHLVL' => '1'
+    'PWD' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend'
+    'OLDPWD' => '/Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator'
+    'HOMEBREW_PREFIX' => '/opt/homebrew'
+    'HOMEBREW_CELLAR' => '/opt/homebrew/Cellar'
+    'HOMEBREW_REPOSITORY' => '/opt/homebrew'
+    'MANPATH' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/share/man:/opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/share/man:/opt/homebrew/share/man:'
+    'INFOPATH' => '/opt/homebrew/share/info:/opt/homebrew/share/info:'
+    'NVM_DIR' => '/Users/aliaksei.badnarchuck/.nvm'
+    'NVM_CD_FLAGS' => '-q'
+    'NVM_BIN' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/bin'
+    'NVM_INC' => '/Users/aliaksei.badnarchuck/.nvm/versions/node/v8.4.0/include/node'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.69.2'
+    'LANG' => 'en_GB.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => '--ms-enable-electron-run-as-node'
+    'VSCODE_GIT_ASKPASS_MAIN' => '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '/var/folders/7z/kxs7gk7d2kqd2913y57_1vq40000gp/T/vscode-git-1698ccf855.sock'
+    'TERM' => 'xterm-256color'
+    '_' => '/opt/homebrew/bin/php'
+    'PHP_SELF' => 'craft'
+    'SCRIPT_NAME' => 'craft'
+    'SCRIPT_FILENAME' => 'craft'
+    'PATH_TRANSLATED' => 'craft'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1662554134.5935
+    'REQUEST_TIME' => 1662554134
+    'argv' => [
+        0 => 'craft'
+        1 => 'update'
+    ]
+    'argc' => 2
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_PORT' => '8889'
+    'DB_DATABASE' => 'configurator'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+]

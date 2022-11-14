@@ -1,0 +1,636 @@
+[21-Sep-2022 00:45:55 America/Los_Angeles] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#21 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+The SQL being executed was: SELECT COUNT(*)
+FROM (SELECT 1
+FROM `sites`
+LIMIT 2) `x` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#21 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#22 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2006
+    [2] => MySQL server has gone away
+)
+
+Previous exception:
+PDOException: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#21 [internal function]: yii\base\Application->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress
+The SQL being executed was: SELECT COUNT(*)
+FROM (SELECT 1
+FROM `sites`
+LIMIT 2) `x` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#21 [internal function]: yii\base\Application->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#28 {main}
+Additional Information:
+Array
+(
+    [0] => 08S01
+    [1] => 1053
+    [2] => Server shutdown in progress
+)
+
+[17-Oct-2022 09:20:41 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `s`.`id`...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(152): yii\db\Query->all(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(1197): craft\db\Query->all()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(477): craft\services\Sites->_loadAllSites()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Component.php(181): craft\services\Sites->setCurrentSite(NULL)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(558): yii\base\Component->__set('currentSite', NULL)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(107): yii\BaseYii::configure(Object(craft\services\Sites), Array)
+#10 [internal function]: yii\base\BaseObject->__construct(Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\services\\...', Array, Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\services\\...', Array, Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('sites', true)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('sites', true)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(173): craft\web\Application->get('sites')
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(145): yii\di\Instance->get(NULL)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Request.php(231): yii\di\Instance::ensure(Object(yii\di\Instance), 'craft\\services\\...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Request->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Reque...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Reque...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(13): yii\BaseYii::createObject(Array)
+#26 [internal function]: {closure}()
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#28 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#29 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#30 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('request', true)
+#31 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('request', true)
+#32 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(161): craft\web\Application->get('request')
+#33 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(709): yii\web\Application->getRequest()
+#34 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(26): craft\helpers\App::userConfig()
+#35 [internal function]: {closure}()
+#36 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#37 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#38 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#39 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('user', true)
+#40 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('user', true)
+#41 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(188): craft\web\Application->get('user')
+#42 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\Application->getUser()
+#43 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(187): craft\web\ErrorHandler->_showExceptionView()
+#44 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#45 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#46 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#47 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+The SQL being executed was: SELECT `s`.`id`, `s`.`name`, `s`.`handle`, `s`.`language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`, `s`.`groupId`, `s`.`enabled`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT `s`.`id`...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `s`.`id`...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(152): yii\db\Query->all(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(1197): craft\db\Query->all()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(477): craft\services\Sites->_loadAllSites()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Component.php(181): craft\services\Sites->setCurrentSite(NULL)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(558): yii\base\Component->__set('currentSite', NULL)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(107): yii\BaseYii::configure(Object(craft\services\Sites), Array)
+#10 [internal function]: yii\base\BaseObject->__construct(Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\services\\...', Array, Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\services\\...', Array, Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('sites', true)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('sites', true)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(173): craft\web\Application->get('sites')
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(145): yii\di\Instance->get(NULL)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Request.php(231): yii\di\Instance::ensure(Object(yii\di\Instance), 'craft\\services\\...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Request->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Reque...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Reque...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(13): yii\BaseYii::createObject(Array)
+#26 [internal function]: {closure}()
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#28 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#29 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#30 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('request', true)
+#31 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('request', true)
+#32 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(161): craft\web\Application->get('request')
+#33 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/helpers/App.php(709): yii\web\Application->getRequest()
+#34 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(26): craft\helpers\App::userConfig()
+#35 [internal function]: {closure}()
+#36 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#37 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#38 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#39 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('user', true)
+#40 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('user', true)
+#41 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(188): craft\web\Application->get('user')
+#42 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\Application->getUser()
+#43 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(187): craft\web\ErrorHandler->_showExceptionView()
+#44 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#45 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#46 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#47 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2006
+    [2] => MySQL server has gone away
+)
+
+Previous exception:
+PDOException: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `s`.`id`...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(152): yii\db\Query->all(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(1197): craft\db\Query->all()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(477): craft\services\Sites->_loadAllSites()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Component.php(181): craft\services\Sites->setCurrentSite(NULL)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(558): yii\base\Component->__set('currentSite', NULL)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(107): yii\BaseYii::configure(Object(craft\services\Sites), Array)
+#10 [internal function]: yii\base\BaseObject->__construct(Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\services\\...', Array, Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\services\\...', Array, Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('sites', true)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('sites', true)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(173): craft\web\Application->get('sites')
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(145): yii\di\Instance->get(NULL)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Request.php(231): yii\di\Instance::ensure(Object(yii\di\Instance), 'craft\\services\\...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Request->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Reque...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Reque...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(13): yii\BaseYii::createObject(Array)
+#26 [internal function]: {closure}()
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#28 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#29 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#30 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('request', true)
+#31 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('request', true)
+#32 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(161): craft\web\Application->get('request')
+#33 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1439): yii\web\Application->getRequest()
+#34 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(90): craft\web\Application->_preInit()
+#35 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#36 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#37 [internal function]: yii\base\Application->__construct(Array)
+#38 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#39 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#40 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#41 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#42 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#43 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#44 {main}
+
+Next yii\db\Exception: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress
+The SQL being executed was: SELECT `s`.`id`, `s`.`name`, `s`.`handle`, `s`.`language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`, `s`.`groupId`, `s`.`enabled`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT `s`.`id`...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `s`.`id`...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(152): yii\db\Query->all(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(1197): craft\db\Query->all()
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/services/Sites.php(477): craft\services\Sites->_loadAllSites()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Component.php(181): craft\services\Sites->setCurrentSite(NULL)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(558): yii\base\Component->__set('currentSite', NULL)
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(107): yii\BaseYii::configure(Object(craft\services\Sites), Array)
+#10 [internal function]: yii\base\BaseObject->__construct(Array)
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\services\\...', Array, Array)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\services\\...', Array, Array)
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('sites', true)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('sites', true)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(173): craft\web\Application->get('sites')
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Instance.php(145): yii\di\Instance->get(NULL)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Request.php(231): yii\di\Instance::ensure(Object(yii\di\Instance), 'craft\\services\\...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Request->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Reque...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Reque...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/config/app.web.php(13): yii\BaseYii::createObject(Array)
+#26 [internal function]: {closure}()
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(634): call_user_func_array(Object(Closure), Array)
+#28 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->invoke(Object(Closure), Array)
+#29 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Object(Closure))
+#30 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Module.php(748): yii\di\ServiceLocator->get('request', true)
+#31 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(337): yii\base\Module->get('request', true)
+#32 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/Application.php(161): craft\web\Application->get('request')
+#33 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(1439): yii\web\Application->getRequest()
+#34 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(90): craft\web\Application->_preInit()
+#35 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#36 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#37 [internal function]: yii\base\Application->__construct(Array)
+#38 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#39 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#40 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#41 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#42 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#43 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#44 {main}
+Additional Information:
+Array
+(
+    [0] => 08S01
+    [1] => 1053
+    [2] => Server shutdown in progress
+)
+
+[19-Oct-2022 04:44:35 America/Los_Angeles] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `users`....')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(424): yii\db\Command->queryInternal('fetch', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Command->queryOne()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#14 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#15 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+The SQL being executed was: SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`id` AS `siteSettingsId`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`uri`, `elements_sites`.`enabled` AS `enabledForSite`, `elements`.`canonicalId`, `elements`.`dateLastMerged`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_roomType_rhypurby`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON `content`.`elementId` = `elements`.`id`
+WHERE (`elements`.`id`=3) AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT `users`....')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `users`....')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(424): yii\db\Command->queryInternal('fetch', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Command->queryOne()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#14 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2006
+    [2] => MySQL server has gone away
+)
+
+Previous exception:
+PDOException: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `users`....')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(424): yii\db\Command->queryInternal('fetch', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Command->queryOne()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#14 [internal function]: yii\base\Application->__construct(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#21 {main}
+
+Next yii\db\Exception: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress
+The SQL being executed was: SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`id` AS `siteSettingsId`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`uri`, `elements_sites`.`enabled` AS `enabledForSite`, `elements`.`canonicalId`, `elements`.`dateLastMerged`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_roomType_rhypurby`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON `content`.`elementId` = `elements`.`id`
+WHERE (`elements`.`id`=3) AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT `users`....')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT `users`....')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(424): yii\db\Command->queryInternal('fetch', NULL)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Command->queryOne()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#14 [internal function]: yii\base\Application->__construct(Array)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 08S01
+    [1] => 1053
+    [2] => Server shutdown in progress
+)
+
+[19-Oct-2022 04:44:35 America/Los_Angeles] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#21 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+The SQL being executed was: SELECT COUNT(*)
+FROM (SELECT 1
+FROM `sites`
+LIMIT 2) `x` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(522): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(277): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(137): craft\web\ErrorHandler->_showExceptionView()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/ErrorHandler.php(135): craft\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/ErrorHandler.php(71): yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#21 [internal function]: craft\web\ErrorHandler->handleException(Object(yii\db\Exception))
+#22 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2006
+    [2] => MySQL server has gone away
+)
+
+Previous exception:
+PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#21 [internal function]: yii\base\Application->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+The SQL being executed was: SELECT COUNT(*)
+FROM (SELECT 1
+FROM `sites`
+LIMIT 2) `x` in /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Schema.php:678
+Stack trace:
+#0 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Command.php(436): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(497): yii\db\Command->queryScalar()
+#4 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(258): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#5 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(368): craft\db\Query->queryScalar('COUNT(*)', NULL)
+#6 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/base/ApplicationTrait.php(393): yii\db\Query->count()
+#7 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1466): craft\web\Application->getIsMultiSite(false, true)
+#8 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/QueryBuilder.php(227): craft\elements\db\ElementQuery->prepare(Object(craft\db\mysql\QueryBuilder))
+#9 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(157): yii\db\QueryBuilder->build(Object(craft\elements\db\UserQuery))
+#10 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/db/Query.php(287): yii\db\Query->createCommand(Object(craft\db\Connection))
+#11 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/db/Query.php(167): yii\db\Query->one(NULL)
+#12 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/db/ElementQuery.php(1634): craft\db\Query->one(NULL)
+#13 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/elements/User.php(452): craft\elements\db\ElementQuery->one()
+#14 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(700): craft\elements\User::findIdentity(3)
+#15 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/User.php(511): yii\web\User->renewAuthStatus()
+#16 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/web/User.php(199): craft\web\User->renewAuthStatus()
+#17 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(413): yii\web\User->getIdentity()
+#18 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/src/web/Application.php(95): craft\web\Application->debugBootstrap()
+#19 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/BaseObject.php(109): craft\web\Application->init()
+#20 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/base/Application.php(212): yii\base\BaseObject->__construct(Array)
+#21 [internal function]: yii\base\Application->__construct(Array)
+#22 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(420): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/di/Container.php(171): yii\di\Container->build('craft\\web\\Appli...', Array, Array)
+#24 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('craft\\web\\Appli...', Array, Array)
+#25 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/bootstrap.php(242): yii\BaseYii::createObject(Array)
+#26 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/vendor/craftcms/cms/bootstrap/web.php(51): require('/Users/aliaksei...')
+#27 /Users/aliaksei.badnarchuck/PROJECTS/Konfig/Konfigurator/backend/web/index.php(25): require('/Users/aliaksei...')
+#28 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2006
+    [2] => MySQL server has gone away
+)
+

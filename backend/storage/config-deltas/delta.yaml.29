@@ -1,0 +1,27 @@
+dateApplied: '2022-11-03 03:40:16'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667471970
+        to: 1667472014
+  -
+    removed:
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.fieldUid: 0d293b9c-108b-482c-b426-82982a729542
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.instructions: null
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.label: null
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.required: false
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.tip: null
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.type: craft\fieldlayoutelements\CustomField
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.warning: null
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.elements.0.width: 100
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.name: Results
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.fieldLayouts.cdde7329-a284-43f0-80eb-662485d6a107.tabs.0.sortOrder: 1
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.handle: results
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.name: Results
+      globalSets.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e.sortOrder: 4
+    message: 'Delete the “results” global set'
+  -
+    removed:
+      meta.__names__.e577c09f-e6fd-4ed9-a817-91cb6bbdca9e: Results

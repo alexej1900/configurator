@@ -1,0 +1,19 @@
+dateApplied: '2022-11-04 03:13:20'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667556779
+        to: 1667556798
+  -
+    added:
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.fieldUid: 34df6a6b-3e64-483e-b967-a437ff01c7da
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.instructions: null
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.label: null
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.required: false
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.tip: null
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.type: craft\fieldlayoutelements\CustomField
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.warning: null
+      entryTypes.66677a00-1430-4c0a-822e-22c8f3f59176.fieldLayouts.618458dd-e572-4291-a469-278e0b86d5a0.tabs.0.elements.5.width: 100
+    message: 'Save entry type “default”'

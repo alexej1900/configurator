@@ -1,0 +1,101 @@
+dateApplied: '2022-11-03 01:25:22'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1667461225
+        to: 1667463918
+  -
+    added:
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.field: 0d293b9c-108b-482c-b426-82982a729542
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.fieldUid: 2c474d16-b775-43e4-a872-953e73549192
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.instructions: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.label: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.required: false
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.tip: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.type: craft\fieldlayoutelements\CustomField
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.warning: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.0.width: 100
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.fieldUid: e1331fa6-6e34-47f8-8c1f-8bd1a4f71868
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.instructions: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.label: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.required: false
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.tip: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.type: craft\fieldlayoutelements\CustomField
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.warning: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.elements.1.width: 100
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.name: Content
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fieldLayouts.59a2ad7e-6bbc-45ca-ad19-a49394165f95.tabs.0.sortOrder: 1
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.columnSuffix: aawbmqzs
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.contentColumnType: text
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.fieldGroup: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.handle: userid
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.instructions: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.name: userId
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.searchable: false
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.byteLimit: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.charLimit: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.code: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.columnType: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.initialRows: '4'
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.multiline: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.placeholder: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.settings.uiMode: normal
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.translationKeyFormat: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.translationMethod: none
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.2c474d16-b775-43e4-a872-953e73549192.type: craft\fields\PlainText
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.columnSuffix: dtabmnfe
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.contentColumnType: text
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.fieldGroup: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.handle: userdata
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.instructions: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.name: userData
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.searchable: false
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.byteLimit: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.charLimit: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.code: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.columnType: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.initialRows: '4'
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.multiline: ''
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.placeholder: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.settings.uiMode: normal
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.translationKeyFormat: null
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.translationMethod: none
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.fields.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868.type: craft\fields\PlainText
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.handle: userresult
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.name: UserResult
+      matrixBlockTypes.ac495883-05c6-4f16-9717-73737d71ab6a.sortOrder: 1
+    message: 'Save matrix block type “userresult” for parent field “results”'
+  -
+    added:
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.maxBlocks: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.minBlocks: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.propagationKeyFormat: null
+    removed:
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.fieldLayout: row
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.maxRows: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.minRows: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.placeholderKey: null
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.selectionLabel: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.staticField: ''
+    message: 'Save field “results”'
+    changed:
+      fields.0d293b9c-108b-482c-b426-82982a729542.instructions:
+        from: null
+        to: ''
+      fields.0d293b9c-108b-482c-b426-82982a729542.settings.contentTable:
+        from: '{{%stc_results}}'
+        to: '{{%matrixcontent_results}}'
+      fields.0d293b9c-108b-482c-b426-82982a729542.type:
+        from: verbb\supertable\fields\SuperTableField
+        to: craft\fields\Matrix
+  -
+    added:
+      meta.__names__.ac495883-05c6-4f16-9717-73737d71ab6a: UserResult
+  -
+    added:
+      meta.__names__.2c474d16-b775-43e4-a872-953e73549192: userId
+  -
+    added:
+      meta.__names__.e1331fa6-6e34-47f8-8c1f-8bd1a4f71868: userData
