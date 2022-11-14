@@ -1,0 +1,298 @@
+dateModified: 1667569536
+email:
+  fromEmail: admin@admin.com
+  fromName: Configurator
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    0b100dd4-bff4-408c-8228-c88f9c6ada89: Modification # Modification
+    0c1e7921-6657-4e14-b1d8-0ceea79f2ba6: 'Individual Solution Price' # Individual Solution Price
+    0c1f4d59-c00f-4749-ba15-33c2b81252fd: 'Mod Item Example' # Mod Item Example
+    0ccfa3be-f72d-4ef5-ab0e-7dc5d046ae26: UserSettings # UserSettings
+    0d293b9c-108b-482c-b426-82982a729542: Results # Results
+    0db2a22a-7bcf-4db3-8db0-4d30e1f1848b: 'Mods Name' # Mods Name
+    0f2ac1e8-cb64-427b-82ed-8f1a5f21b059: 'Apartment title' # Apartment title
+    0f8af7c1-a79d-4e3e-bec0-eaac557ab784: Styles # Styles
+    1aea3dfb-6a80-430f-8aea-963d69724c45: 'Options List Block' # Options List Block
+    1be43342-31fd-4afe-b990-fe0c26138014: 'Individual Solution' # Individual Solution
+    1c67a171-c259-4fd2-96f6-c01ac7ff92db: Title # Title
+    1e5ef1b6-baaa-4146-ba5b-e043cbccba61: Cards # Cards
+    2a6d8778-3c5e-4324-a432-4f2299dc7935: Description # Description
+    2a9f1edd-d35f-47e6-8d68-49d9aa68c1e1: 'Modification Number' # Modification Number
+    2af22254-5561-4654-a6ec-a7fba5795e8e: 'Modification Title' # Modification Title
+    2c03fd0d-7f9e-482b-a9d2-7f9382b36fdc: 'Tab 1 Title' # Tab 1 Title
+    2c474d16-b775-43e4-a872-953e73549192: userId # userId
+    2e6b114a-4786-42ea-9439-681f5f227ae1: 'Mod Numb' # Mod Numb
+    3a92bdf1-ca7d-41a3-99db-28086fd0491e: 'Modification Type Name' # Modification Type Name
+    3b1c05c8-55e2-4094-9c0b-960c295fe6e7: Title # Title
+    3ca1e212-e622-430e-9d4e-e1979bdc2f4a: 'Big apartment title' # Big apartment title
+    3dbe66c2-fe49-4b1b-bea9-7e5a16a369a6: 'Position X' # Position X
+    3e76c142-6610-4464-a64f-f645924a28f1: 'Header Settings' # Header Settings
+    3ede28dd-2c0f-40e8-b559-d43fb81cea0a: 'User Email' # User Email
+    4a3bba70-a34d-4ed6-a440-737d6e407722: 'Modification Pin' # Modification Pin
+    4a2181cc-e91b-4e57-8f17-7a501242d15d: Styles # Styles
+    4b830dd9-d865-4d0a-a39f-452e0ec13319: 'Modification group  title' # Modification group  title
+    4b277576-4353-4162-babc-8e650ed5b4e4: 'Pin Position Top' # Pin Position Top
+    4c2d130f-a69c-4690-afe1-659a551f6402: Title # Title
+    4c7cb93e-93fd-4512-ad02-fa302893fba5: 'Position Y' # Position Y
+    4c36a819-a635-4f88-ad84-dd2e644f3ebc: 'Room Type' # Room Type
+    4ca74280-d2e4-45ef-af56-86de32d3d5aa: 'Recommended modification' # Recommended modification
+    4d40f99a-cf5d-4eef-90aa-03aaf3dae8ed: 'Modific Item Block' # Modific Item Block
+    4f930775-7899-4b67-aced-9ab0314852e5: 'Tab 2 Title' # Tab 2 Title
+    5a7bbdd0-e05a-4686-8ad6-69733c153631: 'Options Title' # Options Title
+    5a67638c-7e53-40c8-a609-ca1fd1c5e6fc: 'Living-room Images' # Living-room Images
+    5de452ff-0136-427e-bebe-5c4c8335a2a4: 'Modification image ' # Modification image 
+    5e51d2f1-7683-4e2a-aa8f-f5229f211cbc: 'Individual Solution Price' # Individual Solution Price
+    6a33257c-c238-4d4f-9a69-356b7380b06e: Pins # Pins
+    7a343e8b-1828-485d-91d4-1e53bc808835: Description # Description
+    7baacffa-169e-4914-bcbd-d14e89481f2a: 'Modified Image' # Modified Image
+    7bf2789e-ef77-4721-8540-661a36f3137a: 'Mod Name' # Mod Name
+    7c689efc-5509-4c53-91a1-b76938d29f86: 'Modification group block' # Modification group block
+    7caa9c39-61ca-49c1-9490-aa62f9d14649: Title # Title
+    7cd62f82-9585-4a9a-9d8b-3823c17dac63: 'User Name' # User Name
+    8a0de730-d35b-412f-ae3b-ffacc0f56778: Results # Results
+    8a41fc42-6c4f-4703-aee9-1393b905a1c0: 'Big apartment price' # Big apartment price
+    8a742068-2208-4c13-8497-72d296e63c4c: userId # userId
+    8ac7ec42-361d-4f2e-a785-24f0d631aae3: 'Modification Pin' # Modification Pin
+    8cabee79-8d30-4b2d-a1a9-bc9e72488680: 'Main brand color' # Main brand color
+    8d3b3d96-2261-4131-8821-fe94bfefac5c: 'Modification group Name' # Modification group Name
+    8de25516-7148-484c-bd6d-7dcc5e25dfad: 'Mods type block' # Mods type block
+    8f7b6a5b-94b9-4765-8b16-867b44062a6c: 'Modification group' # Modification group
+    8f7e10df-9425-4417-bc74-f8449e142a1f: 'Modification examples' # Modification examples
+    9a9ef88a-9f26-4abb-85d3-dc94f3a80204: 'Small apartment price' # Small apartment price
+    9a2148ef-460e-4908-bc18-c808ed380b6d: 'Public Schema' # Public Schema
+    9bad162e-0a3b-4bd7-8fd5-242642d1f09b: 'Modification examples' # Modification examples
+    9ce5ba08-e814-469b-a51f-3a1f6b46158b: 'Style Image' # Style Image
+    9dcd13ea-f0fc-451c-8676-68e4995ea9dc: 'Mods Name' # Mods Name
+    9e1746dd-c6c8-4ef4-bb22-9fca7c828b82: 'Header background picture' # Header background picture
+    9e6631d3-fc7b-4dcc-9fe1-adc520bc8a2b: 'Mods Number' # Mods Number
+    9f612f12-5660-4222-822c-ad5c8d05e9d7: 'Additional Price' # Additional Price
+    12a425ad-edf0-4ce6-a9a7-153611f63df0: 'Option Price' # Option Price
+    14d68999-c933-414d-99a1-1ce09563b527: Image # Image
+    15ca951a-4085-4b28-85f0-7cf86d20885c: 'Left Position' # Left Position
+    19de32af-49e7-4e22-9c71-9d3d2a5d9c97: 'Apartment price' # Apartment price
+    19ea3d79-dbdb-485f-8133-7bc514f00bf4: 'First Modification type title' # First Modification type title
+    20dddec9-a37e-4e2c-b532-0edd4df92087: 'Modification Name' # Modification Name
+    21ef4454-9fd6-4b63-8170-68a7c09ac0cf: 'Additional Price' # Additional Price
+    21f03266-7a5e-450d-8e2b-cb19f099cdfc: 'Modification Title' # Modification Title
+    22c88f2e-86d8-4fb8-bfe5-060b15cbb04b: 'Modification Pin' # Modification Pin
+    26c4fa6a-be0d-41f9-b9ac-9723217b2893: 'Modification Pin' # Modification Pin
+    34df6a6b-3e64-483e-b967-a437ff01c7da: 'Signed contract' # Signed contract
+    38eef38e-9a04-4822-b483-ad0b129df62e: 'Option Title' # Option Title
+    39caf05d-a4d4-4f39-964b-47f7bff42309: 'Third mod Images' # Third mod Images
+    45ea1de9-fd16-46ba-a60b-46f203684565: 'Option Subtitle' # Option Subtitle
+    45efe046-7264-4a3a-a9a0-f504a5bed96b: 'Header background picture' # Header background picture
+    50a65505-514a-4c3a-b8ea-16e38e61e939: 'Third mod Full Image' # Third mod Full Image
+    50b3d857-24ad-440c-ac90-b1755c399ad6: 'Style Default Image' # Style Default Image
+    56f29913-0434-45fd-a2b1-92417e615eea: 'Individual Solution' # Individual Solution
+    57e1b676-7d2b-42ef-8c52-11a349a6ef61: Recommended # Recommended
+    58c7f379-f280-42c7-a9dd-c8ee7b267c45: 'Additional brand color' # Additional brand color
+    60d702d6-a7df-4ccc-a332-0282a7785d31: 'Modific Example' # Modific Example
+    61a739a2-d545-4f60-8046-389c4f13c369: 'Welcome Screen' # Welcome Screen
+    62c1918b-002b-46ce-ad18-5af2470a9edb: 'Second mod images' # Second mod images
+    66bd1d74-c694-44c7-8103-f8a2365f1009: Description # Description
+    70fea5dc-8e05-4e3e-a0e5-800ff9cb29e8: 'Mod Style' # Mod Style
+    72a7f4f3-d87e-4e5b-b5cf-2b1246ae1d0b: 'Modification Name' # Modification Name
+    72aa885b-67e5-4ca9-9123-198ae6e85fd0: 'Apartment image' # Apartment image
+    76f02169-461d-4903-853d-4d46736d12ed: 'Default Image' # Default Image
+    77b3ac67-dd20-43c2-8871-b779db46c979: 'Card Groups' # Card Groups
+    77dafdea-025e-42a9-8411-283f0555ccac: 'Enable Individual Solution' # Enable Individual Solution
+    79ab4b83-36ea-4131-a95a-4678915249fb: 'Modification group  examples' # Modification group  examples
+    81c860f1-6af9-4c63-83af-4db3ba533b84: 'Modifications Block' # Modifications Block
+    82c7175e-9b3e-48dd-9cd6-ee65ffd8cb94: 'Mods Image' # Mods Image
+    85b14582-ceb5-486d-88f4-6354d37ffd3a: Rooms # Rooms
+    85dcc7d9-3b1b-4b92-a66b-744afedef82b: 'Small apartment title' # Small apartment title
+    86b901b3-15bd-451d-a449-37b255e244a5: 'Mods type image' # Mods type image
+    86e6d0ee-1da1-42f4-8087-9806fb4df37b: 'Mod number' # Mod number
+    90a4c34f-345f-469c-a8d8-e7b59c31d58e: 'Individual Solution' # Individual Solution
+    90aa87e5-d7df-459e-af54-61a89ab0703d: 'Room Settings' # Room Settings
+    90fe60bc-4d3f-4af4-b8e4-21687c4da55b: 'Top Position' # Top Position
+    94a8360f-2eb6-436b-919c-bc16339b54da: Users # Users
+    98dba852-18ad-4e4a-bbed-b19a096afbb4: 'Styles Group Title' # Styles Group Title
+    0100cb97-3383-4f17-9f99-b79d5131aae5: 'Modification Image' # Modification Image
+    110b005e-7016-43be-99e7-319d710d0bf4: 'Modified Block' # Modified Block
+    143cff96-cb57-45cb-8a7f-8f7aa7e8aaca: 'Second mod type' # Second mod type
+    204d0dbf-a5df-459f-b96d-79893174f8ef: 'Mods Name' # Mods Name
+    212c8e41-39c8-4f95-b6e9-c5b0b6758987: 'Modification groups' # Modification groups
+    231f7288-a1c9-47c5-aaab-9e01bd0a3edf: 'Modification images' # Modification images
+    249b59f7-0a14-40e9-9c94-fe1b92c4e6f2: 'Additional Price' # Additional Price
+    266f602f-c55b-4a7f-b03d-4f03f0252c59: 'Modification visibility' # Modification visibility
+    270b17db-4936-4b7d-b71b-d5df1ed51564: 'Modification Block' # Modification Block
+    298fe75a-6112-4ee5-99c2-c2d3e6bd4c5e: 'Tab 1 options' # Tab 1 options
+    308f575f-fc81-40a3-b8aa-538b1af76e18: 'Modification visibility' # Modification visibility
+    335a7376-03ac-4c50-ae5a-9bd4ece409fc: Settings # Settings
+    424c9559-652d-48d2-94cf-0376db84929b: userId # userId
+    449e8d1f-c1d1-4fd5-b1f2-52b52ea17065: 'Modification name' # Modification name
+    460e87b8-0c78-42e0-9da1-5ff9ab2412c4: 'Modification group name' # Modification group name
+    474eb0b9-88d0-4ff9-8adb-c8d6faa81d3b: 'Main Style' # Main Style
+    494f98c9-f91d-4864-a1ed-6fe7d4705cf5: 'Modified Style' # Modified Style
+    535a33b3-6445-47fd-a0a8-e80b85e0fbaf: 'Modification Example' # Modification Example
+    573ec1f7-1d79-40b3-95ba-a5905e43cc89: 'Modification Title' # Modification Title
+    595ee523-e8de-4f2b-abff-e0385165745b: 'Enable Individual Solution' # Enable Individual Solution
+    598e1e29-af4b-41b8-9e21-e1b021d5e408: 'Mod Name' # Mod Name
+    631df38a-6772-47e8-8b2c-a99c9621a313: 'Brand Logo' # Brand Logo
+    0670ff4a-6bc8-4081-851d-9135d968f1a1: 'Apartment type' # Apartment type
+    734e54bc-5721-47bf-8ad9-ba322cfcc5af: Pages # Pages
+    751fdd7d-5239-4832-aaa0-3a00bb535ed8: 'Style name' # Style name
+    823bbaed-2b97-4920-9b1e-0d25513ce030: 'Intro text' # Intro text
+    827bde45-92ba-4fd9-8afb-97a7695f9c3d: 'Style Items' # Style Items
+    833c9f21-d9fa-4391-beb6-1c95189e1ac2: 'Style data Block' # Style data Block
+    851fc8a0-f815-457e-9c94-29b0df4f22f3: 'Font for titles' # Font for titles
+    860a0ae3-d3bd-4774-9477-bfd39311ca76: 'Mods type number' # Mods type number
+    907a048a-530c-47f2-a2ec-0e68079fc25f: 'Style Example Block' # Style Example Block
+    954ba412-ab3d-47eb-9037-74192d82519b: 'User Data' # User Data
+    2521c6a4-5b9f-4974-bc00-ec13913712a5: userData # userData
+    2997df2f-304f-4bc7-8b50-3a9c9752aa05: 'Modification visibility' # Modification visibility
+    5015eb69-293a-47d7-8c85-045b1924f027: 'Style Default Image' # Style Default Image
+    6148fa40-aec1-4f5e-9529-4a974e537d4b: 'Second mod image' # Second mod image
+    8076ecba-851f-4fc6-8425-90cedaf681b0: 'Main Style' # Main Style
+    8704f3fd-a055-4f90-aca3-6eea28168365: 'Position X' # Position X
+    9792c38e-182b-4b4e-9f43-13e9990532fe: 'Modific Name' # Modific Name
+    45077ae7-27bd-4b94-af11-a7e9cc5ac489: 'Tab 2 options' # Tab 2 options
+    66677a00-1430-4c0a-822e-22c8f3f59176: Default # Default
+    73552e45-750d-426d-85c3-c8a8ca0b6ffa: 'Style Block' # Style Block
+    76817b98-d32e-499e-a62b-354da6c0a2fd: 'Style Name' # Style Name
+    98204ce9-f9b0-4ced-8927-1eb9092a13ca: result # result
+    133881ee-1e41-473c-ae72-607a5bb0bb32: Description # Description
+    137774b2-c4c3-4bc7-9390-c71a6f956c6c: userData # userData
+    151135d1-e1d9-421f-9b92-df3494c95e53: 'Modification type name' # Modification type name
+    307167f5-9d46-43b6-bb3f-5eadf52a8dc2: Groups # Groups
+    715560e9-0bbc-4cb9-9558-953b4754e9e3: Results # Results
+    869944d1-876d-4dc2-a12c-9a33d09f2157: 'Enable Individual Solution' # Enable Individual Solution
+    2149786e-c4b5-4489-a089-677732438513: 'Main style name' # Main style name
+    2368752d-bc65-4c84-ae07-c6a4678d75c6: 'Position Y' # Position Y
+    31545243-c54e-4879-9719-3b262fd885b4: Paragraph # Paragraph
+    47035909-b5c6-440b-8234-112e8be6a58e: 'Modification Image' # Modification Image
+    74575471-1b2d-43ad-8304-7e0844ebb9f0: 'Style default Image' # Style default Image
+    96819837-0931-49d4-bc87-1043746d8eb7: 'Big apartment image' # Big apartment image
+    a2a7c5a5-00a8-45a3-a0c1-f2623a9ea5e9: 'Mod Type' # Mod Type
+    a2dc9557-3472-4b63-be6a-72bec6d62866: Title # Title
+    a4bf076b-6228-4565-87c1-317c3c4adf7c: 'Options List' # Options List
+    a4c72639-0014-4390-864c-90c72b90df5d: 'Position Y' # Position Y
+    a4eb5cfe-2314-4f62-9252-73ed40f52b52: 'Modification group title' # Modification group title
+    a4f9aea6-9c70-4395-8471-9cef920d9d62: Configurator # Configurator
+    a6c6d3ff-4e00-44b0-8308-925b600fdb3c: Image # Image
+    a7e31322-fe7a-41db-88d7-d242a76f2de6: Rooms # Rooms
+    a8a070fa-b395-492f-85dc-18008f1d7309: Settings # Settings
+    a9c27276-f041-41b5-a7af-60b2ccb6c915: Default # Default
+    a9e44136-f3d6-4a44-8dee-3e0bd2b9c9a4: Settings # Settings
+    a69b8cf1-8c21-4370-974c-ffee87a220c9: 'Styles example Item' # Styles example Item
+    a293f3d0-a67d-47d7-aa20-378e44ef416c: 'Room styles block' # Room styles block
+    a977f063-766a-4d22-8906-670685ef6723: Options # Options
+    a7010ef0-5dd8-470d-b381-87e2c65801f8: 'Options Price' # Options Price
+    a4567726-d969-4d55-a06f-41b3e52405cf: 'Third mod image' # Third mod image
+    aa16afd3-cea9-4fb5-8c13-7cb835c8967e: 'Mods type' # Mods type
+    aa9998cf-b15b-40e4-911e-ed450abf70f5: 'Position Y' # Position Y
+    ab302ef2-6483-4cc0-a98e-9f392d7b5c16: 'Recommended modification' # Recommended modification
+    b0fb83be-0f11-4e66-95e6-799107674824: Options # Options
+    b018bde8-26d8-4dd0-9acb-629428ba416d: Common # Common
+    b1a5509b-324d-48d0-a7c2-8cffb2f6d298: 'Featured Image' # Featured Image
+    b6fb07d4-c606-49a0-b5da-d9b6206dae8d: 'Welcome Screen' # Welcome Screen
+    b99ff0d4-aecf-4245-abd1-e1d39a29ce4c: 'Style Name' # Style Name
+    b954fb35-7727-4c87-bf3e-d76e6ee5ead2: 'Room Style Name' # Room Style Name
+    b62726b4-2fad-462a-89cd-59fef7566b9e: 'Modific Number' # Modific Number
+    b764410e-fc27-485e-8610-e63073501478: 'Style Example' # Style Example
+    b9315425-e3fd-478c-9248-2dd8fa17d88d: 'Modific Types' # Modific Types
+    bae33e5e-fe17-4eae-833e-993e7ab1b88d: 'Mods type Name' # Mods type Name
+    bbd8fa27-c0d5-4ae7-8743-c54f8d7a8b3f: 'Individual Solution Price' # Individual Solution Price
+    becceb54-1bbc-4ba0-9f72-e84709df340c: 'Style default Image' # Style default Image
+    bf08ef9d-b17b-42dc-9572-b63c7d31ab90: 'Welcome page background' # Welcome page background
+    bf4e9c0a-6e43-4a36-89aa-d5377c19064d: 'Group Title' # Group Title
+    bff8e1e7-9dab-4338-b3db-0651fe26d1fe: 'Modifications Types' # Modifications Types
+    bffabaf6-7396-4e70-a8d5-fec93c5cc3ec: Globals # Globals
+    c1ce9b4d-6b63-4bf3-876a-694dfd7b24b3: 'Featured Image' # Featured Image
+    c3ec6e23-9912-49f4-b2b4-5c31c8d338ac: 'Featured Image' # Featured Image
+    c4eae802-e3d7-46d6-8b12-c7b1d8d84b69: 'Enable Individual Solution' # Enable Individual Solution
+    c6d5578f-e6cf-4171-8037-4bcaf4e95dd0: 'Room Styles' # Room Styles
+    c7ea46f1-33c7-45dd-b73a-215ca587da63: 'Recommended modification' # Recommended modification
+    c7faf54e-4937-4b42-9cdc-c871c5eb4376: 'Modific Name' # Modific Name
+    c9f634e7-e90f-4c01-86e7-40fc368ecdbf: 'Modification Image' # Modification Image
+    c29e6f48-f40c-4f51-8192-f2ff41e20d61: 'Options List' # Options List
+    c64a570c-03ed-40c4-bf13-78459a481a9b: 'Third mod Type' # Third mod Type
+    c66bd431-aad6-4305-97ac-61805783eaae: 'Style Name' # Style Name
+    c91d0da6-d20f-458f-96cc-c7e62aa382d7: 'First modification type' # First modification type
+    c832b005-6f97-49ea-8aa5-db77307be230: 'Kitchen Images' # Kitchen Images
+    c3112aba-9614-4cb7-b90b-575c9f0eb8a4: Subtitle # Subtitle
+    c1807484-edc8-4cb1-b517-930153f1050c: 'Individual Solution Price' # Individual Solution Price
+    cab208b2-5553-430a-b368-40f08429d1bb: 'Mod Name' # Mod Name
+    ccecd47c-7c8b-4af1-b337-19c42d70ba83: 'Mod Image' # Mod Image
+    cd3af387-56f2-4dc6-9317-2056f979600a: Description # Description
+    cdd1bfa2-3933-44e7-b4a5-992b8d0970a9: Default # Default
+    cdd761f6-8dae-41bd-9f22-96195852a5d0: 'Modific Examples' # Modific Examples
+    ce164c5c-5bef-43f0-a927-5916638a5791: 'Mod Type Item' # Mod Type Item
+    cf30cf35-c42d-461e-bbe0-bbba7c18c39b: 'Header background color' # Header background color
+    d2bb2c9c-da4d-459d-b894-4698c7ac2b03: 'Style Name' # Style Name
+    d4b7fd33-ced0-4f6d-890d-beed32bf0a3c: 'Mod Picture' # Mod Picture
+    d7bfc229-804c-4b66-9ff4-529512e9065b: 'Second Modification' # Second Modification
+    d38a9908-f37d-4696-a32f-c289aa703ee6: 'Style Name' # Style Name
+    d724f930-0b4a-4518-9061-9633bb3d3165: 'Options Subtitle' # Options Subtitle
+    d5005f21-75b2-45f1-b193-518b7a740277: 'First modification' # First modification
+    d489016d-368f-476c-a4df-2f7b904e7306: uploads # uploads
+    d7636627-654e-47c9-88db-55fcb3888a6c: 'Mods Image' # Mods Image
+    da3670d1-f32e-4572-badf-07f0950d31b5: 'Header background color' # Header background color
+    daf5976d-e6a6-416c-8889-df52ec7c0316: 'Modification examples block' # Modification examples block
+    dbd545ab-fd06-4c48-9929-2060865db809: 'Modification Group' # Modification Group
+    dd3e52b6-bc3c-44f3-8147-8feb8f63ccca: 'Position X' # Position X
+    dd915a84-d99b-44bf-81d2-9624fdbaf777: Title # Title
+    dd942b75-23b0-4070-b449-312f744cb3ae: 'Group Title' # Group Title
+    dde5bdeb-ff51-4cd7-85c9-46c82d6f3848: 'Apartment type' # Apartment type
+    df4b96a8-9f30-4eb7-9335-525213c5eae7: 'Third mod' # Third mod
+    dfd5a6bc-b89e-4f13-9b92-bd8168ad721f: 'Modifications ' # Modifications 
+    e3e5709d-5796-4b03-88ef-13dc49fb6cff: Configurator # Configurator
+    e4a8ce3e-774f-414e-aec7-da04c9c68a81: 'Options List' # Options List
+    e5a6b6cb-5126-4249-be40-1da33fcab00c: 'Modific Blocks' # Modific Blocks
+    e5c25c58-ebc7-4242-a1c4-57c1be2691ed: 'Featured Image' # Featured Image
+    e5ede6ca-8d4c-40ec-9cdd-b16dd8dd409c: 'Small apartment image' # Small apartment image
+    e6a4673d-6bd1-4969-9336-05f5a5f4db1f: 'Third mod Title' # Third mod Title
+    e8c7ba4e-3833-4e37-9322-2a9c52caee1b: 'Group Title' # Group Title
+    e572ecf5-0fd2-4b67-bab5-8f3bd50a0ed6: 'Style Item' # Style Item
+    e1331fa6-6e34-47f8-8c1f-8bd1a4f71868: userData # userData
+    e2028071-257d-4615-9112-30ecc02bfaa9: 'Font for descriptions' # Font for descriptions
+    e3224741-dbf4-4a30-8290-3406d44b8ba3: 'First modification image' # First modification image
+    eaa979eb-d80b-45d2-82dc-746215d2aa68: 'Mod Numb' # Mod Numb
+    eab42f43-200a-46b2-a8bf-d310d2e0d994: 'Modification Group' # Modification Group
+    eb7598d6-d2cb-43e8-9af8-f6affd223b10: UserId # UserId
+    eb8278e0-cebd-4915-9e0f-f746d9c8867a: 'Individual Solution' # Individual Solution
+    f0f8f01c-0485-494b-8ef0-926ac65a6b61: 'Additional Price' # Additional Price
+    f2fb231f-533e-4d15-be0d-b74bb82615f8: 'Bath Images' # Bath Images
+    f4bd513b-20d2-4049-82a5-ef9831e0511c: 'First Modification images' # First Modification images
+    f6cce683-3bcb-4923-ae69-d29dad2d575e: 'Second mod title' # Second mod title
+    f7fcb46d-c6c0-46d5-9d4b-7ed2f0d02147: 'Room Style Examples' # Room Style Examples
+    f29c5419-2140-43cf-afcf-15393cf3d389: 'User phone' # User phone
+    f54d43fa-0709-406e-a453-c9d7754137c5: 'Pin Position Left' # Pin Position Left
+    f76ab002-9322-47b3-92ad-6a197b3e5a5e: Recommended # Recommended
+    f93dbbd5-17a7-4907-be0b-9e0c03afc5a2: 'User Id' # User Id
+    f540f48a-cae2-4cd6-af06-c44226e81bab: 'Position X' # Position X
+    f954dcaa-1ad2-4042-b0eb-8fec9bf0723f: 'Modification visibility' # Modification visibility
+    f9625c6d-6743-4e6a-8814-8515c93e0a1d: Styles # Styles
+    f242347d-e6aa-4938-afd6-c792e6b82650: Results # Results
+    f3862313-c629-4cfb-b726-f816613be72d: Cards # Cards
+    fa6efbe2-7ac2-4de9-bf82-70a6bfec957b: 'Color selected' # Color selected
+    fb11fbcc-e5a9-4670-a68f-5e5c056a85a3: 'Mods Item' # Mods Item
+    fb241b97-1876-475d-8a93-830b90c08d98: 'Options List' # Options List
+    fbf27b47-374b-4b3b-acd0-3c24a7c8f93c: 'User Data' # User Data
+    fd7a94b7-32ae-4eec-8811-ad6fe7a6ca18: 'Style default Image' # Style default Image
+    fd43163c-170c-4f9f-8a57-3aaad3f7f7ee: 'Main Style' # Main Style
+    ff8af702-046d-46f9-8fc5-65771b5bb2a6: 'Style default image' # Style default image
+    ff690b8e-4f54-4a16-9a9d-66d4f7830b67: Title # Title
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+system:
+  edition: pro
+  live: true
+  name: Configurator
+  schemaVersion: 3.7.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

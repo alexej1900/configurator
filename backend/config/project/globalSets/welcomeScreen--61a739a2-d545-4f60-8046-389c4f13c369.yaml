@@ -1,0 +1,19 @@
+fieldLayouts:
+  7d2d1a34-6b9a-4b3e-a030-09cf9170e4e2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b6fb07d4-c606-49a0-b5da-d9b6206dae8d # Welcome Screen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Tab1
+        sortOrder: 1
+handle: welcomeScreen
+name: 'Welcome Screen'
+sortOrder: 2

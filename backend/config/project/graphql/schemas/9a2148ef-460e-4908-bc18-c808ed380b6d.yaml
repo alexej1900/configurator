@@ -1,0 +1,23 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sections.734e54bc-5721-47bf-8ad9-ba322cfcc5af:read' # Pages
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:read' # Default
+  - 'sections.a7e31322-fe7a-41db-88d7-d242a76f2de6:read' # Rooms
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:read' # Default
+  - 'sections.94a8360f-2eb6-436b-919c-bc16339b54da:read' # Users
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:read' # Default
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:read' # uploads
+  - 'volumes.c832b005-6f97-49ea-8aa5-db77307be230:read' # Kitchen Images
+  - 'volumes.5a67638c-7e53-40c8-a609-ca1fd1c5e6fc:read' # Living-room Images
+  - 'globalsets.61a739a2-d545-4f60-8046-389c4f13c369:read' # Welcome Screen
+  - 'globalsets.a8a070fa-b395-492f-85dc-18008f1d7309:read' # Settings
+  - 'usergroups.everyone:read'
+  - 'sections.94a8360f-2eb6-436b-919c-bc16339b54da:edit' # Users
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:edit' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:create' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:save' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:delete' # Default
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:edit' # uploads
+  - 'globalsets.61a739a2-d545-4f60-8046-389c4f13c369:edit' # Welcome Screen
+  - 'globalsets.a8a070fa-b395-492f-85dc-18008f1d7309:edit' # Settings
