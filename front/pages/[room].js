@@ -23,6 +23,8 @@ export default function Room() {
     ROOM_TYPE = router.query.room;
     const path = router.asPath.slice(1);
 
+    console.log('ROOM_TYPE', ROOM_TYPE)
+
     const [styleId, setStyleId] = useState(0);
     const [largeImage, setLargeImage] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
