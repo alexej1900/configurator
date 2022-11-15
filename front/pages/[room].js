@@ -37,32 +37,48 @@ export default function Room() {
 
     useEffect(() => {
         setLargeImage(false);
+
+        if (sidebarState) {
+
+            const id = window.setTimeout(() => {
+                document.querySelector('#fullImage')?.classList.add(styles.animate)
+            }, 500);
+
+            const id1 = window.setTimeout(() => {
+                document.querySelector('#fullImage')?.classList.remove(styles.animate)
+            }, 3500);
+
+            return () => { 
+                window.clearTimeout(id)
+                window.clearTimeout(id1)
+            };
+        }
     }, [router.asPath])
 
     useEffect(() => {
         setStyleId(apartStyle.style);
     }, [])
 
-    // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.style.animationName='moving';
-    // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.style.animationDuration='4s';
+    // useEffect(() => {
+    //     const id = window.setTimeout(async() => {
 
-    useEffect(() => {
-        // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({
-        //     top: 0,
-        //     left: 0,
-        //     behavior: 'smooth'
-        //     });
 
-        // const id = window.setTimeout(() => {
-        //     document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({
-        //         top: 0,
-        //         left: sidebarState ? 400 : 0,
-        //         behavior: 'smooth'
-        //         });
-        // }, 500);
-        // return () => window.clearTimeout(id);
+    //         for (var x = 0; x <= 200; x += 10) {
+    //             document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
+    //             await new Promise(res => setTimeout(res, 30))
+    //         }
+
+
+
+    //         // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({
+    //         //     top: 0,
+    //         //     left: sidebarState ? 200 : 0,
+    //         //     behavior: 'smooth'
+    //         //     });
+    //     }, 3000);
+    //     return () => window.clearTimeout(id);
        
-    }, [sidebarState]);
+    // }, []);
 
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <p> Loading...</p>
@@ -96,7 +112,7 @@ export default function Room() {
                 onStartScroll={() => setIsScroll(true)}
                 onEndScroll={() => setIsScroll(false)}
             >
-                <img className={styles.full} src={largeImage ? largeImage : activeImage} />
+                <img className={styles.full} src={largeImage ? largeImage : activeImage} id='fullImage'/>
 
                 <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>
                 

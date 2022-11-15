@@ -21,6 +21,12 @@
     top: 0;
     left: 0;
 
+    &.animate {
+        animation-name: moving;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+    }
+
 }
 
 .top0 {
@@ -144,7 +150,7 @@
     }
 }
 .left40 {
-    left: calc((100% + 36rem) * 0.3);
+    left: calc((100% + 36rem) * 0.35);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.4)
@@ -214,7 +220,7 @@
     }
 }
 .left90 {
-    left: calc((100% + 36rem) * 0.7);
+    left: calc((100% + 36rem) * 0.75);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.9)
@@ -235,7 +241,7 @@
     }
 }
 .left105 {
-    left: calc((100% + 36rem) * 0.8);
+    left: calc((100% + 36rem) * 0.9);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 1.05)
@@ -255,3 +261,31 @@
         left: calc(1000px * 1.15)
     }
 }
+
+
+@keyframes moving {
+    from {
+        // transform: translateX(0);
+        left: 0;
+    }
+  
+    25% {
+        // transform: translateX(-42rem);
+        left: -42rem;
+    }
+  
+    50% {
+        // transform: translateX(-12rem);
+        left: 10rem;
+    }
+  
+    75% {
+      // transform: translateX(-12rem);
+      left: -21rem;
+    }
+  
+    to {
+        // transform: translateX(-21rem);
+        left: 0;
+    }
+  }

@@ -2,11 +2,15 @@
 
 .header {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 5.6rem);
   height: 8.1rem;
   z-index: 1;
   box-sizing: border-box;
   transition: 0.3s width ease-in;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 
   &:hover {
     background: var(--header__bg_color) !important;

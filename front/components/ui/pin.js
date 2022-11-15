@@ -12,13 +12,15 @@ export default function Pin ({top, left, clickHandle, type, classes, checked, in
 
   console.log(sidebarState);
 
-  let leftStyle;
+  // let leftStyle;
 
-  if (!sidebarState) leftStyle = {left: `calc(${left}% - 36rem)`};
-  else leftStyle = {left: `calc(${left}% )`};
+  // if (!sidebarState) leftStyle = {left: `calc(${left}% )`};
+  // else leftStyle = {left: `calc(${left}% + 15%`};
+
+  const leftShift = sidebarState ? +left + 15 : left;
 
   const topPos = `top${top}`
-  const leftPos = `left${left}`
+  const leftPos = `left${leftShift}`
 
   // const pos = left <= 100 
 
@@ -53,10 +55,11 @@ export default function Pin ({top, left, clickHandle, type, classes, checked, in
     
   return (
     <div 
-    style={leftStyle}
+    // style={leftStyle}
     className={`
       ${styles.pin} 
       ${styles[topPos]}
+      ${styles[leftPos]}
       ${classes}`} 
       // style={pos} 
       onClick={()=>clickHandle()}>
