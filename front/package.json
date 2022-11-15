@@ -16,7 +16,7 @@
     "graphql": "^15.7.2",
     "html2pdf.js": "^0.10.1",
     "jspdf": "^2.5.1",
-    "next": "12.0.3",
+    "next": "12.2.4",
     "next-redux-wrapper": "^7.0.5",
     "next-server": "^9.0.5",
     "react": "17.0.2",
