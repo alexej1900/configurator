@@ -84,6 +84,8 @@ export default function Sidebar({
 
             if (item.modificationVisibility) {
                 const modName = item.modificationName;
+                console.log('modName', modName)
+                console.log('modifications', modifications)
                 const modGroupTitle = modifications[modName]?.modGroupTitle ? ` ${modifications[modName]?.modGroupTitle}` : '';
 
                 activeMod = modifications[modName] && modifications[modName].modGroupTitle
