@@ -23,12 +23,10 @@ export default function Room() {
     ROOM_TYPE = router.query.room;
     const path = router.asPath.slice(1);
 
-    console.log('ROOM_TYPE', ROOM_TYPE)
-
     const [styleId, setStyleId] = useState(0);
     const [largeImage, setLargeImage] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
-
+    
     const dispatch = useDispatch();
 
     const state = useSelector((state) => state);
@@ -63,15 +61,10 @@ export default function Room() {
 
     // useEffect(() => {
     //     const id = window.setTimeout(async() => {
-
-
     //         for (var x = 0; x <= 200; x += 10) {
     //             document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
     //             await new Promise(res => setTimeout(res, 30))
     //         }
-
-
-
     //         // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({
     //         //     top: 0,
     //         //     left: sidebarState ? 200 : 0,
@@ -81,16 +74,18 @@ export default function Room() {
     //     return () => window.clearTimeout(id);
        
     // }, []);
-
+    
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <p> Loading...</p>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
- 
+
     const activeImage = roomState?.image ? roomState.image : data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0].url;
 
     const modifyData = data.entry.mods[0].modificationsTypes;
 
     const changeType = (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle) => {
+        console.log('modNameROOM', modName)
+
         dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage));
     }
 
