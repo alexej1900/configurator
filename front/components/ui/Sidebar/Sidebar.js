@@ -110,12 +110,14 @@ export default function Sidebar({
                 } 
                 console.log('activeMod', activeMod) 
                 prevModGroupTitle = modName;
+                console.log('prevModGroupTitle', prevModGroupTitle) 
         })
         
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === activeMod.slice(0, -1).toLowerCase())[0].url;
         setLargeImage(newActiveImage); 
-        dispatch(changeRoomImage(roomType, newActiveImage));
         console.log('newActiveImage', newActiveImage)
+        dispatch(changeRoomImage(roomType, newActiveImage));
+        console.log('newActiveImage11', newActiveImage)
     }
 
     return (
