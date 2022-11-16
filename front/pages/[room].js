@@ -84,8 +84,6 @@ export default function Room() {
     const modifyData = data.entry.mods[0].modificationsTypes;
 
     const changeType = (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle) => {
-        console.log('modNameROOM', modName)
-
         dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage));
     }
 

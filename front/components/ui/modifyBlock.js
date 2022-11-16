@@ -22,8 +22,6 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
  
   const dispatch = useDispatch();
 
-  console.log('cardItem', cardItem)
-
   useEffect(() => {
     if (activePin === cardItem.modificationName) {
       setCollapsed(collapsed ? !collapsed : collapsed); 

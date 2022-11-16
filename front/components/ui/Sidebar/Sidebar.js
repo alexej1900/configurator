@@ -84,8 +84,6 @@ export default function Sidebar({
 
             if (item.modificationVisibility) {
                 const modName = item.modificationName;
-                console.log('modName', modName)
-                console.log('modifications', modifications)
                 const modGroupTitle = modifications[modName]?.modGroupTitle ? ` ${modifications[modName]?.modGroupTitle}` : '';
 
                 activeMod = modifications[modName] && modifications[modName].modGroupTitle
@@ -107,17 +105,15 @@ export default function Sidebar({
                                         : ''
                                 }` 
                         : activeMod+`${modName} ${item.modificationItemExample.length > styleId ? styleId : '0'} `
-                } 
-                console.log('activeMod', activeMod) 
-                // prevModGroupTitle = item.modificationName;
-                // console.log('prevModGroupTitle', prevModGroupTitle) 
+                
+                    prevModGroupTitle = modName;
+                }  
         })
         
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === activeMod.slice(0, -1).toLowerCase())[0].url;
         setLargeImage(newActiveImage); 
-        console.log('newActiveImage', newActiveImage)
         dispatch(changeRoomImage(roomType, newActiveImage));
-        console.log('newActiveImage11', newActiveImage)
+        // console.log('newActiveImage', newActiveImage)
     }
 
     return (
