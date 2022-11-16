@@ -21,11 +21,11 @@
     top: 0;
     left: 0;
 
-    // &.animate {
-    //     animation-name: moving;
-    //     animation-duration: 3s;
-    //     animation-timing-function: ease-in-out;
-    // }
+    &.animate {
+        animation-name: moving;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+    }
 
 }
 
@@ -101,28 +101,28 @@
     }
 }
 .left5 {
-    left: calc((100% + 36rem) * 0.01);
+    left: calc((100% + 36rem) * 0.05);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.05)
     }
 }
 .left10 {
-    left: calc((100% + 36rem) * 0.02);
+    left: calc((100% + 36rem) * 0.1);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.1)
     }
 }
 .left15 {
-    left: calc((100% + 36rem) * 0.05);
+    left: calc((100% + 36rem) * 0.1);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.15)
     }
 }
 .left20 {
-    left: calc((100% + 36rem) * 0.1);
+    left: calc((100% + 36rem) * 0.15);
 
     @media (max-width: 1000px) {
         left: calc(1000px * 0.2)
@@ -265,27 +265,22 @@
 
 @keyframes moving {
     from {
-        // transform: translateX(0);
         left: 0;
     }
   
     25% {
-        // transform: translateX(-42rem);
-        left: -42rem;
+        left: -60rem;
     }
   
     50% {
-        // transform: translateX(-12rem);
-        left: 10rem;
+        left: 20rem;
     }
   
     75% {
-      // transform: translateX(-12rem);
       left: -21rem;
     }
   
     to {
-        // transform: translateX(-21rem);
         left: 0;
     }
   }

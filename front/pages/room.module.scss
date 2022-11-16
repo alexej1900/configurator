@@ -54,11 +54,11 @@ img {
     object-fit: cover;
     position: relative;
 
-    &.animate {
-      animation-name: moving;
-      animation-duration: 3s;
-      animation-timing-function: ease-in-out;
-    }
+    // &.animate {
+    //   animation-name: moving;
+    //   animation-duration: 3s;
+    //   animation-timing-function: ease-in-out;
+    // }
 
     @media (max-width: 1000px) {
       width: auto;
