@@ -286,7 +286,7 @@ function Header() {
 ;// CONCATENATED MODULE: ./apollo/apollo-client.js
 
 const client = new client_.ApolloClient({
-    uri: 'http://staging.immokonfigurator.ch/api',
+    uri: 'https://staging.immokonfigurator.ch/api',
     cache: new client_.InMemoryCache({
         resultCaching: true
     })

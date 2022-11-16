@@ -107,14 +107,15 @@ export default function Sidebar({
                                         : ''
                                 }` 
                         : activeMod+`${modName} ${item.modificationItemExample.length > styleId ? styleId : '0'} `
-                }  
+                } 
+                console.log('activeMod', activeMod) 
                 prevModGroupTitle = modName;
         })
         
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === activeMod.slice(0, -1).toLowerCase())[0].url;
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
-        // console.log('newActiveImage', newActiveImage)
+        console.log('newActiveImage', newActiveImage)
     }
 
     return (
