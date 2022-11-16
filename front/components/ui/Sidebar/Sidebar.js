@@ -109,8 +109,8 @@ export default function Sidebar({
                         : activeMod+`${modName} ${item.modificationItemExample.length > styleId ? styleId : '0'} `
                 } 
                 console.log('activeMod', activeMod) 
-                prevModGroupTitle = modName;
-                console.log('prevModGroupTitle', prevModGroupTitle) 
+                // prevModGroupTitle = item.modificationName;
+                // console.log('prevModGroupTitle', prevModGroupTitle) 
         })
         
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === activeMod.slice(0, -1).toLowerCase())[0].url;
