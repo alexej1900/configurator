@@ -3,7 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useDispatch} from 'react-redux';
-import { changeSidebarState, setSummaryVisibility } from '../../redux/actions/index';
+import { 
+  changeSidebarState, 
+  setSummaryVisibility, 
+  changeRoomVisibility, 
+  changeActivePin, 
+  changeActiveMod 
+} from '../../redux/actions/index';
+
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import Card from './card';
 import OptionItem from './optionItem';
@@ -13,6 +20,17 @@ import styles from './finalRoom.module.scss';
 export default function FinalRoom({room, roomName}) {
   const dispatch = useDispatch();
   const roomMods = room.modifications && Object.entries(room.modifications);
+
+  const editClickHandler = (modName) => {
+    dispatch(changeSidebarState(true));
+    dispatch(changeRoomVisibility(false));
+    dispatch(setSummaryVisibility(true));
+    dispatch(changeActivePin(modName));
+    dispatch(changeActiveMod(modName));
+
+    // dispatch(changeSidebarState(false));
+    // dispatch(setSummaryVisibility(true));
+  }
 
   return (
     <section className={`${styles.summary__room} finalRoom` }>
@@ -38,10 +56,7 @@ export default function FinalRoom({room, roomName}) {
                 <div className={`${styles.summary__room_card_wrapper}`}>
                   <div className={`${styles.summary__room_edit_icon}`} >
                     <Link href={`/${roomName}`} >
-                      <a className={`${styles.summary__room_edit_icon}`} onClick={() => {
-                        dispatch(changeSidebarState(false));
-                        dispatch(setSummaryVisibility(true));
-                      }}>
+                      <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
                         <img src={'/edit-simple.svg'}  />
                       </a>		
                     </Link>
