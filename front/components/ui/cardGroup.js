@@ -26,6 +26,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
     const individualPrices = useSelector(state => state.apartPrice.individual);
 
     const modsGroup = data.modificationGroupBlock;
+    const modificationDescription = data.modificationDescription;
     const individual = data.individualSolution ? data.individualSolution[0] : null;
     const isIndividualSetted = individualPrices[modificationName] && individualPrices[modificationName] > 0;
 
@@ -154,7 +155,10 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
                             )
                         })
                     } 
-                </div>   
+                </div> 
+                <div className={`${styles.mod__description}`}>
+                    {modificationDescription}
+                </div>  
 
                 {modsGroup.map((group, groupIndex) => {
 

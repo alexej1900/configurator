@@ -24,6 +24,13 @@
     font-size: 1.6rem;
   }
 
+  .mod__description {
+    margin-bottom: 1.6rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 135%;
+  }
+
   .card_group__number span{
     display: none;
   }
@@ -48,6 +55,10 @@
       color: $color__grey--transparent;
       font-weight: bold;
       font-size: 14px;
+    }
+
+    .mod__description {
+      display: none;
     }
   }
 

@@ -41,6 +41,7 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
   }, [individualPrices])
 
   const modificationName = cardItem.modificationName;
+  const modificationDescription = cardItem.modificationDescription;
   const individual = cardItem.individualSolution ? cardItem.individualSolution[0] : null;
   const isIndividualSetted = individualPrices[modificationName] && individualPrices[modificationName] > 0;
   const optionsList = cardItem.optionsList ? cardItem.optionsList : null;
@@ -116,14 +117,17 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
     
   const activeIndex = activeModification.modificationNumber;
 
+
+  console.log('cardItem', cardItem)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine | individual && styles.inLine}`}>
         <div className={styles.card__header} onClick={() => listSwitchHandler()}>
           <div className={`${styles.arrow} ${collapsed && styles.rotate}`}></div>
 
-          <h3 className={styles.mod__title}>{modificationName}
-                        {!cardItem.modificationVisibility && <span className={styles.mod__title_unvisible}> (nicht visualisiert) </span>}</h3>
+          <h3 className={styles.mod__title}>{modificationName} {!cardItem.modificationVisibility && 
+            <span className={styles.mod__title_unvisible}> (nicht visualisiert) </span>}
+          </h3>
 
           {cardItem.modificationItemExample.length > 0 &&
             <div className={styles.card_group__number}>
@@ -137,7 +141,10 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
             </div>
           }
 
-        </div>        
+        </div> 
+        <div className={`${styles.mod__description}`}>
+          {modificationDescription}
+        </div>       
         <div className={`${styles.card__list}`}>
 
           {collapsed | onlyIndividual

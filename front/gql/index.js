@@ -133,6 +133,7 @@ export const RoomData = (slug) => {
             modificationsTypes {
               ... on modificationsTypes_modificationExample_BlockType {
                 modificationName
+                modificationDescription
                 modificationItemExample {
                   ... on modificationItemExample_BlockType {
                     id
@@ -204,6 +205,7 @@ export const RoomData = (slug) => {
                   }
                 }
                 modificationName
+                modificationDescription
                 modificationPin {
                   ... on modificationPin_BlockType {
                     id

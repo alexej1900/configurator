@@ -55,8 +55,6 @@
     }
 }
 
-
-
 .card__wrapper {
     position: relative;
     margin-bottom: .5rem;
@@ -74,6 +72,13 @@
       margin-right: 2rem;
       line-height: 2.4rem;
       font-weight: 700;
+    }
+
+    .mod__description {
+      margin-bottom: 1.6rem;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 135%;
     }
   
     .card_group__number span{
@@ -101,6 +106,10 @@
         color: $color__grey--transparent;
         font-weight: bold;
         font-size: 14px;
+      }
+
+      .mod__description {
+        display: none;
       }
     }
   
