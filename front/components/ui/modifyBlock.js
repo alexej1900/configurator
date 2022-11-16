@@ -125,9 +125,7 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
         <div className={styles.card__header} onClick={() => listSwitchHandler()}>
           <div className={`${styles.arrow} ${collapsed && styles.rotate}`}></div>
 
-          <h3 className={styles.mod__title}>{modificationName} {!cardItem.modificationVisibility && 
-            <span className={styles.mod__title_unvisible}> (nicht visualisiert) </span>}
-          </h3>
+          <h3 className={styles.mod__title}>{modificationName}</h3>
 
           {cardItem.modificationItemExample.length > 0 &&
             <div className={styles.card_group__number}>
