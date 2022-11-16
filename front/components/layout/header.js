@@ -97,7 +97,6 @@ export default function Header () {
     >
 
       <div className={style.header__wrapper}>
-     
         {logo && 
           <Link href='/'>
             <div className={style.logo}>
@@ -121,53 +120,52 @@ export default function Header () {
             } 
         </div>
       </div>
+
       {menu &&
-          <Fade duration={150} top className={style.header__menu_block} >
-            <div className={style.header__menu} id='listWrapper'>
-              <div className={style.header__menu__wrapper} >
+        <Fade duration={150} top className={style.header__menu_block} >
+          <div className={style.header__menu} id='listWrapper'>
+            <div className={style.header__menu__wrapper} >
                 {/* <div className={style.header__about}>
                   Whg Nr. 1.11.3
                 </div> */}
-                <ul className={style.header__menu__list} ref={listRef} id='menuList'>
-                  <Link activeClassName='active' exact={true} href='/'>
-                    <a className={`${asPath === '/' ? style.active : ''} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
-                  </Link>
+              <ul className={style.header__menu__list} ref={listRef} id='menuList'>
+          
+                {(listSize > wrapperSize && shift > 0) && 
+                  <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> <img src="/arrowRight.svg"/> </div>
+                }
 
-                  {isStylePageExist && 
-                    <Link href='/type'>
-                      <a className={`${asPath === '/type' ? style.active : ''} ${style.typeItem}`} onClick={() => closeMenuHandler()}>Interieurstil</a>
+                <div className={style.header__menu__internalList}>
+                  <div className={`${style.header__menu__internalList_wrapper} `} style={{transform: `translateX(-${shiftSize}%)`}}>
+                    
+                    <Link activeClassName='active' exact={true} href='/'>
+                      <a className={`${asPath === '/' ? style.active : ''} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
                     </Link>
-                  }
 
-                  {(listSize > wrapperSize && shift > 0) && 
-                    <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> <img src="/arrowRight.svg"/> </div>
-                  }
+                    {isStylePageExist && 
+                      <Link href='/type'>
+                        <a className={`${asPath === '/type' ? style.active : ''} ${style.typeItem}`} onClick={() => closeMenuHandler()}>Interieurstil</a>
+                      </Link>
+                    }
+                    {/* {roomsList.map((room) => {
 
-                  <div className={style.header__menu__internalList}>
+                      const currentRoom = `/${room.toLowerCase()}`;
+                      return (
+                        <Link href={currentRoom} key={room}>
+                          <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
+                        </Link>
+                      )
+                    })} */}
 
-                    <div className={`${style.header__menu__internalList_wrapper} `} style={{transform: `translateX(-${shiftSize}%)`}}>
-                      
-                      {/* {roomsList.map((room) => {
-
-                        const currentRoom = `/${room.toLowerCase()}`;
+                    {rooms && rooms.map((room) => {
+                  
+                      if (room.title) {
+                        const currentRoom = `/${room.title.toLowerCase()}`;
                         return (
-                          <Link href={currentRoom} key={room}>
-                            <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
-                          </Link>
-                        )
-                      })} */}
-
-                       {rooms && rooms.map((room) => {
-                      
-                        if (room.title) {
-                          const currentRoom = `/${room.title.toLowerCase()}`;
-                          return (
-                          <Link href={currentRoom} key={room.title}>
-                            <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room.title}</a>
-                          </Link>
+                        <Link href={currentRoom} key={room.title}>
+                          <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room.title}</a>
+                        </Link>
                         )}
-                      })}
-
+                    })}
                     </div>
                   </div>
 
