@@ -106,18 +106,26 @@ export default function Header () {
         }
 
         <div className={style.menu}>
+          <div className={style.menu__item}>
             <img 
               src={menu ? "/close.svg" : "/hamburger.svg"} 
-              width="20" 
-              height="20" 
+              width="24" 
+              height="24" 
               className={style.menu__open} 
               onClick={() => closeMenuHandler()}
             />
-            {isSummaryOpen && 
-              <Link href='/summary'>
-                <a className={style.summary} title="To the summary page"><img src='./summaryList.svg' alt="summary" /></a>
-              </Link> 
-            } 
+          </div>
+          {asPath !== '/' && asPath !== '/summary' &&
+            <Link href='/summary'>
+              <a className={`${style.finish}`} title="To the summary page"><img src='./summaryList.svg' alt="summary" />Fertigstellen</a>
+            </Link> 
+          } 
+
+          {/* {isSummaryOpen && 
+            <Link href='/summary'>
+              <a className={style.summary} title="To the summary page"><img src='./summaryList.svg' alt="summary" /></a>
+            </Link> 
+          }  */}
         </div>
       </div>
 
