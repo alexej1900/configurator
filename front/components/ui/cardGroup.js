@@ -167,7 +167,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
                                     type='small'
                                     image={!onlyIndividual 
                                         ? {url: activeModification.modificationImage[0].url, width: '80px', height: '50px', layout: "fixed"} 
-                                        : {url: '/../public/individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}}
+                                        : {url: 'individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}}
                                     subtitle={!onlyIndividual ? activeModification.modificationStyle : 'Individual'}
                                     title={!onlyIndividual ? activeModification.modificationTitle : ''}
                                     active = 'true'
