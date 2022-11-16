@@ -26,7 +26,7 @@ export default function Footer() {
               <img src={"/youtube.svg"} width="32" height="32"/>
               <img src={"/twitter.svg"} width="32" height="32"/>
               <img src={"/facebook.svg"} width="32" height="32"/>
-              <img src={"/linkedin-logo.svg"} width="32" height="32"/>
+              <img src={"/insta.svg"} width="32" height="32"/>
             </div>
 
             <div className={styles.member}>
