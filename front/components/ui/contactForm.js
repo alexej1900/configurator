@@ -239,7 +239,7 @@ export default function ContactForm({rooms}) {
         </div>
         
           <button 
-            className={`${styles.saveBtn}`} 
+            className={`${styles.resetBtn}`} 
             onClick={(e) => {
               resetData();
             }}
