@@ -118,9 +118,15 @@ export default function Header () {
           </div>
           {asPath !== '/' && asPath !== '/summary' &&
             <Link href='/summary'>
-              <a className={`${style.finish}`} title="To the summary page"><img src='./summaryList.svg' alt="summary" />Fertigstellen</a>
+              <a className={`${style.finish}`} title="To the summary page"><img src='./summaryList.svg' alt="summary" /><span>Fertigstellen</span></a>
             </Link> 
           } 
+
+          {asPath !== '/' &&
+            <Link href='https://www.nightnurse.ch/share/22G09%20Calydo/221102/'>
+              <a className={`${style.virtual}`} title="To the virtual tour" target="_blank"><img src='./virtual.svg' alt="virtual" /></a>
+            </Link> 
+          }     
 
           {/* {isSummaryOpen && 
             <Link href='/summary'>

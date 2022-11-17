@@ -74,37 +74,14 @@ export default function Room() {
     }
 
     useEffect(async() => {
-        // const id = window.setTimeout(async() => {
-            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
+        document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
+        moveRightFunction()
 
-            moveRightFunction()
-                // .then(()=>moveLeftFunction());
+        const id = window.setTimeout(async() => {
+            moveLeftFunction()
+        }, 1700);
 
-                const id = window.setTimeout(async() => {
-                    moveLeftFunction()
-                }, 1700);
-            
-            
-            
-                // for (var x = 0; x <= 400; x += 10) {
-            //     document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
-            //     await new Promise(res => setTimeout(res, 30))
-            // }
-
-        // const id1 = window.setTimeout(async() => {
-
-            // for (var x = 400; x <= 200; x -= 10) {
-            //     document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
-            //     await new Promise(res => setTimeout(res, 30))
-            // }
-
-        // }, 1500);
-
-
-        return () => {
-            window.clearTimeout(id);
-            window.clearTimeout(id1);
-        };
+        return () => window.clearTimeout(id);
        
     }, [path]);
     
