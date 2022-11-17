@@ -117,8 +117,6 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
     
   const activeIndex = activeModification.modificationNumber;
 
-
-  console.log('cardItem', cardItem)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine | individual && styles.inLine}`}>

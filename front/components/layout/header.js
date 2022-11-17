@@ -79,17 +79,18 @@ export default function Header () {
   // const roomsList = ['wohnraum', 'badezimmer' ,'halle', 'badezimmer222', 'wohnraum2222']
 
   const moveRightClickHandler = () => {
-    (shift < 10 && shift < roomsList.length) && setShift(++shift);
-    setShiftSize((50 / roomsList.length) * shift); //shifting should be not more than 50%
+    (shift < 10 && shift < rooms.length) && setShift(++shift);
+    setShiftSize((50 / rooms.length) * shift); //shifting should be not more than 50%
   }
   
   const moveLeftClickHandler = () => {
     shift > 0 && setShift(--shift);
-    setShiftSize((50 / roomsList.length) * shift); 
+    setShiftSize((50 / rooms.length) * shift); 
   }
 
   const openStyle = menu ? {background: background, backgroundSize: "100%"} : {background: 'transparent'};
 
+  console.log('listSize > wrapperSize && shift', {listSize, wrapperSize, shift})
   return (
     <header 
       className={[style.header, open & asPath !== '/' && style.compressed].join(' ')} 

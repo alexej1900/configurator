@@ -54,53 +54,55 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
         }) 
         }
       </div>
-      <div className={styles.list__nonvisible}>
-
-        <div className={styles.list__nonvisible_description}>
-          <div className={styles.list__nonvisible_description_text}>Nicht visualisierte Optionen</div>
-          <div 
-            className={styles.list__nonvisible_description_button}
-            onClick={changeInfoVisibility}
-          >
-            <img src={'/info.svg'} width='24' height='24'/>
+      
+      {nonVisibleData.length !== 0 && 
+      
+        <div className={styles.list__nonvisible}>
+          <div className={styles.list__nonvisible_description}>
+            <div className={styles.list__nonvisible_description_text}>Nicht visualisierte Optionen</div>
+            <div 
+              className={styles.list__nonvisible_description_button}
+              onClick={changeInfoVisibility}
+            >
+              <img src={'/info.svg'} width='24' height='24'/>
+            </div>
           </div>
+          <div className={`${styles.list__nonvisible_info} ${isInfoVisible && styles.show}`}>
+            Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt
+          </div>
+
+          {nonVisibleData?.map((cardItem, index) => {
+
+            return !cardItem.modificationGroupBlock ? (
+              <ModifyBlock 
+                key={index}
+                activeMod={activeMod === index}
+                setActiveMod={() => setActiveMod(index)}
+                cardItem={cardItem}
+                activeStyle={activeStyle}
+                styleId={styleId}
+                roomType={roomType}
+                setIndividualPrice={setIndividualPrice}
+                activePin={pinState}
+              />
+            )
+          : (
+              <CardGroup 
+                key={index}
+                data={cardItem} 
+                activeStyle={activeStyle}
+                setActiveMod={() => setActiveMod(index)}
+                styleId={styleId}
+                room={roomType}
+                setIndividualPrice={setIndividualPrice}
+                activeMod={activeMod === index}
+                activePin={pinState}
+              />
+            )
+          }) 
+          }
         </div>
-        <div className={`${styles.list__nonvisible_info} ${isInfoVisible && styles.show}`}>
-          Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt
-        </div>
-
-        {nonVisibleData?.map((cardItem, index) => {
-
-          return !cardItem.modificationGroupBlock ? (
-            <ModifyBlock 
-              key={index}
-              activeMod={activeMod === index}
-              setActiveMod={() => setActiveMod(index)}
-              cardItem={cardItem}
-              activeStyle={activeStyle}
-              styleId={styleId}
-              roomType={roomType}
-              setIndividualPrice={setIndividualPrice}
-              activePin={pinState}
-            />
-          )
-        : (
-            <CardGroup 
-              key={index}
-              data={cardItem} 
-              activeStyle={activeStyle}
-              setActiveMod={() => setActiveMod(index)}
-              styleId={styleId}
-              room={roomType}
-              setIndividualPrice={setIndividualPrice}
-              activeMod={activeMod === index}
-              activePin={pinState}
-            />
-          )
-        }) 
-        }
-      </div>
-
+      }
     </>
   )
 }

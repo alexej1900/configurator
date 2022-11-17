@@ -59,7 +59,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: calc(100% - 25rem);
+    width: calc(100% - 40rem);
     background: transparent;
     margin: 0 auto;
     overflow: hidden;
@@ -82,8 +82,9 @@
 
     &__list {
       display: flex;
-      margin: 0 auto;
+      // margin: 0 auto;
       margin-left: 5rem;
+      margin-right: 5rem;
       min-width: 60rem;
       overflow: hidden;
 
