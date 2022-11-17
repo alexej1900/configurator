@@ -110,10 +110,15 @@ export default function Sidebar({
                 }  
         })
         // console.log('activeMod', room + ' ' + activeMod)
-        const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === room + ' ' + activeMod.slice(0, -1).toLowerCase())[0].url;
+        // console.log('roomImages', roomImages)
+
+        const roomActiveMode = activeMod.length === 0 ? room : room + ' ' + activeMod.slice(0, -1).toLowerCase();
+
+        const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
+        
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
-        // console.log('newActiveImage', newActiveImage)
+        // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0])
     }
 
     return (

@@ -139,7 +139,7 @@ export default function Header () {
                 </div> */}
               <ul className={style.header__menu__list} ref={listRef} id='menuList'>
           
-                {(listSize > wrapperSize && shift > 0) && 
+                {shift > 0 && 
                   <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> <img src="/arrowRight.svg"/> </div>
                 }
 

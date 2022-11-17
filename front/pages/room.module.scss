@@ -55,7 +55,7 @@ img {
     position: relative;
 
     &.animate {
-      animation-name: moving;
+      // animation-name: moving;
       animation-duration: 3s;
       animation-timing-function: ease-in-out;
     }
@@ -81,17 +81,17 @@ img {
     left: 0;
   }
 
-  25% {
-      left: -60rem;
-  }
+  // 25% {
+  //     left: -60rem;
+  // }
 
   50% {
-      left: 20rem;
+      left: -50rem;
   }
 
-  75% {
-    left: -21rem;
-  }
+  // 75% {
+  //   left: -21rem;
+  // }
 
   to {
       left: 0;

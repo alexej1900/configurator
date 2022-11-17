@@ -59,21 +59,54 @@ export default function Room() {
         setStyleId(apartStyle.style);
     }, [])
 
-    // useEffect(() => {
-    //     const id = window.setTimeout(async() => {
-    //         for (var x = 0; x <= 200; x += 10) {
-    //             document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
-    //             await new Promise(res => setTimeout(res, 30))
-    //         }
-    //         // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({
-    //         //     top: 0,
-    //         //     left: sidebarState ? 200 : 0,
-    //         //     behavior: 'smooth'
-    //         //     });
-    //     }, 3000);
-    //     return () => window.clearTimeout(id);
+    const moveRightFunction = async() => {
+        for (let x = 0; x <= 400; x += 10) {
+            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
+            await new Promise(res => setTimeout(res, 30))
+        }
+    }
+
+    const moveLeftFunction = async() => {
+        for (let x = 400; x >= 200; x -= 10) {
+            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
+            await new Promise(res => setTimeout(res, 30))
+        }
+    }
+
+    useEffect(async() => {
+        // const id = window.setTimeout(async() => {
+            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
+
+            moveRightFunction()
+                // .then(()=>moveLeftFunction());
+
+                const id = window.setTimeout(async() => {
+                    moveLeftFunction()
+                }, 1700);
+            
+            
+            
+                // for (var x = 0; x <= 400; x += 10) {
+            //     document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
+            //     await new Promise(res => setTimeout(res, 30))
+            // }
+
+        // const id1 = window.setTimeout(async() => {
+
+            // for (var x = 400; x <= 200; x -= 10) {
+            //     document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
+            //     await new Promise(res => setTimeout(res, 30))
+            // }
+
+        // }, 1500);
+
+
+        return () => {
+            window.clearTimeout(id);
+            window.clearTimeout(id1);
+        };
        
-    // }, []);
+    }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <p> Loading...</p>
