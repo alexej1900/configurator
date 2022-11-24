@@ -37,52 +37,28 @@ export default function Room() {
 
     useEffect(() => {
         setLargeImage(false);
-
-        if (sidebarState) {
-
-            const id = window.setTimeout(() => {
-                document.querySelector('#fullImage')?.classList.add(styles.animate)
-            }, 500);
-
-            const id1 = window.setTimeout(() => {
-                document.querySelector('#fullImage')?.classList.remove(styles.animate)
-            }, 3500);
-
-            return () => { 
-                window.clearTimeout(id)
-                window.clearTimeout(id1)
-            };
-        }
-    }, [router.asPath])
+    }, [router.asPath]);
 
     useEffect(() => {
         setStyleId(apartStyle.style);
-    }, [])
+    }, []);
 
-    const moveRightFunction = async() => {
-        for (let x = 0; x <= 400; x += 10) {
-            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
-            await new Promise(res => setTimeout(res, 30))
-        }
-    }
+    const moveImageFunction = async() => {
+        for (let x = 0; x <= 600; x += 4) {
+            const scrollableImage = document.querySelector('.indiana-scroll-container--hide-scrollbars');
 
-    const moveLeftFunction = async() => {
-        for (let x = 400; x >= 200; x -= 10) {
-            document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'})
-            await new Promise(res => setTimeout(res, 30))
+            if (x < 400) {
+                scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'});
+            } else {
+                scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
+            }
+            await new Promise(res => setTimeout(res, 20));
         }
     }
 
     useEffect(async() => {
         document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
-        moveRightFunction()
-
-        const id = window.setTimeout(async() => {
-            moveLeftFunction()
-        }, 1700);
-
-        return () => window.clearTimeout(id);
-       
+        moveImageFunction();
     }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
@@ -93,8 +69,8 @@ export default function Room() {
 
     const modifyData = data.entry.mods[0].modificationsTypes;
 
-    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle) => {
-        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage));
+    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => {
+        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage, mainStyle));
     }
 
     const openModificationsList = (modificationName) => {
@@ -108,7 +84,7 @@ export default function Room() {
         dispatch(changeActiveMod(modName));
     }
 
-    // console.log('roomState.', roomState)
+    // console.log('roomState.', state.roomType)
 
     return (
         <div className={`${styles.type__wrapper}`} >   
@@ -131,7 +107,7 @@ export default function Room() {
                 modifyData={modifyData}
                 setLargeImage={setLargeImage}
                 activeStyle = { 
-                    (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle)
+                    (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle)
                 }
                 roomType = {ROOM_TYPE}
                 title={data.entry.title} 

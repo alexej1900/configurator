@@ -126,6 +126,7 @@ export default function ContactForm({rooms}) {
     await getPdfPage(apartmentImage, pdfDOC, false, 50, 60, 2);
     await getPdfPage(stats, pdfDOC, false, 50, 170, 2);
 
+
     for (let i = 0; i < finalRooms.length; i++) {
       await getPdfPage(finalRooms[i], pdfDOC, true, 10, 20, 1);
     }
@@ -136,7 +137,7 @@ export default function ContactForm({rooms}) {
   const getPdfPage = async(div, pdfDOC, addPage, x, y, scale) => {
     addPage && pdfDOC.addPage();
     const divHeight = div.clientHeight
-    const divWidth = div.clientWidth
+    const divWidth = 1440;
     const ratio = divHeight / divWidth;
 
     await html2canvas(div, { scale: '2' }).then((canvas) => {

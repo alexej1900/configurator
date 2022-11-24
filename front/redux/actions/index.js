@@ -132,14 +132,14 @@ export const changeApartIndividualPrice = (key, price) => {
 
 // ROOMS TYPES & OPTIONS --------------------------------
 
-export const changeRoomType = (room, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage) => dispatch => {
+export const changeRoomType = (room, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage, mainStyle) => dispatch => {
 
   dispatch({
     type: 'CHANGE_ROOM_TYPE',
     roomName: room,
     image: largeImage,
     modName: modName,
-    payload: {index,  featuredImage, styleTitle, subtitle, modGroupTitle},
+    payload: {index,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle},
   });
 };
 
@@ -162,6 +162,16 @@ export const changeRoomFormatIndividual = (room, modName, individual) => {
     payload: individual
   }
 }
+
+// export const setNesessaryStyle = (room, modName, nesessaryStyle) => {
+
+//   return {
+//     type: 'SET_NESESSARY_STYLE',
+//     room: room,
+//     modName: modName,
+//     payload: nesessaryStyle
+//   }
+// }
 
 export const changeRoomImage = (room, image) => {
 
@@ -190,6 +200,13 @@ console.log('setInitialState', state)
     roomType: roomType,
   });
 };
+
+export const resetRoomTypeState = () => {
+
+  return {
+    type: 'RESET_ROOMTYPE_STATE'
+  }
+}
 
 // FOR ALL REDUCERS ------------------------------
 

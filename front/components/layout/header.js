@@ -90,7 +90,7 @@ export default function Header () {
 
   const openStyle = menu ? {background: background, backgroundSize: "100%"} : {background: 'transparent'};
 
-  console.log('listSize > wrapperSize && shift', {listSize, wrapperSize, shift})
+  // console.log('listSize > wrapperSize && shift', {listSize, wrapperSize, shift})
   return (
     <header 
       className={[style.header, open & asPath !== '/' && style.compressed].join(' ')} 

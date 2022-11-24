@@ -9,11 +9,18 @@ import styles from './modifyCards.module.scss';
 export default function ModifyCards({ activeStyle, cardData, styleId, roomType, setIndividualPrice }) {
   const [activeMod, setActiveMod] = useState(0);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
+  // const [mainStyle, setMainStyle] = useState(false);
 
   const pinState = useSelector((state) => state.generalStates).pin;
+  const style = useSelector(state => state.apartStyle).title;
 
-  const visibleData = cardData?.filter((data) => data.modificationVisibility);
-  const nonVisibleData = cardData?.filter((data) => !data.modificationVisibility);
+  const dataByStyle = cardData?.filter((data) => {
+    return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
+  });
+
+  // !item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()
+  const visibleData = dataByStyle?.filter((data) => data.modificationVisibility);
+  const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility);
 
   const changeInfoVisibility = () => {
     setIsInfoVisible(!isInfoVisible);
@@ -36,6 +43,8 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
               roomType={roomType}
               setIndividualPrice={setIndividualPrice}
               activePin={pinState}
+              // mainStyle={mainStyle}
+              // setMainStyle={setMainStyle}
             />
           )
         : (

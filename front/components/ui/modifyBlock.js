@@ -11,15 +11,27 @@ import getModifications from '../../pages/api/getModifications';
 
 import styles from './modifyBlock.module.scss';
 
-export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, activeMod, setActiveMod, activePin, setGroupCheck, groupIndex}) {
+export default function ModifyBlock({
+  activeStyle, 
+  cardItem, 
+  styleId, 
+  roomType, 
+  activeMod, 
+  setActiveMod, 
+  activePin, 
+  setGroupCheck, 
+  groupIndex,
+}) {
 
   const [collapsed, setCollapsed] = useState(!activeMod);
   const [checked, setChecked] = useState(false);
   const [isInLine, setIsInLine] = useState(!activeMod);
   const [onlyIndividual, setOnlyIndividual] = useState(false);
+  // const [cardCount, setCardCount] = useState(0);
 
   const individualPrices = useSelector(state => state.apartPrice.individual);
- 
+  const style = useSelector(state => state.apartStyle);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,11 +46,11 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
 
   useEffect(() => {
     setCollapsed(!activeMod);
-  }, [activeMod])
+  }, [activeMod]);
 
   useEffect(() => {
     setOnlyIndividual(isIndividualSetted);
-  }, [individualPrices])
+  }, [individualPrices]);
 
   const modificationName = cardItem.modificationName;
   const modificationDescription = cardItem.modificationDescription;
@@ -49,6 +61,7 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
   let modificationImage;
   let modificationTitle;
   let modificationStyle;
+  // let mainStyle = null;
 
   const modifications = getModifications(roomType);
 
@@ -108,15 +121,30 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
       ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
       : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
 
-    useEffect(() => {
-      if (modifications && modifications[`${modificationName}`]) {
-        setChecked(true);
-        setIsInLine(false);
-      } 
-    }, [])
+  useEffect(() => {
+    if (modifications && modifications[`${modificationName}`]) {
+      setChecked(true);
+      setIsInLine(false);
+    } 
+  }, []);
+
+  // useEffect(() => {
+  //   cardItem.modificationItemExample.forEach((item) => {
+  //     if (!item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()) {
+  //       setCardCount(cardCount + 1);
+  //     }
+  //   })
+  //   console.log('cardItem.modificationItemExample', cardItem.modificationItemExample)
+  //   console.log('cardCount', cardCount)
+  // }, [activeMod]);
+
+  // const setNesessaryStyle = (style) => {
+  //   dispatch(setNesessaryStyle(roomType, modificationName, style));
+  //   // console.log('style', style);
+  // }
     
   const activeIndex = activeModification.modificationNumber;
-
+// console.log('cardItem', cardItem)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine | individual && styles.inLine}`}>
@@ -163,29 +191,32 @@ export default function ModifyBlock({activeStyle, cardItem, styleId, roomType, a
               modificationTitle = item.modificationTitle;
               modificationStyle = item.modificationStyle;
 
-              return (
-                <div key={index} className={`${styles.card__block}`}>
-                  <Card
-                    selectCard= {() => {
-                      activeStyle(
-                      index, 
-                      cardItem.modificationName,
-                      item.modificationImage && item.modificationImage[0].url, 
-                      item.modificationTitle, 
-                      item.modificationStyle,
-                    );
-                      setChecked(true);
-                      setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0)
+              if (!item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()) {
+                
+                return (
+                  <div key={index} className={`${styles.card__block}`}>
+                    <Card
+                      selectCard= {() => {
+                        activeStyle(
+                        index, 
+                        cardItem.modificationName,
+                        item.modificationImage && item.modificationImage[0].url, 
+                        item.modificationTitle, 
+                        item.modificationStyle,
+                      );
+                        setChecked(true);
+                        setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0)
+                      }
                     }
-                  }
-                    type='small'
-                    image={modificationImage[0]}
-                    subtitle={modificationStyle}
-                    title={modificationTitle}
-                    active = {activeIndex === index}
-                  /> 
-                </div>
-              )
+                      type='small'
+                      image={modificationImage[0]}
+                      subtitle={modificationStyle}
+                      title={modificationTitle}
+                      active = {activeIndex === index}
+                    /> 
+                  </div>
+                )
+              }
             })
           }
         </div>

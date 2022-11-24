@@ -44,6 +44,7 @@ export default function Sidebar({
 
     const sidebarOpen = useSelector(state => state.generalStates.open);
     const { showStyle, showRoom } = useSelector(state => state.generalStates);
+    const mainStyle = useSelector(state => state.apartStyle).title;
 
     const { OptionsPrice, IndividualPrice } = getPrices();
     
@@ -77,14 +78,20 @@ export default function Sidebar({
     const setActiveImage = () => {  // Comparing choosed modification and existing images 
         // console.log('modifyData', modifyData)
         // console.log('modifications', modifications)
-
+        // console.log('mainStyle', mainStyle)
         let activeMod = '';
         let prevModGroupTitle = null;
+        // let roomStyle = '';
         modifyData.forEach((item) => {
 
-            if (item.modificationVisibility) {
+            if (
+                item.modificationVisibility && 
+                (item.modificationMainStyle.toLowerCase() === mainStyle.toLowerCase() ||
+                item.modificationMainStyle.toLowerCase() === "false")
+                ) {
                 const modName = item.modificationName;
                 const modGroupTitle = modifications[modName]?.modGroupTitle ? ` ${modifications[modName]?.modGroupTitle}` : '';
+                // roomStyle = modifications[modName].mainStyle ? modifications[modName].mainStyle : roomStyle;
 
                 activeMod = modifications[modName] && modifications[modName].modGroupTitle
                     ? activeMod + 
@@ -109,16 +116,16 @@ export default function Sidebar({
                     prevModGroupTitle = modName;
                 }  
         })
-        // console.log('activeMod', room + ' ' + activeMod)
-        // console.log('roomImages', roomImages)
+        // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
+        // console.log('roomStyle', roomStyle)
 
-        const roomActiveMode = activeMod.length === 0 ? room : room + ' ' + activeMod.slice(0, -1).toLowerCase();
-
+        const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
+        // console.log('newActiveImage11', roomImages)
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
-        // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0])
+        // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 
     return (

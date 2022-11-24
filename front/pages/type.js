@@ -13,7 +13,7 @@ import StyleChooseButtons from '../components/ui/styleChooseButtons';
 
 import { typePage } from '../gql/index';
 
-import { changeApartStyle } from '../redux/actions/index';
+import { changeApartStyle, resetRoomTypeState } from '../redux/actions/index';
 
 import styles from './room.module.scss';
 
@@ -43,6 +43,7 @@ export default function Type() {
         setStyleId(id);
         currentStyle = data.entry.styles[id];
         dispatch(changeApartStyle(id, currentStyle.image[0].url, currentStyle.styleTitle));
+        dispatch(resetRoomTypeState());
     }
 
     const setStyleTypeHandle = () => {

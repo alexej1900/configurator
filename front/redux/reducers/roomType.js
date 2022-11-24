@@ -12,6 +12,9 @@ const roomType = (state = {}, action) => {
         }   
       }
 
+    // case 'SET_NESESSARY_STYLE':
+    //   return state ={...state, [`${action.room}`]: {...state[`${action.room}`], modifications:  {...state[`${action.room}`].modifications, [`${action.modName}`]: {... state[`${action.room}`].modifications[`${action.modName}`],  nesessaryStyle: action.payload} }} }
+
     case 'CHANGE_ROOM_TYPE_OPTION': 
       return state = {...state,  [`${action.room}`]: {...state[`${action.room}`], modifications:  {...state[`${action.room}`].modifications, [`${action.modName}`]: {... state[`${action.room}`].modifications[`${action.modName}`],  option : action.payload} }} }
 
@@ -25,6 +28,9 @@ const roomType = (state = {}, action) => {
 
     case 'SET_INIT_STATE': 
       return state = {...action.roomType}
+
+    case 'RESET_ROOMTYPE_STATE': 
+      return state = {}
 
     case 'RESET_STATE': 
       return state = {}
