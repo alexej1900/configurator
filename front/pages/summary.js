@@ -33,7 +33,7 @@ export default function Summary () {
 
 		dispatch(setInitialState(initState));
 
-		console.log('initState', initState)
+		// console.log('initState', initState)
 		window.location.href = location.pathname
 	}
 
@@ -43,7 +43,7 @@ export default function Summary () {
 
   const price = apartSize.price;
   const size = apartSize.size;
-
+	console.log('apartStyle', apartStyle)
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
   const settings = getSettings();

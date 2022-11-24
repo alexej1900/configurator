@@ -107,6 +107,13 @@ export const changeApartStyle = (apartStyleIndex, styleImage, styleTitle) => dis
   });
 };
 
+export const setStyleImage = (image) => dispatch => {
+  dispatch({
+    type: 'SET_STYLE_IMAGE',
+    payload: image,
+  });
+};
+
 export const setModification = (action) => dispatch => {
   dispatch({
     type: 'SET_MODIFICATION',

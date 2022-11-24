@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeSidebarState, changeApartIndividualPrice, changeRoomImage} from "../../../redux/actions/index";
+import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setStyleImage} from "../../../redux/actions/index";
 
 import { useQuery } from '@apollo/client';
 import { RoomData, mainSettings } from '../../../gql/index';
@@ -77,7 +77,7 @@ export default function Sidebar({
 
     const setActiveImage = () => {  // Comparing choosed modification and existing images 
         // console.log('modifyData', modifyData)
-        // console.log('modifications', modifications)
+        console.log('modifications', modifications)
         // console.log('mainStyle', mainStyle)
         let activeMod = '';
         let prevModGroupTitle = null;
@@ -120,8 +120,13 @@ export default function Sidebar({
         // console.log('roomStyle', roomStyle)
 
         const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
-        // console.log('newActiveImage11', roomImages)
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
+
+        if (room.toLowerCase() === 'kueche') { // set final style image for Wohnzimmer depends on kueche style
+            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0].url;
+            // console.log('styleImage', styleImage)
+            dispatch(setStyleImage(styleImage))
+        }
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
