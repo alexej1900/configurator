@@ -140,6 +140,7 @@ export const RoomData = (slug) => {
                     id
                     modificationTitle
                     modificationStyle
+                    modificationDescr
                     modificationImage {
                       url
                       width
@@ -195,6 +196,7 @@ export const RoomData = (slug) => {
                         }
                         modificationStyle
                         modificationTitle
+                        modificationDescr
                         recommendedModification
                       }
                     }

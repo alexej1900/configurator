@@ -174,6 +174,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
                                         : {url: 'individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}}
                                     subtitle={!onlyIndividual ? activeModification.modificationStyle : 'Individual'}
                                     title={!onlyIndividual ? activeModification.modificationTitle : ''}
+                                    description={!onlyIndividual ? activeModification.modificationDescr : ''}
                                     active = 'true'
                                     collapsed={collapsed}
                                 />
@@ -203,6 +204,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
                                                 image={modificationImage[0]}
                                                 subtitle={modificationStyle}
                                                 title={modificationTitle}
+                                                description={item.modificationDescr}
                                                 active = {activeModification.modGroupName === group.modGroupName && activeIndex === index}
                                             /> 
                                         </div>

@@ -12,6 +12,7 @@ export default function Card({
     image, 
     recommended, 
     subtitle, 
+    description,
     selectCard, 
     active, 
     checked, 
@@ -47,6 +48,7 @@ export default function Card({
                         <div className={`${styles.text__wrapper}`}>
                             <h5 className={styles.card__title}>{title}</h5>
                             <p className={styles.card__description}>{subtitle}</p>
+                            <p className={styles.card__description}>{description}</p>
                         </div>
                     </div>
                 </div>

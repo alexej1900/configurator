@@ -116,8 +116,8 @@ export default function Sidebar({
                     prevModGroupTitle = modName;
                 }  
         })
-        // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
-        // console.log('roomStyle', roomStyle)
+        console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
+        // console.log('roomImages', roomImages)
 
         const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
@@ -130,7 +130,7 @@ export default function Sidebar({
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
-        // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
+        console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 
     return (

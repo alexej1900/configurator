@@ -27,7 +27,6 @@ export default function ModifyBlock({
   const [checked, setChecked] = useState(false);
   const [isInLine, setIsInLine] = useState(!activeMod);
   const [onlyIndividual, setOnlyIndividual] = useState(false);
-  // const [cardCount, setCardCount] = useState(0);
 
   const individualPrices = useSelector(state => state.apartPrice.individual);
   const style = useSelector(state => state.apartStyle);
@@ -61,7 +60,6 @@ export default function ModifyBlock({
   let modificationImage;
   let modificationTitle;
   let modificationStyle;
-  // let mainStyle = null;
 
   const modifications = getModifications(roomType);
 
@@ -127,21 +125,6 @@ export default function ModifyBlock({
       setIsInLine(false);
     } 
   }, []);
-
-  // useEffect(() => {
-  //   cardItem.modificationItemExample.forEach((item) => {
-  //     if (!item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()) {
-  //       setCardCount(cardCount + 1);
-  //     }
-  //   })
-  //   console.log('cardItem.modificationItemExample', cardItem.modificationItemExample)
-  //   console.log('cardCount', cardCount)
-  // }, [activeMod]);
-
-  // const setNesessaryStyle = (style) => {
-  //   dispatch(setNesessaryStyle(roomType, modificationName, style));
-  //   // console.log('style', style);
-  // }
     
   const activeIndex = activeModification.modificationNumber;
 // console.log('cardItem', cardItem)
@@ -182,6 +165,7 @@ export default function ModifyBlock({
                 }
                 subtitle={!onlyIndividual ? activeModification.modificationStyle : 'Individual'}
                 title={!onlyIndividual ? activeModification.modificationTitle : ''}
+                description={!onlyIndividual ? activeModification.modificationDescr : ''}
                 active = 'true'
                 collapsed={collapsed}
               />
@@ -212,6 +196,7 @@ export default function ModifyBlock({
                       image={modificationImage[0]}
                       subtitle={modificationStyle}
                       title={modificationTitle}
+                      description={item.modificationDescr}
                       active = {activeIndex === index}
                     /> 
                   </div>

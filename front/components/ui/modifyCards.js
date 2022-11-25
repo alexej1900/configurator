@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import ModifyBlock from './modifyBlock';
@@ -8,8 +8,8 @@ import styles from './modifyCards.module.scss';
 
 export default function ModifyCards({ activeStyle, cardData, styleId, roomType, setIndividualPrice }) {
   const [activeMod, setActiveMod] = useState(0);
+  const [isActiveModVisible, setIsActiveModVisible] = useState(true);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
-  // const [mainStyle, setMainStyle] = useState(false);
 
   const pinState = useSelector((state) => state.generalStates).pin;
   const style = useSelector(state => state.apartStyle).title;
@@ -18,9 +18,12 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
 
-  // !item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()
   const visibleData = dataByStyle?.filter((data) => data.modificationVisibility);
   const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility);
+
+  useEffect(() => {
+    visibleData.length === 0 && setIsActiveModVisible(false);
+  }, []);
 
   const changeInfoVisibility = () => {
     setIsInfoVisible(!isInfoVisible);
@@ -35,16 +38,17 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
           return !cardItem.modificationGroupBlock ? (
             <ModifyBlock 
               key={index}
-              activeMod={activeMod === index}
-              setActiveMod={() => setActiveMod(index)}
+              activeMod={isActiveModVisible && activeMod === index}
+              setActiveMod={() => {
+                setActiveMod(index);
+                setIsActiveModVisible(true);
+              }}
               cardItem={cardItem}
               activeStyle={activeStyle}
               styleId={styleId}
               roomType={roomType}
               setIndividualPrice={setIndividualPrice}
               activePin={pinState}
-              // mainStyle={mainStyle}
-              // setMainStyle={setMainStyle}
             />
           )
         : (
@@ -52,7 +56,10 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
               key={index}
               data={cardItem} 
               activeStyle={activeStyle}
-              setActiveMod={() => setActiveMod(index)}
+              setActiveMod={() => {
+                setActiveMod(index);
+                setIsActiveModVisible(true);
+              }}
               styleId={styleId}
               room={roomType}
               setIndividualPrice={setIndividualPrice}
@@ -85,8 +92,11 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
             return !cardItem.modificationGroupBlock ? (
               <ModifyBlock 
                 key={index}
-                activeMod={activeMod === index}
-                setActiveMod={() => setActiveMod(index)}
+                activeMod={!isActiveModVisible && activeMod === index}
+                setActiveMod={() => {
+                  setIsActiveModVisible(false);
+                  setActiveMod(index);
+                }}
                 cardItem={cardItem}
                 activeStyle={activeStyle}
                 styleId={styleId}
@@ -100,7 +110,10 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
                 key={index}
                 data={cardItem} 
                 activeStyle={activeStyle}
-                setActiveMod={() => setActiveMod(index)}
+                setActiveMod={() => {
+                  setActiveMod(index);
+                  setIsActiveModVisible(false);
+                }}
                 styleId={styleId}
                 room={roomType}
                 setIndividualPrice={setIndividualPrice}
