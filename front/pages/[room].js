@@ -44,21 +44,31 @@ export default function Room() {
     }, []);
 
     const moveImageFunction = async() => {
-        for (let x = 0; x <= 600; x += 4) {
+        for (let x = 0; x <= 600; x += 25) {
             const scrollableImage = document.querySelector('.indiana-scroll-container--hide-scrollbars');
 
             if (x < 400) {
-                scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'});
-            } else {
+                scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
+            } 
+            else {
                 scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
             }
-            await new Promise(res => setTimeout(res, 20));
+
+            // await new Promise(res => setTimeout(res, 80));
         }
     }
 
     useEffect(async() => {
+        console.log('path', path)
         document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
-        moveImageFunction();
+        document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
+
+        setTimeout(() => {
+            document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+            moveImageFunction();
+        }, 1000)
+
+        // moveImageFunction();
     }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
@@ -84,15 +94,15 @@ export default function Room() {
         dispatch(changeActiveMod(modName));
     }
 
-    // console.log('roomState.', state.roomType)
-
     return (
         <div className={`${styles.type__wrapper}`} >   
             <ScrollContainer 
                 className={`${sidebarState && styles.image__wrapperActive} ${styles.image__wrapper}`} 
                 onStartScroll={() => setIsScroll(true)}
                 onEndScroll={() => setIsScroll(false)}
+                id={'image__wrapper'}
             >
+                
                 <img className={styles.full} src={largeImage ? largeImage : activeImage} id='fullImage'/>
 
                 <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>
@@ -100,7 +110,13 @@ export default function Room() {
             </ScrollContainer>
 
             {(sidebarState & !isScroll) ? <ScrollIcon/> : null}
-              
+
+            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
+                // onClick={showRoomClick}
+            >
+                <h4>Kontakt</h4> 
+                <h5>aufnehmen</h5>
+            </div>
             <Sidebar 
                 styleId={styleId} 
                 apartmentPrice = {apartSize.price} 

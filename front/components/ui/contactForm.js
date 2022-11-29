@@ -14,10 +14,12 @@ import { saveData } from '../../gql/index';
 import styles from './contactForm.module.scss';
 import { useEffect, useState } from 'react';
 import { resetState } from '../../redux/actions';
+import Popup from './popup';
 
 export default function ContactForm({rooms}) {
 
   const [isContactReady, setIsContactReady] = useState(false);
+  const [isPopup, setIsPopup] = useState(false);
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +30,7 @@ export default function ContactForm({rooms}) {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  console.log('router', router)
+  // console.log('router', router)
   const state = useSelector(state => state)
 
   const checkHandler = () => {
@@ -91,11 +93,17 @@ export default function ContactForm({rooms}) {
       });
   }
 
-  const resetData = () => {
+  const onConfirm = () => {
+    setIsPopup(false);
     router.push('/');
+    
     setTimeout(() => { 
       dispatch(resetState());
-     }, 0)
+     }, 0);
+  }
+
+  const onCancel = () => {
+    setIsPopup(false);
   }
 
   const madeUrl = async() => {
@@ -155,100 +163,107 @@ export default function ContactForm({rooms}) {
   }
 
   return (
-    <section className={`${styles.contactForm}`}>
-      <div className={styles.text__inner}>
-        <div className={styles.contactForm_header}>
-          <img src='./summary.svg' alt="summary" className={styles.contactForm_icon}/> 
-          <h3>Konfigurator abschliessen</h3>
-        </div>
-        <div className={styles.formular}>
-          <p >Sie können sich Ihre Konfiguration ganz einfach per PDF auf Ihre Emailadresse senden.</p> 
-          <p >Sollten Sie eine neue Konfiguration starten wollen, löschen Sie bitte Ihre Browserdaten.</p>
-          <form className={styles.form}> 
-            <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-              <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
-            </div>
-            
-            <input 
-              type="text" 
-              placeholder="Name" 
-              value={name} 
-              onChange={(e) => setName(e.target.value)} 
-            />
-            <input 
-              type="text" 
-              placeholder="Vorname" 
-              value={surname} 
-              onChange={(e) => setSurname(e.target.value)} 
-            />
-            <input 
-              type="email" 
-              placeholder="Emailadresse" 
-              pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+.)+[A-z]{2,4}$" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              className={styles.clienEmail}
-              />
-            <input 
-              type="tel" 
-              placeholder="Telefonnummer" 
-              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-              value={phone} 
-              onChange={(e) => setPhone(e.target.value)} 
-              className={styles.clienPhone}
-            />
-
-            <div className={`${styles.toggle} toggle`}>
-              <span>Bitte um Kontaktaufnahme </span>
-              <input type="checkbox" id="test" className={styles.checkbox} onClick={checkHandler}/>
-              <label htmlFor="test"> Ja / Nein</label>
-            </div>
-
-            <button 
-              className={`${styles.submitBtn}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                validateData(e)
-              }} 
-              disabled={showSuccess}
-              title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
+    <>
+      <section className={`${styles.contactForm}`}>
+        <div className={styles.text__inner}>
+          <div className={styles.contactForm_header}>
+            <img src='./summary.svg' alt="summary" className={styles.contactForm_icon}/> 
+            <h3>Konfigurator abschliessen</h3>
+          </div>
+          <div className={styles.formular}>
+            <p >Sie können sich Ihre Konfiguration ganz einfach per PDF auf Ihre Emailadresse senden.</p> 
+            <p >Sollten Sie eine neue Konfiguration starten wollen, löschen Sie bitte Ihre Browserdaten.</p>
+            <form className={styles.form}> 
+              <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
+                <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+              </div>
               
-            >
-              {loading ? 'Senden...' : 'Per Email zusenden '}
-            </button>
-            <button 
-              className={`${styles.saveBtn}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                saveAsPdfHandler(true);
-              }} 
-              title='Sie können alle Einstellungen in einer PDF-Datei speichern'
-            >
-                als PDF speichern
+              <input 
+                type="text" 
+                placeholder="Name" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+              />
+              <input 
+                type="text" 
+                placeholder="Vorname" 
+                value={surname} 
+                onChange={(e) => setSurname(e.target.value)} 
+              />
+              <input 
+                type="email" 
+                placeholder="Emailadresse" 
+                pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+.)+[A-z]{2,4}$" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                className={styles.clienEmail}
+                />
+              <input 
+                type="tel" 
+                placeholder="Telefonnummer" 
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                value={phone} 
+                onChange={(e) => setPhone(e.target.value)} 
+                className={styles.clienPhone}
+              />
+
+              <div className={`${styles.toggle} toggle`}>
+                <span>Bitte um Kontaktaufnahme </span>
+                <input type="checkbox" id="test" className={styles.checkbox} onClick={checkHandler}/>
+                <label htmlFor="test"> Ja / Nein</label>
+              </div>
+
+              <button 
+                className={`${styles.submitBtn}`} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  validateData(e)
+                }} 
+                disabled={showSuccess}
+                title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
+                
+              >
+                {loading ? 'Senden...' : 'Per Email zusenden '}
               </button>
+              <button 
+                className={`${styles.saveBtn}`} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  saveAsPdfHandler(true);
+                }} 
+                title='Sie können alle Einstellungen in einer PDF-Datei speichern'
+              >
+                  als PDF speichern
+                </button>
+              <button 
+                className={`${styles.saveBtn}`} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  submitHandler();
+                }}
+                title='Sie können alle Einstellungen als Link speichern'
+              >
+                Link weiterleiten
+              </button>
+            </form>
+          </div>
+          
             <button 
-              className={`${styles.saveBtn}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                submitHandler();
-              }}
-              title='Sie können alle Einstellungen als Link speichern'
+              className={`${styles.resetBtn}`} 
+              onClick={() => setIsPopup(true)}
+              title='RESET YOUR DATA'
             >
-              Link weiterleiten
+              RESET
             </button>
-          </form>
         </div>
         
-          <button 
-            className={`${styles.resetBtn}`} 
-            onClick={(e) => {
-              resetData();
-            }}
-            title='RESET YOUR DATA'
-          >
-            RESET
-          </button>
-      </div>
-    </section>
+      </section>
+
+      {isPopup && <Popup 
+        description='Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt' 
+        onConfirm={onConfirm}
+        onCancel={onCancel}
+        />}
+    </>
   )
 }

@@ -87,6 +87,7 @@ export default function Type() {
                 styleTypeSet={setStyleTypeHandle} 
                 activeStyle={(id) => changeStyle(id)} 
                 styleId={styleId} 
+                stylesAmount={data.entry.styles.length}
             />
         </div>
     )

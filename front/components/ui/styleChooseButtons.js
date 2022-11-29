@@ -10,7 +10,7 @@ import { headerSettings } from '../../gql/index';
 import styles from './styleChooseButtons.module.scss';
 import { useEffect, useState } from 'react';
 
-export default function StyleChooseButtons({room, styleTypeSet, activeStyle, styleId}) {
+export default function StyleChooseButtons({room, styleTypeSet, activeStyle, styleId, stylesAmount}) {
   const dispatch = useDispatch();
 
 	const [currentStyleId, setCurrentStyleId] = useState(styleId);
@@ -43,7 +43,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 	}
 
 	const changeStyle = () => {
-		activeStyle(++currentStyleId%3);
+		activeStyle(++currentStyleId%stylesAmount);  //Last number depends on amount of style lines
 		// dispatch(changeStyleVisibility(true))
 	}
 

@@ -77,11 +77,10 @@ export default function Sidebar({
 
     const setActiveImage = () => {  // Comparing choosed modification and existing images 
         // console.log('modifyData', modifyData)
-        console.log('modifications', modifications)
+        // console.log('modifications', modifications)
         // console.log('mainStyle', mainStyle)
         let activeMod = '';
         let prevModGroupTitle = null;
-        // let roomStyle = '';
         modifyData.forEach((item) => {
 
             if (
@@ -91,7 +90,6 @@ export default function Sidebar({
                 ) {
                 const modName = item.modificationName;
                 const modGroupTitle = modifications[modName]?.modGroupTitle ? ` ${modifications[modName]?.modGroupTitle}` : '';
-                // roomStyle = modifications[modName].mainStyle ? modifications[modName].mainStyle : roomStyle;
 
                 activeMod = modifications[modName] && modifications[modName].modGroupTitle
                     ? activeMod + 
@@ -116,7 +114,7 @@ export default function Sidebar({
                     prevModGroupTitle = modName;
                 }  
         })
-        console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
+        // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
         // console.log('roomImages', roomImages)
 
         const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
@@ -130,7 +128,7 @@ export default function Sidebar({
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
-        console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
+        // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 
     return (

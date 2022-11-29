@@ -13,7 +13,7 @@
     transition: all 0.3s ease-in;
     overflow: hidden;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 768px) {
       height: calc(100vh - 8rem);
       width: 0;
     }
@@ -23,7 +23,7 @@
       transition: all 0.3s ease-in;
       
 
-      @media (max-width: 1000px) {
+      @media (max-width: 768px) {
         position: relative;
         top: 8rem;
         transform: translateX(100%);
@@ -34,7 +34,7 @@
 
       &.moveLeft {
 
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
           transform: translateX(-100%);
           flex: 0 0 100%;
           // z-index: 1000;
@@ -51,7 +51,7 @@
 
     .hideHeader {
 
-      @media (max-width: 1000px) {
+      @media (max-width: 768px) {
         display: none;
       }
     }
@@ -63,7 +63,7 @@
         margin-bottom: 1.2rem;
         padding: 0 1rem;
 
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
           // display: none;
         }
 
@@ -124,7 +124,7 @@
         cursor: pointer;
         flex-shrink: 0;
 
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
           display: none;
         }
   
@@ -169,7 +169,7 @@
         left: 5.6rem;
         z-index: 10;
 
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
           left: calc((100% - 36.4rem)/2);
         }
   
@@ -207,7 +207,7 @@
             &__back {
               background: var(--color__cta_secondary);
 
-              @media (max-width: 1000px) {
+              @media (max-width: 768px) {
                 display: none;
               }
 
@@ -228,7 +228,7 @@
             &__next {
               // min-width: 18rem;
 
-              @media (max-width: 1000px) {
+              @media (max-width: 768px) {
                 min-width: 0;
               }
             }
@@ -236,7 +236,7 @@
             &__showRoom {
               display: none;
 
-              @media (max-width: 1000px) {
+              @media (max-width: 768px) {
                 display: block;
                 display: flex;
                 justify-content: center;
@@ -303,7 +303,7 @@
       margin-bottom: 64px;
       width: 100%;
 
-      @media (max-width: 1000px) {
+      @media (max-width: 768px) {
         margin: 0;
       }
 

@@ -118,7 +118,10 @@ export default function Header () {
           </div>
           {asPath !== '/' && asPath !== '/summary' &&
             <Link href='/summary'>
-              <a className={`${style.finish}`} title="To the summary page"><img src='./summaryList.svg' alt="summary" /><span>Fertigstellen</span></a>
+              <a className={`${style.finish}`} title="To the summary page">
+                <img src='./summaryList.svg' alt="summary" />
+                <span className={`${style.finish__btn_descr}`}>Fertigstellen</span>
+              </a>
             </Link> 
           } 
 
