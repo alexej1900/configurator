@@ -12,7 +12,7 @@ import getSettings from './api/getSettings';
 import getPrices from './api/getPrices';
 
 import FinalRoom from '../components/ui/finalRoom';
-import ContactForm from '../components/ui/contactForm';
+import FinalForm from '../components/ui/finalForm';
 import Footer from '../components/layout/footer';
  
 import styles from './summary.module.scss';
@@ -130,7 +130,7 @@ export default function Summary () {
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index}/>)}
 				</div> 
 
-				<ContactForm rooms={roomType}/> 
+				<FinalForm rooms={roomType}/> 
 			</div>
 			<Footer/>
 		</>

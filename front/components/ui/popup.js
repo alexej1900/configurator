@@ -1,12 +1,12 @@
 import styles from './popup.module.scss';
 
-export default function Popup ({ description, onConfirm, onCancel}) {
+export default function Popup ({ children, onConfirm, onCancel}) {
   return (
     <div className={styles.popup} id='popup'>
 
       <div className={styles.popup__form}>
         <div className={styles.popup__form_description}>
-          {description}
+          {children}
         </div>
         <div className={`${styles.popup__form_buttons}`}>
           <div className={`${styles.popup__form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechnen</div>
