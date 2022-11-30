@@ -1,8 +1,10 @@
 
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
 import Image from 'next/image';
+import { useQuery } from '@apollo/client';
+import { headerSettings } from '../gql/index';
 
 import { changeSidebarState, setInitialState } from '../redux/actions/index';
 
@@ -43,7 +45,8 @@ export default function Summary () {
 
   const price = apartSize.price;
   const size = apartSize.size;
-	// console.log('apartStyle', apartStyle)
+
+	
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
   const settings = getSettings();
@@ -58,6 +61,15 @@ export default function Summary () {
     dispatch(changeSidebarState(false));
     return () => dispatch(changeSidebarState(true));
   }, []);
+
+	// const { data, error, loading } = useQuery(headerSettings);
+  // if (loading) return null;
+  // if(error) return `Error ${error}`;
+
+	// const rooms = data.entries
+	// 	.filter((item) => (item.__typename === 'rooms_default_Entry'))
+	// 	.map((room) => room.title);
+	// console.log('roomType', roomType)
 
   return (
 		<>
@@ -127,7 +139,7 @@ export default function Summary () {
 				</div>
 
 				<div className={`${styles.container}`} id="finalRooms">
-					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index}/>)}
+					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
 				<FinalForm rooms={roomType}/> 

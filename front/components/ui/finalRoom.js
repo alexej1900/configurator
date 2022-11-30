@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { 
   changeSidebarState, 
   setSummaryVisibility, 
@@ -11,15 +12,37 @@ import {
   changeActiveMod 
 } from '../../redux/actions/index';
 
+import { useQuery } from '@apollo/client';
+import { RoomData } from '../../gql/index';
+
+import getModifications from '../../pages/api/getModifications';
+
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import Card from './card';
 import OptionItem from './optionItem';
 
 import styles from './finalRoom.module.scss';
 
-export default function FinalRoom({room, roomName}) {
+export default function FinalRoom({room, roomName, style}) {
   const dispatch = useDispatch();
   const roomMods = room.modifications && Object.entries(room.modifications);
+
+  // const { roomType } = useSelector(state => state);
+  // const room = roomType[`${roomName}`] 
+  // ? roomType[`${roomName}`] 
+  // : 
+
+  const { data, loading, error } = useQuery(RoomData(roomName));
+  if (loading) return <p> Loading...</p>
+  if(error) return <p>Error, please read the console. {console.log(error)}</p>
+
+  const modifyData = data.entry.mods[0].modificationsTypes;
+
+  const dataByStyle = modifyData?.filter((data) => {
+    return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
+  });
+  // console.log('dataByStyle', dataByStyle)
+  // console.log('room.modifications', room.modifications)
 
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
@@ -32,6 +55,21 @@ export default function FinalRoom({room, roomName}) {
     // dispatch(setSummaryVisibility(true));
   }
 
+  const allOptions = dataByStyle.map((item) => {
+    if(room.modifications[item.modificationName]) {
+      return [item.modificationName, room.modifications[item.modificationName]]
+    } else {
+      const card = {
+        modGroupTitle : '', 
+        featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
+        styleTitle : item.modificationItemExample[0].modificationStyle, 
+        subtitle : item.modificationItemExample[0].modificationTitle, 
+        description : item.modificationItemExample[0].modificationDescr
+      }
+      return [item.modificationName, card]
+    }
+  })
+
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>
@@ -43,7 +81,7 @@ export default function FinalRoom({room, roomName}) {
       </div> 
           
       <div className={`${styles.summary__room_data}`}>
-        {roomMods.map((data, index)=> {
+        {allOptions.map((data, index)=> {
 
           const {modGroupTitle, featuredImage, styleTitle, subtitle, description} = data[1];
 
