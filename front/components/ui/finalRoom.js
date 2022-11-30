@@ -23,15 +23,11 @@ import OptionItem from './optionItem';
 
 import styles from './finalRoom.module.scss';
 
-export default function FinalRoom({room, roomName, style}) {
+export default function FinalRoom({roomName, style}) {
   const dispatch = useDispatch();
-  const roomMods = room.modifications && Object.entries(room.modifications);
-
-  // const { roomType } = useSelector(state => state);
-  // const room = roomType[`${roomName}`] 
-  // ? roomType[`${roomName}`] 
-  // : 
-
+  
+  const { roomType } = useSelector(state => state);
+  
   const { data, loading, error } = useQuery(RoomData(roomName));
   if (loading) return <p> Loading...</p>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
@@ -41,8 +37,14 @@ export default function FinalRoom({room, roomName, style}) {
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
-  // console.log('dataByStyle', dataByStyle)
-  // console.log('room.modifications', room.modifications)
+
+  const room = roomType[`${roomName}`] 
+  ? roomType[`${roomName}`] 
+  : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
+    return item.styleName.toLowerCase() === style.toLowerCase()
+  })[0].styleDefaultImage[0].url};
+
+  const roomMods = room?.modifications && Object.entries(room.modifications);
 
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
@@ -50,13 +52,10 @@ export default function FinalRoom({room, roomName, style}) {
     dispatch(setSummaryVisibility(true));
     dispatch(changeActivePin(modName));
     dispatch(changeActiveMod(modName));
-
-    // dispatch(changeSidebarState(false));
-    // dispatch(setSummaryVisibility(true));
   }
 
   const allOptions = dataByStyle.map((item) => {
-    if(room.modifications[item.modificationName]) {
+    if(room?.modifications && room?.modifications[item.modificationName]) {
       return [item.modificationName, room.modifications[item.modificationName]]
     } else {
       const card = {

@@ -41,7 +41,7 @@ export default function Summary () {
 
   const { apartStyle, apartSize, roomType } = useSelector(state => state);
 
-	const rooms = Object.keys(roomType);
+	// const rooms = Object.keys(roomType);
 
   const price = apartSize.price;
   const size = apartSize.size;
@@ -62,13 +62,13 @@ export default function Summary () {
     return () => dispatch(changeSidebarState(true));
   }, []);
 
-	// const { data, error, loading } = useQuery(headerSettings);
-  // if (loading) return null;
-  // if(error) return `Error ${error}`;
+	const { data, error, loading } = useQuery(headerSettings);
+  if (loading) return null;
+  if(error) return `Error ${error}`;
 
-	// const rooms = data.entries
-	// 	.filter((item) => (item.__typename === 'rooms_default_Entry'))
-	// 	.map((room) => room.title);
+	const rooms = data.entries
+		.filter((item) => (item.__typename === 'rooms_default_Entry'))
+		.map((room) => room.title);
 	// console.log('roomType', roomType)
 
   return (
