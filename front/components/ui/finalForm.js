@@ -11,10 +11,11 @@ import validator from 'validator';
 
 import { saveData } from '../../gql/index';
 
-import styles from './contactForm.module.scss';
 import { useEffect, useState } from 'react';
 import { resetState } from '../../redux/actions';
 import Popup from './popup';
+
+import styles from './finalForm.module.scss';
 
 export default function ContactForm({rooms}) {
 

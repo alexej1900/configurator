@@ -43,7 +43,7 @@ export default function Summary () {
 
   const price = apartSize.price;
   const size = apartSize.size;
-	console.log('apartStyle', apartStyle)
+	// console.log('apartStyle', apartStyle)
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
   const settings = getSettings();

@@ -45,7 +45,7 @@ export default function FinalRoom({room, roomName}) {
       <div className={`${styles.summary__room_data}`}>
         {roomMods.map((data, index)=> {
 
-          const {modGroupTitle, featuredImage, styleTitle, subtitle} = data[1];
+          const {modGroupTitle, featuredImage, styleTitle, subtitle, description} = data[1];
 
           if (!checkObjIsEmpty(data[1])) 
           return (
@@ -64,6 +64,7 @@ export default function FinalRoom({room, roomName}) {
                   <Card 
                     title={styleTitle} 
                     subtitle={subtitle} 
+                    description={description}
                     image={{url: featuredImage, width: '80px', height: '80px', layout: "fixed"}}
                     type="small" 
                     final={true}

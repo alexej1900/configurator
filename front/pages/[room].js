@@ -5,6 +5,8 @@ import Sidebar from '../components/ui/Sidebar/Sidebar';
 import PinsList from '../components/ui/pinsList';
 import ScrollIcon from '../components/ui/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
+import Popup from '../components/ui/popup';
+import ContactForm from '../components/ui/contactForm';
 
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -26,6 +28,7 @@ export default function Room() {
     const [styleId, setStyleId] = useState(0);
     const [largeImage, setLargeImage] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
+    const [isPopup, setIsPopup] = useState(false);
     
     const dispatch = useDispatch();
 
@@ -59,7 +62,7 @@ export default function Room() {
     }
 
     useEffect(async() => {
-        console.log('path', path)
+        // console.log('path', path)
         document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
         document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
@@ -79,8 +82,8 @@ export default function Room() {
 
     const modifyData = data.entry.mods[0].modificationsTypes;
 
-    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => {
-        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, modGroupTitle, largeImage, mainStyle));
+    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle) => {
+        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, modGroupTitle, largeImage, mainStyle));
     }
 
     const openModificationsList = (modificationName) => {
@@ -94,7 +97,19 @@ export default function Room() {
         dispatch(changeActiveMod(modName));
     }
 
+    //popup functions
+
+    const onConfirm = () => {
+        setIsPopup(false);
+    
+    }
+    
+    const onCancel = () => {
+        setIsPopup(false);
+    }
+
     return (
+        <>
         <div className={`${styles.type__wrapper}`} >   
             <ScrollContainer 
                 className={`${sidebarState && styles.image__wrapperActive} ${styles.image__wrapper}`} 
@@ -112,7 +127,7 @@ export default function Room() {
             {(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
             {/* <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
-                // onClick={showRoomClick}
+                onClick={() => setIsPopup(true)}
             >
                 <h4>Kontakt</h4> 
                 <h5>aufnehmen</h5>
@@ -123,7 +138,7 @@ export default function Room() {
                 modifyData={modifyData}
                 setLargeImage={setLargeImage}
                 activeStyle = { 
-                    (index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle)
+                    (index, modName, featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle)
                 }
                 roomType = {ROOM_TYPE}
                 title={data.entry.title} 
@@ -132,5 +147,12 @@ export default function Room() {
 
             <StyleChooseButtons room={ROOM_TYPE ? ROOM_TYPE : path} styleTypeSet={() => console.log()} />
         </div>
+
+        {isPopup && <Popup 
+            children={<ContactForm/>}
+            onConfirm={onConfirm}
+            onCancel={onCancel}
+        />}
+        </>
     );
 }

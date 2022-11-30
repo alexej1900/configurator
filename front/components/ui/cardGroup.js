@@ -194,6 +194,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
                                                         item.modificationImage && item.modificationImage[0].url, 
                                                         item.modificationTitle, 
                                                         item.modificationStyle,
+                                                        item.modificationDescr,
                                                         group.modGroupName
                                                     );
                                                     setChecked(true);

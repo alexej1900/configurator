@@ -1,9 +1,9 @@
 @import '../../assets//scss/abstracts/variables';
 
 .contactForm {
-  width: 100%;
+  width: 50%;
   max-width: 70rem;
-  margin: 3rem auto;
+  margin: 5rem auto;
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -47,13 +47,13 @@
     }
 
     .success__message {
-      // position: absolute;
+      position: absolute;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 92%;
-      // height: 19rem;
-      margin: 2rem;
+      height: 19rem;
+      padding: .5rem;
       left: calc((100% - 93%)/2);
       font-size: 2rem;
       text-align: center;

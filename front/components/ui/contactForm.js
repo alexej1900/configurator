@@ -18,64 +18,64 @@ export default function ContactForm({rooms}) {
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [link, setLink] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // console.log('router', router)
   const state = useSelector(state => state)
 
   useEffect(() => {
     madeUrl()
   }, []);
 
-  const validateData = async(e) => {
+  // const validateData = async(e) => {
 
-    if (!validator.isEmail(email)) {
-      alert("Please, enter valid Email!");
-      return
-    }
+  //   if (!validator.isEmail(email)) {
+  //     alert("Please, enter valid Email!");
+  //     return
+  //   }
 
-    if (!validator.isMobilePhone(phone)) {
-      alert("Please, enter valid Phone!");
-      return
-    }
+  //   if (!validator.isMobilePhone(phone)) {
+  //     alert("Please, enter valid Phone!");
+  //     return
+  //   }
 
-    // saveAsPdfHandler(false); 
+  //   // saveAsPdfHandler(false); 
 
-    save_users_default_Entry({ variables: { 
-      resultName: name + ' ' + surname,
-      userEmail: email, 
-      userPhone: phone, 
-      userData: link,
-      authorId: 3,
-    } });
+  //   save_users_default_Entry({ variables: { 
+  //     resultName: name + ' ' + surname,
+  //     userEmail: email, 
+  //     userPhone: phone, 
+  //     userData: link,
+  //     authorId: 3,
+  //   } });
 
-    if(!loading && phone && email){
-      setShowSuccess(true);
+  //   if(!loading && phone && email){
+  //     setShowSuccess(true);
 
-      setTimeout(() => { 
-        setShowSuccess(false);
-        setName('');
-        setSurname('');
-        setEmail('');
-        setPhone('');
-       }, 2500)
-    }
-  }
+  //     setTimeout(() => { 
+  //       setShowSuccess(false);
+  //       setName('');
+  //       setSurname('');
+  //       setEmail('');
+  //       setPhone('');
+  //      }, 2500)
+  //   }
+  // }
 
-  const submitHandler = () => {
-    const longURL = window.location.href + '#' + JSON.stringify(state);
+  // const submitHandler = () => {
+  //   const longURL = window.location.href + '#' + JSON.stringify(state);
     
-    const type = "text/plain";
-    TinyURL.shorten(longURL, function(shortURL, err) {
-        if (err)
-          console.log(err)
-        const blob = new Blob([shortURL], { type });
-        const data = [new ClipboardItem({ [type]: blob })];
-        navigator.clipboard.write(data);
+  //   const type = "text/plain";
+  //   TinyURL.shorten(longURL, function(shortURL, err) {
+  //       if (err)
+  //         console.log(err)
+  //       const blob = new Blob([shortURL], { type });
+  //       const data = [new ClipboardItem({ [type]: blob })];
+  //       navigator.clipboard.write(data);
 
-        alert(`Link ist:  ${shortURL}`);
-      });
-  }
+  //       alert(`Link ist:  ${shortURL}`);
+  //     });
+  // }
 
   const madeUrl = async() => {
     const longURL = window.location.href + '#' + JSON.stringify(state);
@@ -96,7 +96,7 @@ export default function ContactForm({rooms}) {
             
             <form className={styles.form}> 
               <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-                <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+                <span>Ihre Kontakte werden an das Unternehmen gesendet</span>
               </div>
               
               <input 

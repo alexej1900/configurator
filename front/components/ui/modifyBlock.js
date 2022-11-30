@@ -189,6 +189,7 @@ export default function ModifyBlock({
                         item.modificationImage && item.modificationImage[0].url, 
                         item.modificationTitle, 
                         item.modificationStyle,
+                        item.modificationDescr,
                       );
                         setChecked(true);
                         setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0)
