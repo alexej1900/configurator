@@ -71,9 +71,9 @@ export default function Home() {
 
             <FormToggle 
               tab1={welcomeScreen.bigRoomTitle} 
-              tab1Action={() => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage.url))}
+              tab1Action={() => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage))}
               tab2={welcomeScreen.smallRoomTitle}
-              tab2Action={() => dispatch(changeApartSize('small', welcomeScreen.smallApartmentPrice, apartmentImage.url))}
+              tab2Action={() => dispatch(changeApartSize('small', welcomeScreen.smallApartmentPrice, apartmentImage))}
             />
 
             <div 

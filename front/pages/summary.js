@@ -46,7 +46,6 @@ export default function Summary () {
   const price = apartSize.price;
   const size = apartSize.size;
 
-	
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
   const settings = getSettings();
@@ -69,7 +68,7 @@ export default function Summary () {
 	const rooms = data.entries
 		.filter((item) => (item.__typename === 'rooms_default_Entry'))
 		.map((room) => room.title);
-	// console.log('roomType', roomType)
+	console.log('apartSize', apartSize)
 
   return (
 		<>
@@ -88,7 +87,8 @@ export default function Summary () {
 
 						<div  className={`${styles.summary__overview_content}`}>
 							<div className={`${styles.summary__overview_image}`} id="apartmentImage">
-								<Image src={apartSize.image} width="381" height="400" />
+								{/* <Image src={apartSize.image} width="381" height="400" /> */}
+								<Image src={apartSize.image.url} width={apartSize.image.width} height={apartSize.image.height} />
 							</div>
 							<div className={`${styles.stats}`} id="stats">
 								<div className={`${styles.summary__overview_line} row`}>
