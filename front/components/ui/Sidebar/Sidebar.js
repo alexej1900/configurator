@@ -109,7 +109,8 @@ export default function Sidebar({
                                         ? `option ${modifications[modName].option.index} ` 
                                         : ''
                                 }` 
-                        : activeMod+`${modName} ${item.modificationItemExample.length > styleId ? styleId : '0'} `
+                        // : activeMod+`${modName} ${item.modificationItemExample.length > styleId ? styleId : '0'} ` if user able mix styles, decomment 
+                        : activeMod+`${modName} ${'0'} `
                 
                     prevModGroupTitle = modName;
                 }  

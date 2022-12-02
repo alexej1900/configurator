@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import Image from 'next/image';
 
 import Sidebar from '../components/ui/Sidebar/Sidebar';
 import PinsList from '../components/ui/pinsList';
@@ -83,6 +84,7 @@ export default function Room() {
     const modifyData = data.entry.mods[0].modificationsTypes;
 
     const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle) => {
+        // console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle})
         dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, modGroupTitle, largeImage, mainStyle));
     }
 
@@ -101,7 +103,6 @@ export default function Room() {
 
     const onConfirm = () => {
         setIsPopup(false);
-    
     }
     
     const onCancel = () => {
@@ -117,7 +118,9 @@ export default function Room() {
                 onEndScroll={() => setIsScroll(false)}
                 id={'image__wrapper'}
             >
-                
+                {/* <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
+                    <Image src={largeImage ? largeImage : activeImage.url} width={activeImage.width} height={activeImage.height}/>
+                </div> */}
                 <img className={styles.full} src={largeImage ? largeImage : activeImage} id='fullImage'/>
 
                 <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>
@@ -126,12 +129,12 @@ export default function Room() {
 
             {(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
-            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
+            {/* <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
                 onClick={() => setIsPopup(true)}
             >
                 <h4>Kontakt</h4> 
                 <h5>aufnehmen</h5>
-            </div>
+            </div> */}
             <Sidebar 
                 styleId={styleId} 
                 apartmentPrice = {apartSize.price} 

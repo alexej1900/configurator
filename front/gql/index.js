@@ -21,10 +21,14 @@ query MyQuery {
           id
           brandLogo {
             url
+            height
+            width
           }
           headerBackgroundColor
           headerBackgroundPicture {
             url
+            height
+            width
           }
           welcomePageBg
           additionalBrandColor
@@ -123,6 +127,8 @@ export const RoomData = (slug) => {
                 styleName
                 styleDefaultImage {
                   url
+                  height
+                  width
                 }
               }
             }
@@ -232,6 +238,8 @@ query MyQuery {
   assets {
     ... on uploads_Asset {
       url
+      height
+      width
       title
     }
   }
