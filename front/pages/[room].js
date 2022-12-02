@@ -126,12 +126,12 @@ export default function Room() {
 
             {(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
-            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
+            {/* <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
                 onClick={() => setIsPopup(true)}
             >
                 <h4>Kontakt</h4> 
                 <h5>aufnehmen</h5>
-            </div>
+            </div> */}
             <Sidebar 
                 styleId={styleId} 
                 apartmentPrice = {apartSize.price} 
