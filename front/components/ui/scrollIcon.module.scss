@@ -5,7 +5,7 @@
   bottom: 10rem;
   left: calc((100% - 520px)/2);
 
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     left: calc((100% - 120px)/2);
   }
 }

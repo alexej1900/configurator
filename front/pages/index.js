@@ -81,7 +81,7 @@ export default function Home() {
 
               // If user didn't choosed size of apartment will be setted initial large size
               onClick={apartSize.image === '' 
-                ? () => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage.url)) 
+                ? () => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage)) 
                 : null}
             >              
               <Button title="Wahl bestätigen"  href={!link ? "/type" : `${link}`} classes="btn btn--primary btn--check"/>

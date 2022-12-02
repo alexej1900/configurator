@@ -17,7 +17,6 @@ import Fade from 'react-reveal/Fade';
 import style from './header.module.scss';
 
 export default function Header () {
-  const [isSummaryOpen, setIsSummaryOpen] = useState(false);
   const [isStylePageExist, setIStylePageExist] = useState(false);
 
   const [listSize, setListSize] = useState(0);
@@ -33,13 +32,8 @@ export default function Header () {
   const { asPath, query } = useRouter();
 
   const generalStates = useSelector((state) => state.generalStates);
-  const apartmentStates = useSelector((state) => state.apartmentStates);
 
-  const { menu, open, logo, headerImage, headerBg, summaryIsOpen }  = generalStates;
-
-  useEffect(() => {
-    setIsSummaryOpen(summaryIsOpen);
-  }, [summaryIsOpen]);
+  const { menu, open, logo, headerImage, headerBg }  = generalStates;
 
   useEffect(() => {
     checkStylePage.then((isExist) => {
@@ -49,7 +43,7 @@ export default function Header () {
 
   useEffect(() => {
     updateSize();
-  })
+  });
 
   useLayoutEffect(() => {
     window.addEventListener('resize', updateSize);
@@ -72,11 +66,9 @@ export default function Header () {
   if (loading) return null;
   if(error) return `Error ${error}`;
 
-  const background = headerImage ? `no-repeat url("${headerImage}")` : `${headerBg}`;
-
   const rooms = data.entries;
-  
-  // const roomsList = ['wohnraum', 'badezimmer' ,'halle', 'badezimmer222', 'wohnraum2222']
+
+  const background = headerImage ? `no-repeat url("${headerImage}")` : `${headerBg}`;
 
   const moveRightClickHandler = () => {
     (shift < 10 && shift < rooms.length) && setShift(++shift);
@@ -90,7 +82,6 @@ export default function Header () {
 
   const openStyle = menu ? {background: background, backgroundSize: "100%"} : {background: 'transparent'};
 
-  // console.log('listSize > wrapperSize && shift', {listSize, wrapperSize, shift})
   return (
     <header 
       className={[style.header, open & asPath !== '/' && style.compressed].join(' ')} 
@@ -127,15 +118,11 @@ export default function Header () {
 
           {asPath !== '/' &&
             <Link href='https://www.nightnurse.ch/share/22G09%20Calydo/221102/'>
-              <a className={`${style.virtual}`} title="To the virtual tour" target="_blank"><img src='./virtual.svg' alt="virtual" /></a>
+              <a className={`${style.virtual}`} title="To the virtual tour" target="_blank">
+                <img src='./virtual.svg' alt="virtual" />
+              </a>
             </Link> 
           }     
-
-          {/* {isSummaryOpen && 
-            <Link href='/summary'>
-              <a className={style.summary} title="To the summary page"><img src='./summaryList.svg' alt="summary" /></a>
-            </Link> 
-          }  */}
         </div>
       </div>
 
@@ -149,7 +136,9 @@ export default function Header () {
               <ul className={style.header__menu__list} ref={listRef} id='menuList'>
           
                 {shift > 0 && 
-                  <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> <img src="/arrowRight.svg"/> </div>
+                  <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> 
+                    <img src="/arrowRight.svg"/> 
+                  </div>
                 }
 
                 <div className={style.header__menu__internalList}>
@@ -164,15 +153,6 @@ export default function Header () {
                         <a className={`${asPath === '/type' ? style.active : ''} ${style.typeItem}`} onClick={() => closeMenuHandler()}>Interieurstil</a>
                       </Link>
                     }
-                    {/* {roomsList.map((room) => {
-
-                      const currentRoom = `/${room.toLowerCase()}`;
-                      return (
-                        <Link href={currentRoom} key={room}>
-                          <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
-                        </Link>
-                      )
-                    })} */}
 
                     {rooms && rooms.map((room) => {
                   
@@ -186,11 +166,6 @@ export default function Header () {
                     })}
                     </div>
                   </div>
-
-                  {/* {isSummaryOpen && 
-                    <Link href='/summary'>
-                    <a className={asPath === '/summary' ? style.active : ''} onClick={() => closeMenuHandler()}>Summary</a>
-                  </Link>} */}
                 </ul>
               </div>
 
