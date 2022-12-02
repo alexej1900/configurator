@@ -115,11 +115,11 @@ export default function ModifyBlock({
       modificationNumber: modifications[`${modificationName}`].index,
       activeOption: modifications[`${modificationName}`].option ? modifications[`${modificationName}`].option.index : undefined,
     } 
-    : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0,} // if style lines are not separated, replace to commented code below
+    : roomType !== "schlafzimmer" ? {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0,} // if style lines are not separated, replace to commented code below (3 lines)
     
-    // cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
-    //   ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
-    //   : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
+                                  : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
+                                    ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
+                                    : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
 
   useEffect(() => {
     if (modifications && modifications[`${modificationName}`]) {
