@@ -10,33 +10,20 @@ export default function Pin ({top, left, clickHandle, type, classes, checked, in
   const { generalStates } = useSelector((state) => state);
   const sidebarState = generalStates.open;
 
-  console.log(sidebarState);
+  const leftShift = sidebarState ? +left + 10 : left;
 
-  // let leftStyle;
+  // const leftX = window.innerWidth > 1500 
+  //   ? {left: `calc((100% + 36rem) * ${leftShift/100})`} 
+  //   : window.innerWidth > 768
+  //     ? {left: `calc((100% + 36rem) * ${leftShift/100} - (1500px - 100vw) / ${left/5}`}
+  //     : {left: `calc((1500px * ${(left)/100 + .05})`};
 
-  // if (!sidebarState) leftStyle = {left: `calc(${left}% )`};
-  // else leftStyle = {left: `calc(${left}% + 15%`};
-
-  const leftShift = sidebarState ? +left + 15 : left;
-
-  const topPos = `top${top}`
-  const leftPos = `left${leftShift}`
-
-  // const pos = left <= 100 
-
-  // ? {
-  //   top: `${top}%`,
-  //   // left: `${50 - left}%`,
-  //   left: `${left}%`,
-  //   position: 'absolute',
-  //   cursor: 'pointer'
-  // }
-  // : {
-  //   top: `${top}%`,
-  //   right: `${100 - left}%`,
-  //   position: 'absolute',
-  //   cursor: 'pointer'
-  // }
+  const leftX = window.innerWidth > 1500 // 1500 = width of big image in px
+    ? {left: `calc((100% + 36rem) * ${leftShift/100})`,
+        top: `${top}%`} 
+    : {left: `calc((1500px * ${(left)/100 + .05})`,
+        top: `${top}%`}
+        
 
   const disabledImage = () => {
     return checked 
@@ -55,13 +42,10 @@ export default function Pin ({top, left, clickHandle, type, classes, checked, in
     
   return (
     <div 
-    // style={leftStyle}
     className={`
       ${styles.pin} 
-      ${styles[topPos]}
-      ${styles[leftPos]}
       ${classes}`} 
-      // style={pos} 
+      style={leftX} 
       onClick={()=>clickHandle()}>
       {disabledImage()}
     </div>

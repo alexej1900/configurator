@@ -6,7 +6,7 @@ import styles from './pin.module.scss';
 
 export default function PinsList ({ data, roomState, pinClickHandler }) {
   const { generalStates } = useSelector((state) => state);
-  // console.log('generalStates', generalStates)
+  
   return (
     <div className={styles.pins} id='pinList'>
       {data.map((item, index) => {
