@@ -1,6 +1,6 @@
 import styles from './popup.module.scss';
 
-export default function Popup ({ children, onConfirm, onCancel}) {
+export default function Popup ({ children, onConfirm, onCancel, buttonIsVisible}) {
   return (
     <div className={styles.popup} id='popup'>
 
@@ -8,10 +8,12 @@ export default function Popup ({ children, onConfirm, onCancel}) {
         <div className={styles.popup__form_description}>
           {children}
         </div>
-        <div className={`${styles.popup__form_buttons}`}>
+
+        {buttonIsVisible && <div className={`${styles.popup__form_buttons}`}>
           <div className={`${styles.popup__form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechnen</div>
           <div className={`${styles.popup__form_button} ${styles.button__confirm}`} onClick={onConfirm}>Bestätigen</div>
-        </div>
+        </div>}
+        
       </div>
      
     </div>  

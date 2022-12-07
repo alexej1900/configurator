@@ -23,7 +23,7 @@ import OptionItem from './optionItem';
 
 import styles from './finalRoom.module.scss';
 
-export default function FinalRoom({roomName, style}) {
+export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   
   const { roomType } = useSelector(state => state);
@@ -38,10 +38,10 @@ export default function FinalRoom({roomName, style}) {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
 
-  const room = roomType[`${roomName}`] 
-  ? roomType[`${roomName}`] 
-  : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
-    return item.styleName.toLowerCase() === style.toLowerCase()
+  const room = roomType[`${roomName.toLowerCase()}`] 
+    ? roomType[`${roomName.toLowerCase()}`] 
+    : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
+      return item.styleName.toLowerCase() === style.toLowerCase()
   })[0].styleDefaultImage[0].url};
 
   const roomMods = room?.modifications && Object.entries(room.modifications);
@@ -68,7 +68,8 @@ export default function FinalRoom({roomName, style}) {
       return [item.modificationName, card]
     }
   })
-
+console.log('roomType', roomType)
+console.log('roomName', roomName)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>

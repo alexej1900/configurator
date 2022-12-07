@@ -3,11 +3,7 @@
 .contactForm {
   width: 100%;
   max-width: 70rem;
-  // margin: 3rem auto;
-
-  @media (max-width: 1000px) {
-    width: 100%;
-  }
+  margin: 0 auto;
 
   &_header {
     display: flex;
@@ -211,4 +207,36 @@
   outline: none;
   color: #D31414;
   border: 1px solid #D31414;
+}
+
+.form_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+}
+
+.form_button {
+  width: 26rem;
+  margin: 2rem;
+  padding: 1.4rem;
+  background: var(--color__primary);
+  color: $color__bright;
+  font-weight: 600; 
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  &.button__confirm {
+    background: var(--color__cta);
+  }
 }

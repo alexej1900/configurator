@@ -264,6 +264,7 @@ export default function ContactForm({rooms}) {
         children='Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt' 
         onConfirm={onConfirm}
         onCancel={onCancel}
+        buttonIsVisible={true}
         />}
     </>
   )

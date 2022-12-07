@@ -121,7 +121,7 @@ export default function Sidebar({
         const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
 
-        if (room.toLowerCase() === 'kueche') { // set final style image for Wohnzimmer depends on kueche style
+        if (room.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
             const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0].url;
             // console.log('styleImage', styleImage)
             dispatch(setStyleImage(styleImage))

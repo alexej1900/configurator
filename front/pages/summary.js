@@ -68,7 +68,7 @@ export default function Summary () {
 	const rooms = data.entries
 		.filter((item) => (item.__typename === 'rooms_default_Entry'))
 		.map((room) => room.title);
-	console.log('apartSize', apartSize)
+	console.log('apartStyle', apartStyle)
 
   return (
 		<>
