@@ -34,13 +34,19 @@ export default function Room() {
     const dispatch = useDispatch();
 
     const state = useSelector((state) => state);
-    const { apartSize, apartStyle, generalStates } = state;
+    const { apartSize, apartStyle, generalStates, roomType } = state;
     const sidebarState = generalStates.open;
 
     const roomState = state.roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModificarion
-// console.log('apartStyle', apartStyle)
+
+// console.log('generalStates', generalStates.pin)
+// console.log('roomType', roomType)
+// console.log('ROOM_TYPE', ROOM_TYPE)
+
     useEffect(() => {
-        setLargeImage(false);
+        roomType[`${ROOM_TYPE?.toLowerCase()}`] 
+            ? setLargeImage(roomType[`${ROOM_TYPE.toLowerCase()}`].image) 
+            : setLargeImage(false);
     }, [router.asPath]);
 
     useEffect(() => {
@@ -86,6 +92,7 @@ export default function Room() {
     const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle) => {
         // console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle})
         dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, modGroupTitle, largeImage, mainStyle));
+        dispatch(changeActivePin(modName));
     }
 
     const openModificationsList = (modificationName) => {

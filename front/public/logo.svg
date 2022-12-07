@@ -8,10 +8,10 @@
       <mask id="mask-2" fill="white">
         <use xlink:href="#path-1"></use>
       </mask>
-      <use id="Combined-Shape" fill="#622B4F" xlink:href="#path-1"></use>
+      <use id="Combined-Shape" fill="#fff" xlink:href="#path-1"></use>
       <g id="Group" mask="url(#mask-2)">
         <g transform="translate(0.000000, -0.322987)" id="Colors/Primary/1/Full">
-          <rect id="Swatch" fill="#381C2E" x="0" y="0" width="145" height="40"></rect>
+          <rect id="Swatch" fill="#fff" x="0" y="0" width="145" height="40"></rect>
         </g>
       </g>
     </g>

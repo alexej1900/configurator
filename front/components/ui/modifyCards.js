@@ -15,6 +15,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   const dispatch = useDispatch();
 
   const pinState = useSelector((state) => state.generalStates).pin;
+
   const style = useSelector(state => state.apartStyle).title;
 
   const dataByStyle = cardData?.filter((data) => {
@@ -32,7 +33,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   const changeInfoVisibility = () => {
     setIsInfoVisible(!isInfoVisible);
   }
-
+  // console.log('activeMod', activeMod)
   return (
     <>
       <div className={styles.list__visible}>

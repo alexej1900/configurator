@@ -68,8 +68,8 @@ export default function FinalRoom({ roomName, style }) {
       return [item.modificationName, card]
     }
   })
-console.log('roomType', roomType)
-console.log('roomName', roomName)
+// console.log('roomType', roomType)
+// console.log('roomName', roomName)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>
@@ -93,7 +93,7 @@ console.log('roomName', roomName)
                 <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
                 <div className={`${styles.summary__room_card_wrapper}`}>
                   <div className={`${styles.summary__room_edit_icon}`} >
-                    <Link href={`/${roomName}`} >
+                    <Link href={`/${roomName.toLowerCase()}`} >
                       <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
                         <img src={'/edit-simple.svg'}  />
                       </a>		

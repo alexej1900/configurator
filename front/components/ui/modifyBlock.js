@@ -27,6 +27,9 @@ export default function ModifyBlock({
   const [checked, setChecked] = useState(false);
   const [isInLine, setIsInLine] = useState(!activeMod);
   const [onlyIndividual, setOnlyIndividual] = useState(false);
+  const [activeModification, setActiveModification] = useState(
+    {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0}
+    );
 
   const individualPrices = useSelector(state => state.apartPrice.individual);
   const style = useSelector(state => state.apartStyle);
@@ -38,6 +41,7 @@ export default function ModifyBlock({
       setCollapsed(collapsed ? !collapsed : collapsed); 
       setIsInLine(isInLine ? !isInLine : isInLine); 
       setActiveMod();
+
     } else {
       setCollapsed(true);
     }
@@ -60,6 +64,7 @@ export default function ModifyBlock({
   let modificationImage;
   let modificationTitle;
   let modificationStyle;
+  let activeIndex = 0;
 
   const modifications = getModifications(roomType);
 
@@ -107,7 +112,15 @@ export default function ModifyBlock({
     dispatch(changeApartPrice(cardItem.modificationName, price));
   }
 
-  const activeModification = (modifications && modifications[`${modificationName}`]) 
+  useEffect(() => {
+    if (modifications && modifications[`${modificationName}`]) {
+      setChecked(true);
+      setIsInLine(false);
+    } 
+  }, []);
+
+  useEffect(() => {
+    const activeMod = (modifications && modifications[`${modificationName}`]) 
     ? {
       modificationImage: [{url: modifications[`${modificationName}`].featuredImage, width: '80px', height: '50px'}],
       modificationStyle: modifications[`${modificationName}`].subtitle,
@@ -120,15 +133,13 @@ export default function ModifyBlock({
                                   : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
                                     ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
                                     : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
-
-  useEffect(() => {
-    if (modifications && modifications[`${modificationName}`]) {
-      setChecked(true);
-      setIsInLine(false);
-    } 
-  }, []);
     
-  const activeIndex = activeModification.modificationNumber;
+
+    setActiveModification(activeMod)
+
+  }, [modifications]);
+
+  activeIndex = activeModification.modificationNumber;
 
   return (
     <>
