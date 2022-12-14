@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useRouter } from 'next/router';
 
-import { useMutation} from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
 import TinyURL from 'tinyurl';
 import jsPDF from 'jspdf';

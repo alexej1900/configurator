@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 
 import TinyURL from 'tinyurl';
 
 import styles from './contactForm.module.scss';
 import { useEffect, useState } from 'react';
+
 
 export default function ContactForm({rooms, onConfirm, onCancel}) {
 
@@ -23,7 +23,6 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
     madeUrl()
   }, []);
 
-
   const madeUrl = async() => {
     const longURL = window.location.href + '#' + JSON.stringify(state);
     
@@ -33,18 +32,6 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
           setLink(shortURL);
       });
   }
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    // console.log('result');
-    // console.log('form.current', form.current);
-    emailjs.sendForm('service_aos1en7', 'contact_form', form.current, '8qkbLqZrCzlRn69yP')
-      .then((result) => {       
-          console.log('Your mail is sent!');
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
 
   const serialize = (form) => {
     // Setup our serialized data
@@ -68,36 +55,63 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
     return serialized.join('&');
   };
 
-  // Ajax call to submit the form and show the success page
-  const submitContactForm = (ev) => {
+  const submitContactForm = async(ev) => {
     ev.preventDefault();
-    submitButton.disabled = true;
+    // submitButton.disabled = true;
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        formWrapper.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-      } else if (xhr.status === 404) {
-        alert('Error: your message was not sent');
-      }
-    };
-    xhr.send(serialize(ev.target));
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', 'https://lora-quartier.ch/', true);
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    // xhr.onload = () => {
+    //   if (xhr.status === 200) {
+    //     // formWrapper.classList.add('hidden');
+    //     // formSuccess.classList.remove('hidden');
+    //     alert('Success');
+    //   } else if (xhr.status === 404) {
+    //     alert('Error: your message was not sent');
+    //   }
+    // };
+    // xhr.send(serialize(ev.target));
+
+    // const csrfToken = getCsrfToken('CRAFT_CSRF_TOKEN')
+
+    // await fetch('https://staging.immokonfigurator.ch/token', {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Accept': 'application/json',
+    //     'access-control-expose-headers': 'access-control-allow-headers',
+    //   },
+    //   mode: 'no-cors',
+    //   }).then((result) => console.log('result',...result.headers));
+
+    await fetch('https://staging.immokonfigurator.ch/mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Access-Control-Allow-Origin': '*',
+        'Accept': 'application/json',
+      },
+      mode: 'no-cors',
+      // 'CRAFT_CSRF_TOKEN': csrfToken,
+      body: serialize(ev.target)
+      })
+      // .then((res) => res.json())
+      .then((result) => console.log(result));
+
+      // // .then(json)
+      // .then(function (data) {
+      // console.log('Request succeeded with JSON response', data);
+      // })
+      // .catch(function (error) {
+      // console.log('Request failed', error);
+      // });
+
   };
 
   // contact.addEventListener('submit', submitContactForm);
-
-
-
-
-
-
-
-
-
 
 
   return (
@@ -107,23 +121,38 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
           
           <div className={styles.formular}>
             
-            <form className={styles.form} ref={form}> 
-            <input 
+            <form method="post" className={styles.form} ref={form} onSubmit={(e) => {
+                  onConfirm();
+                  submitContactForm(e)
+                }}> 
+              <input 
                 type="hidden" 
                 name="user_link"
                 value={link}
-              />              
+              />  
+              <input 
+                type="hidden" 
+                name="fromEmail"
+                id="fromEmail"
+                value={'info@immokonfigurator.com'}
+              />      
+              <input 
+                type="hidden" 
+                name="fromName"
+                value={`${name} ${surname}`} 
+              />
               <input 
                 type="text" 
                 placeholder="Name" 
                 name="user_name"
+                id='messege'
                 value={name} 
                 onChange={(e) => setName(e.target.value)} 
               />
               <input 
                 type="text" 
                 placeholder="Vorname" 
-                name="user_surName"
+                name="fromSurname"
                 value={surname} 
                 onChange={(e) => setSurname(e.target.value)} 
               />
@@ -131,7 +160,7 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
                 type="email" 
                 placeholder="Emailadresse" 
                 pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+.)+[A-z]{2,4}$" 
-                name="user_email"
+                name="message[Mail]"
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 className={styles.clienEmail}
@@ -140,7 +169,7 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
                 type="tel" 
                 placeholder="Telefonnummer" 
                 pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-                name="user_tel"
+                name="message[Phone]"
                 value={phone} 
                 onChange={(e) => setPhone(e.target.value)} 
                 className={styles.clienPhone}
@@ -148,10 +177,7 @@ export default function ContactForm({rooms, onConfirm, onCancel}) {
 
               <div className={`${styles.form_buttons}`}>
                 <div className={`${styles.form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechnen</div>
-                <div className={`${styles.form_button} ${styles.button__confirm}`} onClick={(e) => {
-                  onConfirm();
-                  sendEmail(e)
-                  }}>Bestätigen</div>
+                <button type="submit" className={`${styles.form_button} ${styles.button__confirm}`} >Bestätigen</button>
               </div>
             </form>
           </div>
