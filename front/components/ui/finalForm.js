@@ -1,97 +1,133 @@
+import { useEffect, useState } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { resetState } from '../../redux/actions';
 
 import { useRouter } from 'next/router';
 
 import { useMutation } from '@apollo/client';
 
-import TinyURL from 'tinyurl';
+import madeShortUrl from '../../utils/madeShortUrl';
+import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import validator from 'validator';
 
 import { saveData } from '../../gql/index';
 
-import { useEffect, useState } from 'react';
-import { resetState } from '../../redux/actions';
 import Popup from './popup';
+import LoadingSpinner from './loadingSpinner';
 
 import styles from './finalForm.module.scss';
 
-export default function ContactForm({rooms}) {
+export default function ContactForm() {
 
   const [isContactReady, setIsContactReady] = useState(false);
   const [isPopup, setIsPopup] = useState(false);
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+
+  const [formValue, setFormValue] = useState(
+    { name: '',
+      surname: '',
+      email: '',
+      phone: ''
+    });
+  const [errors, setErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
+
   const [link, setLink] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   
   const router = useRouter();
   const dispatch = useDispatch();
 
-  // console.log('router', router)
-  const state = useSelector(state => state)
-
   const checkHandler = () => {
     setIsContactReady(!isContactReady)
   }
 
-  useEffect(() => {
-    madeUrl()
+  useEffect(async () => {
+    const shortURl = await madeShortUrl(window.location.href);
+    setLink(shortURl);
   }, []);
+
+  useEffect(() => {
+    validate(false);
+  },[formValue]);
 
   const [save_users_default_Entry, {data, loading, error}] = useMutation(saveData);
 
-  const validateData = async(e) => {
-
-    if (!validator.isEmail(email)) {
-      alert("Please, enter valid Email!");
-      return
+  const validate = (onSubmit) => {
+    const errors = {};
+    if (!/^[A-Za-z]{1,32}$/i.test(formValue.name)) {
+      errors.name = 'Please use only letters';
     }
 
-    if (!validator.isMobilePhone(phone)) {
-      alert("Please, enter valid Phone!");
-      return
+    if (!/^[A-Za-z]{1,32}$/i.test(formValue.surname)) {
+      errors.surname = 'Please use only letters';
     }
 
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formValue.email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i.test(formValue.phone)) {
+      errors.phone = 'Invalid phone format';
+    }
+
+    const formValueKeys = Object.keys(formValue);
+
+    formValueKeys.forEach(key => {
+      if (!formValue[key]) {
+        errors[key] = onSubmit ? 'Required' : '';
+      } 
+    })
+
+    setErrors(errors);
+    checkObjIsEmpty(errors) ? setIsFormValid(true) : setIsFormValid(false);
+  }
+
+  const changeFormData = (data) => {
+    setFormValue({...formValue, ...data});
+  }
+
+  const emailSendingHandler = (e) => {
+    validate(true);
+    e.preventDefault();
+
+    if (!isFormValid) return;
     // saveAsPdfHandler(false); 
 
     save_users_default_Entry({ variables: { 
-      resultName: name + ' ' + surname,
-      userEmail: email, 
-      userPhone: phone, 
+      resultName: formValue.name + ' ' + formValue.surname,
+      userEmail: formValue.email, 
+      userPhone: formValue.phone, 
       userData: link,
       authorId: 3,
     } });
 
-    if(!loading && phone && email){
+    if(!loading){
       setShowSuccess(true);
 
       setTimeout(() => { 
         setShowSuccess(false);
-        setName('');
-        setSurname('');
-        setEmail('');
-        setPhone('');
+
+        setFormValue({ 
+          name: '',
+          surname: '',
+          email: '',
+          phone: ''
+        })
        }, 2500)
     }
   }
 
-  const submitHandler = () => {
-    const longURL = window.location.href + '#' + JSON.stringify(state);
-    
+  const submitHandler = async () => {
     const type = "text/plain";
-    TinyURL.shorten(longURL, function(shortURL, err) {
-        if (err)
-          console.log(err)
-        const blob = new Blob([shortURL], { type });
-        const data = [new ClipboardItem({ [type]: blob })];
-        navigator.clipboard.write(data);
+    const shortURl = await madeShortUrl(window.location.href);
+    const blob = new Blob([shortURl], { type });
+    const data = [new ClipboardItem({ [type]: blob })];
+    navigator.clipboard.write(data);
 
-        alert(`Link ist:  ${shortURL}`);
-      });
+    alert(`Link ist:  ${shortURl}`);
   }
 
   const onConfirm = () => {
@@ -105,16 +141,6 @@ export default function ContactForm({rooms}) {
 
   const onCancel = () => {
     setIsPopup(false);
-  }
-
-  const madeUrl = async() => {
-    const longURL = window.location.href + '#' + JSON.stringify(state);
-    
-    TinyURL.shorten(longURL, function(shortURL, err) {
-        if (err)
-          console.log(err)
-          setLink(shortURL);
-      });
   }
 
   const saveAsPdfHandler = async(isSave) => {
@@ -174,57 +200,62 @@ export default function ContactForm({rooms}) {
           <div className={styles.formular}>
             <p >Sie können sich Ihre Konfiguration ganz einfach per PDF auf Ihre Emailadresse senden.</p> 
             <p >Sollten Sie eine neue Konfiguration starten wollen, löschen Sie bitte Ihre Browserdaten.</p>
-            <form className={styles.form}> 
-              <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-                <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
-              </div>
-              
-              <input 
-                type="text" 
-                placeholder="Name" 
-                value={name} 
-                onChange={(e) => setName(e.target.value)} 
-              />
-              <input 
-                type="text" 
-                placeholder="Vorname" 
-                value={surname} 
-                onChange={(e) => setSurname(e.target.value)} 
-              />
-              <input 
-                type="email" 
-                placeholder="Emailadresse" 
-                pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+.)+[A-z]{2,4}$" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                className={styles.clienEmail}
+            
+            {loading ? <LoadingSpinner/> :
+              <form className={styles.form}> 
+                
+                <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
+                  <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+                </div>
+                
+                <input 
+                  type="text" 
+                  placeholder="Name" 
+                  value={formValue.name} 
+                  onChange={(e) => changeFormData({name: e.target.value})} 
+                  className={errors.name && styles.contactForm__error} 
                 />
-              <input 
-                type="tel" 
-                placeholder="Telefonnummer" 
-                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-                value={phone} 
-                onChange={(e) => setPhone(e.target.value)} 
-                className={styles.clienPhone}
-              />
+                {errors.name ? <div className={styles.errors}>{errors.name}</div> : null}
+                <input 
+                  type="text" 
+                  placeholder="Vorname" 
+                  value={formValue.surname} 
+                  onChange={(e) => changeFormData({surname: e.target.value})} 
+                  className={errors.surname && styles.contactForm__error}
+                />
+                {errors.surname ? <div className={styles.errors}>{errors.surname}</div> : null}
+                <input 
+                  type="email" 
+                  placeholder="Emailadresse" 
+                  value={formValue.email} 
+                  onChange={(e) => changeFormData({email: e.target.value})} 
+                  className={errors.email && styles.contactForm__error}
+                />
+                {errors.email ? <div className={styles.errors}>{errors.email}</div> : null}
+                <input 
+                  type="tel" 
+                  placeholder="Telefonnummer" 
+                  value={formValue.phone} 
+                  onChange={(e) => changeFormData({phone: e.target.value})} 
+                  className={errors.phone && styles.contactForm__error}
+                />
+                {errors.phone ? <div className={styles.errors}>{errors.phone}</div> : null}
 
-              <div className={`${styles.toggle} toggle`}>
-                <span>Bitte um Kontaktaufnahme </span>
-                <input type="checkbox" id="test" className={styles.checkbox} onClick={checkHandler}/>
-                <label htmlFor="test"> Ja / Nein</label>
-              </div>
-
+                {/* <div className={`${styles.toggle} toggle`}>
+                  <span>Bitte um Kontaktaufnahme </span>
+                  <input type="checkbox" id="test" className={styles.checkbox} onClick={checkHandler}/>
+                  <label htmlFor="test"> Ja / Nein</label>
+                </div> */}
+              </form>
+            }
               <button 
                 className={`${styles.submitBtn}`} 
-                onClick={(e) => {
-                  e.preventDefault();
-                  validateData(e)
-                }} 
+                onClick={ (e) =>  emailSendingHandler(e)} 
                 disabled={showSuccess}
                 title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
                 
               >
-                {loading ? 'Senden...' : 'Per Email zusenden '}
+                {loading ? 'Senden...' : 'Kontakte per Email zusenden '}
               </button>
               <button 
                 className={`${styles.saveBtn}`} 
@@ -234,7 +265,7 @@ export default function ContactForm({rooms}) {
                 }} 
                 title='Sie können alle Einstellungen in einer PDF-Datei speichern'
               >
-                  als PDF speichern
+                 Konfiguration als PDF speichern
                 </button>
               <button 
                 className={`${styles.saveBtn}`} 
@@ -246,7 +277,7 @@ export default function ContactForm({rooms}) {
               >
                 Link weiterleiten
               </button>
-            </form>
+            
           </div>
           
             <button 
