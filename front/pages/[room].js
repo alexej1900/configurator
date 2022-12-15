@@ -30,6 +30,7 @@ export default function Room() {
     const [largeImage, setLargeImage] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
     const [isPopup, setIsPopup] = useState(false);
+    const [isPinsVisible, setIsPinsVisible] = useState(true);
     
     const dispatch = useDispatch();
 
@@ -130,7 +131,7 @@ export default function Room() {
                 </div> */}
                 <img className={styles.full} src={largeImage ? largeImage : activeImage} id='fullImage'/>
 
-                <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>
+                {isPinsVisible && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>}
                 
             </ScrollContainer>
 
@@ -141,6 +142,11 @@ export default function Room() {
             >
                 <h4>Kontakt</h4> 
                 <h5>aufnehmen</h5>
+            </div>
+            <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
+                onClick={() => setIsPinsVisible(!isPinsVisible)}
+            >
+                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} />
             </div>
             <Sidebar 
                 styleId={styleId} 

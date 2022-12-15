@@ -113,6 +113,7 @@ img {
   & > * {
     margin-left: 4rem;
   }
+
   h4 {
     font-size: 16px;
     font-weight: 400;
@@ -136,6 +137,34 @@ img {
     width: 2.6rem;
     height: 2.6rem;
     background-repeat: no-repeat;
+  }
+}
+
+.btn__pinsHide {
+  position: absolute;
+  bottom: 4rem;
+  right: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 0;
+  background: var(--color__cta);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &_shift {
+    right: 64rem;
+
+    @media (max-width: 768px) {
+      right: 16rem;
+      bottom: 8rem;
+    }
   }
 }
 
