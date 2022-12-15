@@ -18,6 +18,7 @@ export default function ContactForm({ onConfirm, onCancel }) {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [link, setLink] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(async () => {
     const shortURl = await madeShortUrl(window.location.href);
@@ -81,7 +82,12 @@ export default function ContactForm({ onConfirm, onCancel }) {
       .then((result) => {
         // console.log(result);
         setLoading(false);
-        onConfirm();
+        setShowSuccess(true);
+
+        setTimeout(() => { 
+          setShowSuccess(false);
+          onConfirm();
+         }, 2500);
       });
   }
 
@@ -93,6 +99,10 @@ export default function ContactForm({ onConfirm, onCancel }) {
           <div className={styles.formular}>
             {loading ? <LoadingSpinner/> :
               <form method="post" className={styles.form} onSubmit={(e) => submitContactForm(e)}> 
+
+                <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
+                  <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+                </div>      
 
                 <input type="hidden" name="user_link" value={link}/>  
                 <input type="hidden" name="fromEmail" value={'info@immokonfigurator.com'}/>      
