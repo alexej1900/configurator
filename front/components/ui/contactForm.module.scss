@@ -18,6 +18,21 @@
   &_icon {
     margin-right: 2rem;
   }
+
+  &__error {
+    color: #D31414;
+  }
+
+
+  .errors {
+    position: relative;
+    width: 80%;
+    margin: -1rem 0;
+    padding: 0;
+    top: -1rem;
+    left: 25%;
+    color: #D31414;
+  }
 }
 
 .formular {
@@ -41,41 +56,6 @@
       cursor: pointer;
     }
 
-    .success__message {
-      // position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 92%;
-      // height: 19rem;
-      margin: 2rem;
-      left: calc((100% - 93%)/2);
-      font-size: 2rem;
-      text-align: center;
-      background: var(--color__secondary);
-      transform: translateY(-100%);
-      opacity: 0;
-      transition: all .5s;
-
-
-      &.active {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  }
-
-  .toggle {
-    max-width: 50%;
-    margin: 0 auto;
-
-    @media (max-width: 1000px) {
-      max-width: 90%;
-    }
-
-    label {
-      width: 8rem;
-    }
   }
 
   input {
@@ -84,7 +64,7 @@
     display: block;
     width: 100%;
     padding: 1rem .5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border: none;
     border-bottom: 1px solid $color__grey--38;
     font-size: 1.2rem;
@@ -95,118 +75,13 @@
       max-width: 90%;
     }
   }
-  .checkbox{
-    width: 0;
-    max-width: 0;
-  }
 }
-
-.submitBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // flex: 1 0 60%;
-  width: 26rem;
-  margin: 2rem auto;
-  padding: 1.4rem;
-  background: var(--color__primary);
-  color: $color__bright;
-  font-weight: 600; 
-  font-size: 1.6rem;
-  line-height: 2rem;
-  border: none;
-  cursor: pointer;
-
-  &:disabled {
-    cursor: wait;
-  }
-
-  &:after {
-    content: '';
-    background: url('/summary.svg');
-    display: inline-block;
-    position: relative;
-    width: 2.6rem;
-    height: 2.6rem;
-    background-repeat: no-repeat;
-    margin-left: 1rem;
-  }
-
-  &.disabled {
-    background: var(--color__primary_30);
-  }
-
-  &__next {
-    min-width: 18rem;
-  }
-}
-
-.saveBtn,
-.resetBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // flex: 1 0 60%;
-  width: 26rem;
-  margin: 2rem auto;
-  padding: 1.4rem;
-  background: var(--color__primary);
-  color: $color__bright;
-  font-weight: 600; 
-  font-size: 1.6rem;
-  line-height: 2rem;
-  border: none;
-  cursor: pointer;
-
-  &:disabled {
-    cursor: wait;
-  }
-
-  &:after {
-    content: '';
-    background: url('/save1.svg');
-    display: inline-block;
-    position: relative;
-    width: 2.6rem;
-    height: 2.6rem;
-    background-repeat: no-repeat;
-    margin-left: 1rem;
-  }
-
-  &.disabled {
-    background: var(--color__primary_30);
-  }
-
-  &__next {
-    min-width: 18rem;
-  }
-}
-
-.resetBtn {
-  &:after {
-    content: '';
-    background: url('/reset_icon.svg');
-    display: inline-block;
-    position: relative;
-    width: 2.6rem;
-    height: 2.6rem;
-    background-repeat: no-repeat;
-    margin-left: 1rem;
-  }
-}
-
 
 .form:valid .clienEmail:focus,
 .form:valid .clienPhone:focus{
   outline: none;
   border: 1px solid $color__secondary;
   color: $color__dark;
-}
-.form:invalid .clienEmail:focus,
-.form:invalid .clienPhone:focus {
-  outline: none;
-  color: #D31414;
-  border: 1px solid #D31414;
 }
 
 .form_buttons {
@@ -238,5 +113,10 @@
 
   &.button__confirm {
     background: var(--color__cta);
+
+    &:disabled {
+      cursor: wait;
+      background: var(--color__cta_50);
+    }
   }
 }

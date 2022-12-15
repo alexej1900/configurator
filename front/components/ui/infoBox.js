@@ -6,11 +6,6 @@ import styles from './infoBox.module.scss';
 export default function InfoBox({styleTitle, description}) {
   const [colapsed, setCollapsed] = useState(true);
 
-  const changeCloseHanle = () => {
-    setClose(!close);
-    close ? setCollapsed(true) : setCollapsed(false); 
-  }
-
   return (
     <div className={[styles.infoBox, !colapsed ? styles.open : styles.closed].join(' ')}>
       <div className={styles.text_block}>

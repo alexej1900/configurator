@@ -12,9 +12,8 @@ import Button from '../components/ui/button';
 import FormToggle from '../components/ui/formToggle';
 import { introScreen } from '../gql/index';
 
-import { changeApartSize, changeIsStyleRoomState } from "../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
-import { setBrandSettings } from "../redux/actions/index";
+import { changeApartSize, changeIsStyleRoomState, setBrandSettings } from "../redux/actions/index";
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
 
