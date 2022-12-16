@@ -88,7 +88,15 @@ export default function Home() {
 
           </div>
           <div className={`${styles.halfLine} ${styles.planImage}`}>
-            <Image src={apartmentImage.url} width={apartmentImage.width} height={apartmentImage.height} />
+            <Image 
+              src={apartmentImage.url} 
+              width={apartmentImage.width} 
+              height={apartmentImage.height} 
+              priority 
+              placeholder="blur"
+              blurDataURL={'/component.png'}
+              alt="Apartment Image"
+            />
           </div>
         </div>
       </div>

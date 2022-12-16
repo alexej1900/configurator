@@ -42,7 +42,15 @@ export default function Card({
                 >
                     <div className={`row`} >
                         <div className={`${styles.image__wrapper}`} style={{background: `${image.background}`}}>
-                            <Image classes={styles.card__image} src={image.url} width={image.width} height={image.height} layout={image.layout} background={image.background}/>
+                            <Image 
+                                classes={styles.card__image} 
+                                src={image.url} 
+                                width={image.width} 
+                                height={image.height} 
+                                layout={image.layout} 
+                                background={image.background}
+                                alt="Option"
+                            />
                             {recommended && <span className={styles.rec}> Empfehlung </span>}
                         </div>
                         <div className={`${styles.text__wrapper}`}>
@@ -62,7 +70,7 @@ export default function Card({
                     </div>
                     
                     <div className={styles.img__wrapper}>
-                        <Image src={url[0].url} width="312" height="180" />
+                        <Image src={url[0].url} width="312" height="180" alt="Style Image"/>
                     </div>
                 </div>
             )

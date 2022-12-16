@@ -19,7 +19,7 @@ export default function Footer() {
           <div className={`${styles.logo__container} ${styles.footer__block}`}>
 
             <p>Entwickelt von</p>
-            <img src={'/../logo.svg'} layout="fixed" />
+            <img src={'/logo.svg'} layout="fixed" />
           </div>
           <div className={`${styles.contacts} ${styles.footer__block}`}>
             <div className={styles.social}>

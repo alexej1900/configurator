@@ -92,7 +92,7 @@ export default function Header () {
         {logo && 
           <Link href='/'>
             <div className={style.logo}>
-              <Image src={logo} height={'30px'} width={'150px'} layout="fixed" />
+              <Image src={logo} height={'30px'} width={'150px'} layout="fixed" alt="Logo"/>
             </div>
           </Link>
         }
@@ -105,6 +105,7 @@ export default function Header () {
               height="24" 
               className={style.menu__open} 
               onClick={() => closeMenuHandler()}
+              alt="Menu"
             />
           </div>
           {asPath !== '/' && asPath !== '/summary' &&

@@ -76,8 +76,7 @@ export default function Summary () {
 
 				{apartStyle.image && 
 					<div className={`${styles.container} ${styles.mainImage}`} id="mainImage">
-						<Image src={apartStyle.image} layout='fill' />				
-						{/* <img src={apartStyle.image}/>		 */}
+						<Image src={apartStyle.image.url} layout='fill' priority="true" alt="Image of choosed style"/>				
 					</div>
 				} 
 
@@ -87,8 +86,7 @@ export default function Summary () {
 
 						<div  className={`${styles.summary__overview_content}`}>
 							<div className={`${styles.summary__overview_image}`} id="apartmentImage">
-								{/* <Image src={apartSize.image} width="381" height="400" /> */}
-								<Image src={apartSize.image.url} width={apartSize.image.width} height={apartSize.image.height} />
+								<Image src={apartSize.image.url} width={apartSize.image.width} height={apartSize.image.height} alt="Isometry"/>
 							</div>
 							<div className={`${styles.stats}`} id="stats">
 								<div className={`${styles.summary__overview_line} row`}>
@@ -125,10 +123,6 @@ export default function Summary () {
 								</div>
 							</div>
 						</div>
-						
-						{/* <div className="col-4">
-							<Image src='/../public/isometry.svg' width="381" height="400" classes="isometry" />
-						</div>    */}
 					</section>
 				</div>
 

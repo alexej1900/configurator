@@ -22,7 +22,8 @@
   }
 
   &__wrapper {
-    width: 100vw;
+    position: relative;
+    width: calc(100vw - 5.6rem);
     transition: all 0.3s ease-in-out;
   }
 
@@ -48,15 +49,37 @@
   }
 }
 
-img {
-  &.full {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: relative;
-    object-position: center;
+// img {
+//   &.full {
+//     display: block;
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     position: relative;
+//     object-position: center;
 
+//     &.animate {
+//       animation-name: moving;
+//       animation-duration: 3s;
+//       animation-timing-function: ease-in-out;
+//     }
+
+//     @media (max-width: 1500px) { // 1500 = width of big image in px
+//       width: auto;
+//     }
+//   }
+// }
+
+.full {
+  @media (max-width: 1500px) { // 1500 = width of big image in px
+    min-width: 1500px !important;
+  }
+
+  img {
+    width: auto !important;
+    height: 100vh !important;
+    object-fit: cover;
+    // object-position: left;
     &.animate {
       animation-name: moving;
       animation-duration: 3s;
@@ -64,16 +87,16 @@ img {
     }
 
     @media (max-width: 1500px) { // 1500 = width of big image in px
-      width: auto;
+      min-width: 1500px !important;
     }
   }
 }
+
 .image__container {
   position: relative;
 }
 
 .image__wrapper.animate {
-  // width: 50%;
   animation-name: sliding;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -143,7 +166,7 @@ img {
 .btn__pinsHide {
   position: absolute;
   bottom: 4rem;
-  right: 20rem;
+  right: 26rem;
 
   display: flex;
   justify-content: center;

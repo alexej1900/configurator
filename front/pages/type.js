@@ -61,11 +61,17 @@ export default function Type() {
                 onEndScroll={() => setIsScroll(false)}
                 
             >
-                <img className={styles.full} src={styleImage.url}/>
-
-                {/* <div  style={{position:"relative", width: "100vw", height: "100vh"}}>
-                    <Image priority={true} src={styleImage.url} layout="fill" className={styles.full}/>
-                </div> */}
+                <div  style={{position:"relative", width: "100vw", height: "100vh"}}>
+                    <Image 
+                        priority 
+                        src={styleImage.url} 
+                        layout="fill" 
+                        className={styles.full} 
+                        placeholder="blur" 
+                        blurDataURL={'/component.png'}
+                        alt="Main image"
+                    />
+                </div>
             </ScrollContainer>
 
             {(sidebarState & !isScroll) ?  <ScrollIcon/> : null}

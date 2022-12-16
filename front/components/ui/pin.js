@@ -28,16 +28,12 @@ export default function Pin ({top, left, clickHandle, type, classes, checked, in
   const disabledImage = () => {
     return checked 
       ? individual 
-        ? classes === 'active' 
-          ? <Image width="36" height="48" src={'/individ-pin_green.svg'} /> 
-          : <Image width="36" height="48" src={'/individ-pin.svg'} /> 
+        ? <Image width="36" height="48" src={classes === 'active' ? '/individ-pin_green.svg' : '/individ-pin.svg'} alt="Pin"/> 
       
-        : classes === 'active' 
-          ? <Image width="36" height="48" src={'/check-green.svg'} /> 
-          : <Image width="36" height="48" src={'/checked.svg'} /> 
+        : <Image width="36" height="48" src={classes === 'active' ? '/check-green.svg' : '/checked.svg'} alt="Pin"/> 
       : classes === 'active' 
-        ? <Image width="36" height="48" src={type === 'style' ? '/style_active.svg' : '/edit_active.svg'} />
-        : <Image width="36" height="48" src={type === 'style' ? '/edit_style.svg' : '/edit.svg'} />;
+        ? <Image width="36" height="48" src={type === 'style' ? '/style_active.svg' : '/edit_active.svg'} alt="Pin"/>
+        : <Image width="36" height="48" src={type === 'style' ? '/edit_style.svg' : '/edit.svg'} alt="Pin"/>;
   };
     
   return (

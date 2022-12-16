@@ -19,9 +19,5 @@ export default function MyApp({ Component, pageProps }) {
         </Layout>
       </PersistGate>
     </Provider>
-    
-      
   )
 }
-
-// export default wrapper.withRedux(MyApp);

@@ -22,7 +22,6 @@ let ROOM_TYPE;
 
 export default function Room() {
     const router = useRouter();
-    // ROOM_TYPE = router.asPath.slice(1);
     ROOM_TYPE = router.query.room;
     const path = router.asPath.slice(1);
 
@@ -38,10 +37,10 @@ export default function Room() {
     const { apartSize, apartStyle, generalStates, roomType } = state;
     const sidebarState = generalStates.open;
 
-    const roomState = state.roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModificarion
+    const roomState = state.roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
 // console.log('generalStates', generalStates.pin)
-// console.log('roomType', roomType)
+// console.log('roomState', roomState)
 // console.log('ROOM_TYPE', ROOM_TYPE)
 
     useEffect(() => {
@@ -64,13 +63,10 @@ export default function Room() {
             else {
                 scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
             }
-
-            // await new Promise(res => setTimeout(res, 80));
         }
     }
 
     useEffect(async() => {
-        // console.log('path', path)
         document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
         document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
@@ -79,14 +75,13 @@ export default function Room() {
             moveImageFunction();
         }, 1000)
 
-        // moveImageFunction();
     }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <p> Loading...</p>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
-    const activeImage = roomState?.image ? roomState.image : data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0].url;
+    const activeImage = roomState?.image ? roomState.image : data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0];
 
     const modifyData = data.entry.mods[0].modificationsTypes;
 
@@ -117,6 +112,9 @@ export default function Room() {
         setIsPopup(false);
     }
 
+    // console.log('largeImage', largeImage)
+    // console.log('activeImage', activeImage)
+
     return (
         <>
         <div className={`${styles.type__wrapper}`} >   
@@ -126,12 +124,21 @@ export default function Room() {
                 onEndScroll={() => setIsScroll(false)}
                 id={'image__wrapper'}
             >
-                {/* <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
-                    <Image src={largeImage ? largeImage : activeImage.url} width={activeImage.width} height={activeImage.height}/>
-                </div> */}
-                <img className={styles.full} src={largeImage ? largeImage : activeImage} id='fullImage'/>
+                <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", objectPosition: 'left', height: "100vh"}}>
+                    <Image 
+                        src={largeImage ? largeImage.url : activeImage.url} 
+                        layout='fill' 
+                        object-fit="cover" 
+                        style={{width: "100vw", minWidth: `${activeImage.width}`, height: "100vh"}}
+                        priority 
+                        placeholder="blur"
+                        blurDataURL={'/component.png'}
+                        alt="Main image"
+                    />
+                </div>
+                {/* <img className={styles.full} src={largeImage ? largeImage.url : activeImage.url} id='fullImage' />*/}
 
-                {isPinsVisible && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler}/>}
+                {isPinsVisible && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler} />}
                 
             </ScrollContainer>
 
@@ -146,7 +153,7 @@ export default function Room() {
             <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
                 onClick={() => setIsPinsVisible(!isPinsVisible)}
             >
-                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} />
+                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} alt="Hide pins icon"/>
             </div>
             <Sidebar 
                 styleId={styleId} 

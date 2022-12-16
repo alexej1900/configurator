@@ -77,7 +77,7 @@ export default function FinalRoom({ roomName, style }) {
       </div>
 
       <div className={`${styles.summary__room_image} row`}>
-        <Image classes="ofi" src={room.image} layout="fill"/>
+        <Image classes="ofi" src={room.image.url} layout="fill" priority="true" alt="Room Image"/>
       </div> 
           
       <div className={`${styles.summary__room_data}`}>
@@ -95,7 +95,7 @@ export default function FinalRoom({ roomName, style }) {
                   <div className={`${styles.summary__room_edit_icon}`} >
                     <Link href={`/${roomName.toLowerCase()}`} >
                       <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
-                        <img src={'/edit-simple.svg'}  />
+                        <img src={'/edit-simple.svg'}  alt="Edit"/>
                       </a>		
                     </Link>
                   </div>

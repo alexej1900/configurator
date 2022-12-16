@@ -11,7 +11,7 @@ export default function InfoBox({styleTitle, description}) {
       <div className={styles.text_block}>
         <h2> {styleTitle} </h2>
         <div className={styles.close} onClick={() => setCollapsed(!colapsed)}>
-          <Image src={colapsed ? '/info.svg' : '/clear.svg'} width="24" height="24" /> 
+          <Image src={colapsed ? '/info.svg' : '/clear.svg'} width="24" height="24" alt="Icon"/> 
         </div>
       </div>
       <div className={styles.text_block__text}>

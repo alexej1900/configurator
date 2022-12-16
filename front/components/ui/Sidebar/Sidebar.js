@@ -119,16 +119,17 @@ export default function Sidebar({
         // console.log('roomImages', roomImages)
 
         const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
-        const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].url;
+        const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
         if (room.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
-            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0].url;
+            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
             // console.log('styleImage', styleImage)
             dispatch(setStyleImage(styleImage))
         }
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(roomType, newActiveImage));
+        // console.log('newActiveImage', newActiveImage)
         // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 
@@ -137,7 +138,7 @@ export default function Sidebar({
             <div className={styles.sidebar__toggle} onClick={() => dispatch(changeSidebarState(!sidebarOpen))} >
                 <span className={styles.toggle}>
                     Ausstattung                 
-                    <Image src="/sidebar-navigation.svg" width="24" height="24" /> 
+                    <Image src="/sidebar-navigation.svg" width="24" height="24" alt="Open sidebar icon"/> 
                 </span>
             </div>
             {sidebarOpen &&
