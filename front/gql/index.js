@@ -4,7 +4,6 @@ export const headerSettings = gql`
 query MyQuery {
   entries {
     ... on rooms_default_Entry {
-      id
       title
     }
   }
@@ -14,11 +13,9 @@ export const mainSettings = gql`
 query MyQuery {
   globalSets(handle: "settings") {
     ... on settings_GlobalSet {
-      id
       name
       settings {
         ... on settings_BlockType {
-          id
           brandLogo {
             url
             height
@@ -69,7 +66,6 @@ query MyQuery {
           }
           apartmentType {
             ... on apartmentType_apartmentType_BlockType {
-              id
               apartmentPrice
               apartmentTitle
               apartmentImage {
@@ -79,7 +75,6 @@ query MyQuery {
               }
               apartmentRooms {
                 ... on apartmentRooms_BlockType {
-                  id
                   roomType
                 }
               }
@@ -99,7 +94,6 @@ query TypePage {
       styles {
         ... on styles_BlockType {
           styleTitle
-          id
           description
           image {
             url
@@ -120,10 +114,8 @@ export const RoomData = (slug) => {
         title
         roomStyles {
           ... on roomStyles_BlockType {
-            id
             roomStyleExamples {
               ... on roomStyleExamples_styleBlock_BlockType {
-                id
                 styleName
                 styleDefaultImage {
                   url
@@ -143,7 +135,6 @@ export const RoomData = (slug) => {
                 modificationMainStyle
                 modificationItemExample {
                   ... on modificationItemExample_BlockType {
-                    id
                     modificationTitle
                     modificationStyle
                     modificationDescr
@@ -159,7 +150,6 @@ export const RoomData = (slug) => {
                 }
                 modificationPin {
                   ... on modificationPin_BlockType {
-                    id
                     positionX
                     positionY
                   }
@@ -167,7 +157,6 @@ export const RoomData = (slug) => {
                 modificationVisibility
                 individualSolution {
                   ... on individualSolution_BlockType {
-                    id
                     individualSolutionPrice
                     enableIndividualSolution
                   }
@@ -179,22 +168,18 @@ export const RoomData = (slug) => {
                 }
               }
               ... on modificationsTypes_modificationGroup_BlockType {
-                id
                 modificationVisibility
                 individualSolution {
                   ... on individualSolution_BlockType {
-                    id
                     enableIndividualSolution
                     individualSolutionPrice
                   }
                 }
                 modificationGroupBlock {
                   ... on modificationGroupBlock_BlockType {
-                    id
                     modGroupName
                     modificationExamples {
                       ... on modificationExamples_modificationExamplesBlock_BlockType {
-                        id
                         modificationImage {
                           height
                           url
@@ -218,7 +203,6 @@ export const RoomData = (slug) => {
                 modificationDescription
                 modificationPin {
                   ... on modificationPin_BlockType {
-                    id
                     positionX
                     positionY
                   }
@@ -231,7 +215,6 @@ export const RoomData = (slug) => {
     }
   } `
 };
-
 
 export const roomImages = gql`
 query MyQuery {
@@ -249,27 +232,6 @@ export const bathImages = gql`
 query MyQuery {
   assets {
     ... on bathImages_Asset {
-      id
-      url
-      title
-    }
-  }
-}`;
-
-export const kitchenImages = gql`
-query MyQuery {
-  assets {
-    ... on kitchenImages_Asset {
-      url
-      title
-    }
-  }
-}`;
-
-export const livingRoomImages = gql`
-query MyQuery {
-  assets {
-    ... on livingRoomImages_Asset {
       url
       title
     }

@@ -72,12 +72,12 @@
 
   form {
     position: relative;
+
     .btn {
       margin: 3rem auto;
       border: none;
       cursor: pointer;
     }
-
   }
 
   input {
@@ -95,6 +95,7 @@
     @media (max-width: 1000px) {
       width: 90%;
       max-width: 90%;
+      padding: .5rem;
     }
   }
 }
@@ -131,6 +132,8 @@
 
   @media (max-width: 768px) {
     width: 100%;
+    margin: 1rem;
+    margin-bottom: 0;
   }
 
   &.button__confirm {
