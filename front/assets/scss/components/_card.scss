@@ -32,7 +32,7 @@
 
     &:after {
       content: '';
-      background: url('../../images/check.svg');
+      background: url('/check.svg');
       width: rem(24);
       height: rem(24);
       position: absolute;
@@ -99,7 +99,7 @@
 
         &:after {
           content: '';
-          background: url('../../images/check.svg');
+          background: url('/check.svg');
           width: 2.4rem;
           height: 2.4rem;
           position: absolute;

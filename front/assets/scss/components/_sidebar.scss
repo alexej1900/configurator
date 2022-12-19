@@ -130,7 +130,7 @@
       .nextIcon {
           &:after {
               content: '';
-              background: url('../../images/navigation-right.svg');
+              background: url('/navigation-right.svg');
               display: inline-block;
               position: relative;
               width: 2.6rem;
@@ -142,7 +142,7 @@
       .checkIcon {
           &:before {
               content: '';
-              background-image: url('../../images/check.svg');
+              background-image: url('/check.svg');
               display: inline-block;
               position: relative;
               width: 2.4rem;
