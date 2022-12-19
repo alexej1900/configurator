@@ -153,7 +153,7 @@ export default function Room() {
             <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
                 onClick={() => setIsPinsVisible(!isPinsVisible)}
             >
-                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} alt="Hide pins icon"/>
+                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} width="36px" height="36px" alt="Hide pins icon"/>
             </div>
             <Sidebar 
                 styleId={styleId} 

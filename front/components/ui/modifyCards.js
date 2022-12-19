@@ -85,7 +85,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
               className={styles.list__nonvisible_description_button}
               onClick={changeInfoVisibility}
             >
-              <img src={'/info.svg'} width='24' height='24'/>
+              <img src={'/info.svg'} width='24' height='24' alt="Info"/>
             </div>
           </div>
           <div className={`${styles.list__nonvisible_info} ${isInfoVisible && styles.show}`}>

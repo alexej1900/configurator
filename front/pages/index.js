@@ -59,7 +59,7 @@ export default function Home() {
 
   const welcomeScreen = data.globalSets[0].welcomeScreen[0];
   const apartmentImage = apartSize.size ==='large' ? welcomeScreen.bigRoomImage[0] : welcomeScreen.smallRoomImage[0];
-
+// console.log('loading', loading)
   return (
     <>
       <div className={styles.welcome} style={{background: pageBg}}>

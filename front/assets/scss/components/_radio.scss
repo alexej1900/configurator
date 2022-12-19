@@ -75,7 +75,7 @@ input:checked + label {
 
     &:before {
         content: '';
-        background-image: url('../../images/check.svg');
+        background-image: url('/check.svg');
         display: inline-block;
         position: absolute;
         width: 2.4rem;

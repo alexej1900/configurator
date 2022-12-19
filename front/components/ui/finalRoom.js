@@ -42,7 +42,7 @@ export default function FinalRoom({ roomName, style }) {
     ? roomType[`${roomName.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
       return item.styleName.toLowerCase() === style.toLowerCase()
-  })[0].styleDefaultImage[0].url};
+  })[0].styleDefaultImage[0]};
 
   const roomMods = room?.modifications && Object.entries(room.modifications);
 
@@ -68,8 +68,8 @@ export default function FinalRoom({ roomName, style }) {
       return [item.modificationName, card]
     }
   })
-// console.log('roomType', roomType)
-// console.log('roomName', roomName)
+console.log('room', room)
+console.log('roomType', roomType)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>
