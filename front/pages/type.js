@@ -61,7 +61,7 @@ export default function Type() {
                 onEndScroll={() => setIsScroll(false)}
                 
             >
-                <div  style={{position:"relative", width: "100vw", height: "100vh"}}>
+                <div  className={styles.full} style={{position:"relative", width: "100vw", height: "100vh"}}>
                     <Image 
                         priority 
                         src={styleImage.url} 

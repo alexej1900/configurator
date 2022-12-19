@@ -124,13 +124,16 @@ export default function Room() {
                 onEndScroll={() => setIsScroll(false)}
                 id={'image__wrapper'}
             >
-                <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", objectPosition: 'left', height: "100vh"}}>
+                <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
                     <Image 
                         src={largeImage ? largeImage.url : activeImage.url} 
                         layout='fill' 
                         object-fit="cover" 
-                        style={{width: "100vw", minWidth: `${activeImage.width}`, height: "100vh"}}
+                        style={{width: "100vw", height: "100vh"}}
+                        // width={activeImage.width}
+                        // height={activeImage.height}
                         priority 
+                        // quality={100}
                         placeholder="blur"
                         blurDataURL={'/component.png'}
                         alt="Main image"
@@ -153,7 +156,7 @@ export default function Room() {
             <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
                 onClick={() => setIsPinsVisible(!isPinsVisible)}
             >
-                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} width="36px" height="36px" alt="Hide pins icon"/>
+                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} width="26px" height="26px" alt="Hide pins icon"/>
             </div>
             <Sidebar 
                 styleId={styleId} 

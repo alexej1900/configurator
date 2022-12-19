@@ -71,8 +71,11 @@
 // }
 
 .full {
+  object-position: left;
+  
   @media (max-width: 1500px) { // 1500 = width of big image in px
     min-width: 1500px !important;
+    object-position: center;
   }
 
   img {
