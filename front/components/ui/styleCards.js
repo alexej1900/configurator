@@ -8,7 +8,7 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
         return (
           <Card
             selectCard= {() => activeStyle(index, 'image', data.featuredImage && data.featuredImage[0].url, data.styleTitle, data.subtitle)}
-            key={data.id}
+            key={index}
             type='large'
             recommended={data.recommended}
             title={data.styleTitle}

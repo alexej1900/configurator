@@ -16,8 +16,10 @@ import { typePage } from '../gql/index';
 import { changeApartStyle, resetRoomTypeState } from '../redux/actions/index';
 
 import styles from './room.module.scss';
+import LoadingSpinner from '../components/ui/loadingSpinner';
 
 export default function Type() {
+    console.log('Type')
     const [styleId, setStyleId] = useState(0);
     const [isScroll, setIsScroll] = useState(false);
 
@@ -32,7 +34,8 @@ export default function Type() {
     }, [])
 
     const {data, error, loading} = useQuery(typePage);
-    if (loading) return <p> Loading ... </p>;
+    // if (loading) return <p> Loading ... </p>;
+    if (loading) return <LoadingSpinner full={true}/>;
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
     let currentStyle = data.entry.styles[styleId];

@@ -22,6 +22,7 @@ import Card from './card';
 import OptionItem from './optionItem';
 
 import styles from './finalRoom.module.scss';
+import LoadingSpinner from './loadingSpinner';
 
 export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
@@ -29,7 +30,8 @@ export default function FinalRoom({ roomName, style }) {
   const { roomType } = useSelector(state => state);
   
   const { data, loading, error } = useQuery(RoomData(roomName));
-  if (loading) return <p> Loading...</p>
+  // if (loading) return <p> Loading...</p>
+  if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
   const modifyData = data.entry.mods[0].modificationsTypes;

@@ -16,10 +16,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeApartSize, changeIsStyleRoomState, setBrandSettings, setRooms } from "../redux/actions/index";
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
+import LoadingSpinner from '../components/ui/loadingSpinner';
 
 export default function Home() {
   const [link, setLink] = useState(false);
-
+console.log('index');
   const dispatch = useDispatch();
 
   const apartSize = useSelector((state) => state.apartSize);
@@ -36,12 +37,11 @@ export default function Home() {
       const logo = data.settings?.brandLogo[0].url;
       const headerBgPicture = data.settings?.headerBackgroundPicture[0] ? data.settings?.headerBackgroundPicture[0].url : false;
       const headerBg = data.settings?.headerBackgroundColor;
-
-      setVariables(data.settings);
-      dispatch(setBrandSettings(logo, headerBgPicture, headerBg));
       pageBg = data?.welcomePageBg ? settings.welcomePageBg : '';
 
+      setVariables(data.settings);
       dispatch(setRooms(data.rooms));
+      dispatch(setBrandSettings(logo, headerBgPicture, headerBg));
     })
   }, [settings]);
 
@@ -57,7 +57,8 @@ export default function Home() {
 
 
   const { data, error, loading } = useQuery(introScreen);
-  if (loading) return <p>Loading...</p>;
+  // if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingSpinner full={true}/>;
   if(error) return <p> Error</p>;
 
   const welcomeScreen = data.globalSets[0].welcomeScreen[0];

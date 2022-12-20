@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , changeRoomVisibility} from '../redux/actions/index';
 
 import styles from './room.module.scss';
+import LoadingSpinner from '../components/ui/loadingSpinner';
 
 let ROOM_TYPE;
 
@@ -76,7 +77,8 @@ export default function Room() {
     }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
-    if (loading) return <p> Loading...</p>
+    // if (loading) return <p> Loading...</p>
+    if (loading) return <LoadingSpinner full={true}/>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
     const activeImage = roomState?.image ? roomState.image : data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0];
