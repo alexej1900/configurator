@@ -13,7 +13,7 @@ import FormToggle from '../components/ui/formToggle';
 import { introScreen } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeApartSize, changeIsStyleRoomState, setBrandSettings } from "../redux/actions/index";
+import { changeApartSize, changeIsStyleRoomState, setBrandSettings, setRooms } from "../redux/actions/index";
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
 
@@ -25,6 +25,7 @@ export default function Home() {
   const apartSize = useSelector((state) => state.apartSize);
 
   const settings = getSettings();
+
   const linkWithoutTypeRoom = getLinkWithoutTypeRoom();
   const checkStylePage = checkIsStylePageExist();
 
@@ -32,13 +33,15 @@ export default function Home() {
 
   useEffect(() => {
     settings.then((data) => {
-      const logo = data?.brandLogo[0].url;
-      const headerBgPicture = data?.headerBackgroundPicture[0] ? data?.headerBackgroundPicture[0].url : false;
-      const headerBg = data?.headerBackgroundColor;
+      const logo = data.settings?.brandLogo[0].url;
+      const headerBgPicture = data.settings?.headerBackgroundPicture[0] ? data.settings?.headerBackgroundPicture[0].url : false;
+      const headerBg = data.settings?.headerBackgroundColor;
 
-      setVariables(data);
+      setVariables(data.settings);
       dispatch(setBrandSettings(logo, headerBgPicture, headerBg));
       pageBg = data?.welcomePageBg ? settings.welcomePageBg : '';
+
+      dispatch(setRooms(data.rooms));
     })
   }, [settings]);
 
@@ -59,7 +62,7 @@ export default function Home() {
 
   const welcomeScreen = data.globalSets[0].welcomeScreen[0];
   const apartmentImage = apartSize.size ==='large' ? welcomeScreen.bigRoomImage[0] : welcomeScreen.smallRoomImage[0];
-// console.log('loading', loading)
+
   return (
     <>
       <div className={styles.welcome} style={{background: pageBg}}>

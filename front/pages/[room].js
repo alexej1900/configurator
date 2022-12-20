@@ -30,24 +30,17 @@ export default function Room() {
     const [isScroll, setIsScroll] = useState(false);
     const [isPopup, setIsPopup] = useState(false);
     const [isPinsVisible, setIsPinsVisible] = useState(true);
-    
+
     const dispatch = useDispatch();
 
-    const state = useSelector((state) => state);
-    const { apartSize, apartStyle, generalStates, roomType } = state;
+    const { apartSize, apartStyle, generalStates, roomType } = useSelector((state) => state);
     const sidebarState = generalStates.open;
 
-    const roomState = state.roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
+    const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
-// console.log('generalStates', generalStates.pin)
+// console.log('generalStates', generalStates)
 // console.log('roomState', roomState)
 // console.log('ROOM_TYPE', ROOM_TYPE)
-
-    useEffect(() => {
-        roomType[`${ROOM_TYPE?.toLowerCase()}`] 
-            ? setLargeImage(roomType[`${ROOM_TYPE.toLowerCase()}`].image) 
-            : setLargeImage(false);
-    }, [router.asPath]);
 
     useEffect(() => {
         setStyleId(apartStyle.style);
@@ -73,7 +66,12 @@ export default function Room() {
         setTimeout(() => {
             document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
             moveImageFunction();
-        }, 1000)
+        }, 1000);
+
+        //if we have in state image of current room, we set this image
+        roomType[`${ROOM_TYPE?.toLowerCase()}`] 
+            ? setLargeImage(roomType[`${ROOM_TYPE.toLowerCase()}`].image) 
+            : setLargeImage(false);
 
     }, [path]);
     
@@ -166,7 +164,7 @@ export default function Room() {
                 activeStyle = { 
                     (index, modName, featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle)
                 }
-                roomType = {ROOM_TYPE}
+                currentRoom={ROOM_TYPE}
                 title={data.entry.title} 
                 stylesCards={true} 
             />

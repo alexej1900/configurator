@@ -73,6 +73,14 @@ export const changeIsStyleRoomState = (isStylePageExist) => {
   };
 };
 
+export const setRooms = (rooms) => dispatch => {
+
+  dispatch({
+    type: 'SET_ROOMS',
+    rooms,
+  });
+};
+
 // APARTMENTTYPE ---------------------------------------------
 
 export const addApartmentType = (apartmenType, rooms) => {

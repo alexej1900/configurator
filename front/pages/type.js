@@ -23,7 +23,7 @@ export default function Type() {
 
     const dispatch = useDispatch();
 
-    const {apartStyle, apartSize, generalStates} = useSelector((state) => state);
+    const { apartStyle, apartSize, generalStates } = useSelector((state) => state);
     const sidebarState = generalStates.open;
 
     useEffect(() => {
@@ -83,7 +83,7 @@ export default function Type() {
                 title="Stil" 
                 styleCards={data.entry.styles} 
                 styleTypeSet={setStyleTypeHandle} 
-                roomType={'type'}
+                currentRoom={'type'}
             />
 
             <InfoBox  styleTitle={currentStyle.styleTitle} description={currentStyle.description}/>

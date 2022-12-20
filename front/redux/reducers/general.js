@@ -9,6 +9,7 @@ const initState = {
     showStyle: true,
     showRoom: true,
     isStylePageExist: false,
+    rooms: [],
 }
 
 const generalStates = (state = initState, action) => {
@@ -31,6 +32,8 @@ const generalStates = (state = initState, action) => {
             return state = {...state, showRoom: action.showRoom}
         case 'TOGGLE_STYLEROOM_STATE': 
             return state = {...state, isStylePageExist: action.isStylePageExist}
+        case 'SET_ROOMS': 
+            return state = {...state, rooms: action.rooms}
         case 'SET_INIT_STATE': 
             return state = {...action.generalStates}
         case 'RESET_STATE': 

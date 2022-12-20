@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Image from 'next/image';
 import { useQuery } from '@apollo/client';
-import { headerSettings } from '../gql/index';
+import { mainSettings } from '../gql/index';
 
 import { changeSidebarState, setInitialState } from '../redux/actions/index';
 
@@ -18,6 +18,7 @@ import FinalForm from '../components/ui/finalForm';
 import Footer from '../components/layout/footer';
  
 import styles from './summary.module.scss';
+import generalStates from '../redux/reducers/general';
 
 export default function Summary () {
 	const dispatch = useDispatch();
@@ -39,9 +40,8 @@ export default function Summary () {
 		window.location.href = location.pathname
 	}
 
-  const { apartStyle, apartSize, roomType } = useSelector(state => state);
-
-	// const rooms = Object.keys(roomType);
+  const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
+	const rooms = generalStates.rooms
 
   const price = apartSize.price;
   const size = apartSize.size;
@@ -52,7 +52,7 @@ export default function Summary () {
 
   useEffect(() => {
     settings.then((data) => {
-      setVariables(data);
+      setVariables(data.settings);
     })
   }, [settings]);
 
@@ -60,15 +60,6 @@ export default function Summary () {
     dispatch(changeSidebarState(false));
     return () => dispatch(changeSidebarState(true));
   }, []);
-
-	const { data, error, loading } = useQuery(headerSettings);
-  if (loading) return null;
-  if(error) return `Error ${error}`;
-
-	const rooms = data.entries
-		.filter((item) => (item.__typename === 'rooms_default_Entry'))
-		.map((room) => room.title);
-	// console.log('apartStyle', apartStyle)
 
   return (
 		<>

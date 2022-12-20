@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
-import { headerSettings } from '../../gql/index';
+import { mainSettings } from '../../gql/index';
 
 export default async function getLinkWithoutTypeRoom() {
-  const link = await useQuery(headerSettings).data?.entries[0].title?.toLowerCase();
+  const link = await useQuery(mainSettings).data?.entries[0].title?.toLowerCase();
   return link;
 }

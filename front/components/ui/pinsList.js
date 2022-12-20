@@ -14,7 +14,7 @@ export default function PinsList ({ data, roomState, pinClickHandler }) {
         const checked = (roomState?.modifications && roomState?.modifications[item.modificationName]) ? true : false;
         const individual = (roomState?.modifications && roomState?.modifications[item.modificationName]?.individualFormat === true) ? true : false;
         const style = item.modificationVisibility ? 'style' : '';
-        console.log('item', item);
+
         if (item.modificationPin.length > 0) {
           return (
             <Pin 

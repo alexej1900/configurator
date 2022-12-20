@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setStyleImage} from "../../../redux/actions/index";
-
-import { useQuery } from '@apollo/client';
-import { RoomData, mainSettings } from '../../../gql/index';
+import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setStyleImage } from "../../../redux/actions/index";
 
 import StyleCards from '../styleCards';
 import ModifyCards from '../modifyCards';
@@ -18,14 +14,13 @@ import getImages from '../../../pages/api/getImages';
 import getPrices from '../../../pages/api/getPrices';
 import getModifications from '../../../pages/api/getModifications';
 
-import setVariables from '../../../utils/setVariables';
 import checkObjIsEmpty from '../../../utils/checkObjIsEmpty';
 
 import styles from './sidebar.module.scss';
 
 export default function Sidebar({
         apartmentPrice, 
-        roomType, 
+        currentRoom, 
         styleId, 
         title, 
         styleCards,
@@ -36,9 +31,6 @@ export default function Sidebar({
     }) {
 
     const dispatch = useDispatch();
-    const router = useRouter();
-    const room = router.query.room;
-    const path = router.asPath.slice(1);
 
     const [individualPrice, setIndividualPrice] = useState(0);
 
@@ -47,10 +39,10 @@ export default function Sidebar({
     const mainStyle = useSelector(state => state.apartStyle).title;
 
     const { OptionsPrice, IndividualPrice } = getPrices();
-    
-    const modifications = getModifications(roomType);
 
-    const roomImages = getImages(room);
+    const modifications = getModifications(currentRoom);
+
+    const roomImages = getImages(currentRoom);
 
     useEffect(() => {
         if (roomImages && modifyData && !checkObjIsEmpty(modifications)) {
@@ -58,17 +50,7 @@ export default function Sidebar({
         }
     }, [modifications]);
 
-    const settings = useQuery(mainSettings).data?.globalSets[0].settings[0];
-
-    useEffect(() => {
-        setVariables(settings);
-    }, [settings]);
-
-    const {data, loading, error} = useQuery(RoomData(roomType));
-    if (loading) return <p> Loading...</p>
-    if(error) return <p>Error, please read the console. {console.log(error)}</p>
-
-    const sidebarTitle = title ? title : data.entry.title;
+    const sidebarTitle = title ? title : currentRoom;
 
     const setIndividualHandler = (increase, price) => {
         setIndividualPrice(increase ? individualPrice + price : individualPrice - price);
@@ -118,23 +100,23 @@ export default function Sidebar({
         // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
         // console.log('roomImages', roomImages)
 
-        const roomActiveMode = activeMod.length === 0 ? room : (room + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
+        const roomActiveMode = activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
-        if (room.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
+        if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
             const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
             // console.log('styleImage', styleImage)
             dispatch(setStyleImage(styleImage))
         }
         
         setLargeImage(newActiveImage); 
-        dispatch(changeRoomImage(roomType, newActiveImage));
+        dispatch(changeRoomImage(currentRoom, newActiveImage));
         // console.log('newActiveImage', newActiveImage)
         // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 
     return (
-        <div className={`${styles.sidebar} ${sidebarOpen && styles.open} ${roomType === 'type' && showStyle && styles.moveLeft} ${roomType !== 'type' && !showRoom && styles.moveLeft}` }>
+        <div className={`${styles.sidebar} ${sidebarOpen && styles.open} ${currentRoom === 'type' && showStyle && styles.moveLeft} ${currentRoom !== 'type' && !showRoom && styles.moveLeft}` }>
             <div className={styles.sidebar__toggle} onClick={() => dispatch(changeSidebarState(!sidebarOpen))} >
                 <span className={styles.toggle}>
                     Ausstattung                 
@@ -143,7 +125,7 @@ export default function Sidebar({
             </div>
             {sidebarOpen &&
                 <div className={styles.sidebar__content}>
-                    <div className={`${[`row ${styles.sidebar__header} items-center`].join(' ')} ${roomType === 'type' && showStyle && styles.hideHeader}`}>
+                    <div className={`${[`row ${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'type' && showStyle && styles.hideHeader}`}>
                         <div className={[styles["col-6"], "col-6"].join(' ')}>
                             <h3 className={`${styles.optionsTitle}`}>{sidebarTitle}</h3>
                         </div>
@@ -169,7 +151,7 @@ export default function Sidebar({
                                 cardData={modifyData}
                                 styleId={styleId}
                                 activeStyle={activeStyle}
-                                roomType={roomType}
+                                roomType={currentRoom}
                                 setIndividualPrice={setIndividualHandler}
                             />
                         }
@@ -177,7 +159,7 @@ export default function Sidebar({
                 </div>
             }
             
-            <SidebarButtons room={room ? room : path} roomType={roomType} styleTypeSet={styleTypeSet}/>
+            <SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet}/>
         </div>
     )
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect, useLayoutEffect, useRef} from 'react';
 
 import { useQuery } from '@apollo/client';
-import { headerSettings } from '../../gql/index';
+import { mainSettings } from '../../gql/index';
 
 import { changeMenuState } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
@@ -33,7 +33,7 @@ export default function Header () {
 
   const generalStates = useSelector((state) => state.generalStates);
 
-  const { menu, open, logo, headerImage, headerBg }  = generalStates;
+  const { menu, open, logo, headerImage, headerBg, rooms }  = generalStates;
 
   useEffect(() => {
     checkStylePage.then((isExist) => {
@@ -62,12 +62,6 @@ export default function Header () {
 
   const closeMenuHandler = () => dispatch(changeMenuState(!menu));
 
-  const { data, error, loading } = useQuery(headerSettings);
-  if (loading) return null;
-  if(error) return `Error ${error}`;
-
-  const rooms = data.entries;
-
   const background = headerImage ? `no-repeat url("${headerImage}")` : `${headerBg}`;
 
   const moveRightClickHandler = () => {
@@ -83,102 +77,105 @@ export default function Header () {
   const openStyle = menu ? {background: background, backgroundSize: "100%"} : {background: 'transparent'};
 
   return (
+    
+
+
     <header 
       className={[style.header, open & asPath !== '/' && style.compressed].join(' ')} 
       style={openStyle}
     >
+      {logo &&
+        <>
+          <div className={style.header__wrapper}>
+            {logo && 
+              <Link href='/'>
+                <div className={style.logo}>
+                  <Image src={logo} height={'30px'} width={'150px'} layout="fixed" alt="Logo"/>
+                </div>
+              </Link>
+            }
 
-      <div className={style.header__wrapper}>
-        {logo && 
-          <Link href='/'>
-            <div className={style.logo}>
-              <Image src={logo} height={'30px'} width={'150px'} layout="fixed" alt="Logo"/>
+            <div className={style.menu}>
+              <div className={style.menu__item}>
+                <img 
+                  src={menu ? "/close.svg" : "/hamburger.svg"} 
+                  width="24" 
+                  height="24" 
+                  className={style.menu__open} 
+                  onClick={() => closeMenuHandler()}
+                  alt="Menu"
+                />
+              </div>
+              {asPath !== '/' && asPath !== '/summary' &&
+                <Link href='/summary'>
+                  <a className={`${style.finish}`} title="To the summary page">
+                    <img src='./summaryList.svg' alt="summary" />
+                    <span className={`${style.finish__btn_descr}`}>Fertigstellen</span>
+                  </a>
+                </Link> 
+              } 
+
+              {asPath !== '/' &&
+                <Link href='https://www.nightnurse.ch/share/22G09%20Calydo/221102/'>
+                  <a className={`${style.virtual}`} title="To the virtual tour" target="_blank">
+                    <img src='./virtual.svg' alt="virtual" />
+                  </a>
+                </Link> 
+              }     
             </div>
-          </Link>
-        }
-
-        <div className={style.menu}>
-          <div className={style.menu__item}>
-            <img 
-              src={menu ? "/close.svg" : "/hamburger.svg"} 
-              width="24" 
-              height="24" 
-              className={style.menu__open} 
-              onClick={() => closeMenuHandler()}
-              alt="Menu"
-            />
           </div>
-          {asPath !== '/' && asPath !== '/summary' &&
-            <Link href='/summary'>
-              <a className={`${style.finish}`} title="To the summary page">
-                <img src='./summaryList.svg' alt="summary" />
-                <span className={`${style.finish__btn_descr}`}>Fertigstellen</span>
-              </a>
-            </Link> 
-          } 
 
-          {asPath !== '/' &&
-            <Link href='https://www.nightnurse.ch/share/22G09%20Calydo/221102/'>
-              <a className={`${style.virtual}`} title="To the virtual tour" target="_blank">
-                <img src='./virtual.svg' alt="virtual" />
-              </a>
-            </Link> 
-          }     
-        </div>
-      </div>
-
-      {menu &&
-        <Fade duration={150} top className={style.header__menu_block} >
-          <div className={style.header__menu} id='listWrapper'>
-            <div className={style.header__menu__wrapper} >
-                {/* <div className={style.header__about}>
-                  Whg Nr. 1.11.3
-                </div> */}
-              <ul className={style.header__menu__list} ref={listRef} id='menuList'>
-          
-                {shift > 0 && 
-                  <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> 
-                    <img src="/arrowRight.svg"/> 
-                  </div>
-                }
-
-                <div className={style.header__menu__internalList}>
-                  <div className={`${style.header__menu__internalList_wrapper} `} style={{transform: `translateX(-${shiftSize}%)`}}>
-                    
-                    <Link activeClassName='active' exact={true} href='/'>
-                      <a className={`${asPath === '/' ? style.active : ''} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
-                    </Link>
-
-                    {isStylePageExist && 
-                      <Link href='/type'>
-                        <a className={`${asPath === '/type' ? style.active : ''} ${style.typeItem}`} onClick={() => closeMenuHandler()}>Interieurstil</a>
-                      </Link>
+          {menu &&
+            <Fade duration={150} top className={style.header__menu_block} >
+              <div className={style.header__menu} id='listWrapper'>
+                <div className={style.header__menu__wrapper} >
+                  <ul className={style.header__menu__list} ref={listRef} id='menuList'>
+              
+                    {shift > 0 && 
+                      <div className={`${style.moveLeftButton}`} onClick={moveLeftClickHandler}> 
+                        <img src="/arrowRight.svg"/> 
+                      </div>
                     }
 
-                    {rooms && rooms.map((room) => {
-                  
-                      if (room.title) {
-                        const currentRoom = `/${room.title.toLowerCase()}`;
-                        return (
-                        <Link href={currentRoom} key={room.title}>
-                          <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room.title}</a>
+                    <div className={style.header__menu__internalList}>
+                      <div className={`${style.header__menu__internalList_wrapper} `} style={{transform: `translateX(-${shiftSize}%)`}}>
+                        
+                        <Link activeClassName='active' exact={true} href='/'>
+                          <a className={`${asPath === '/' ? style.active : ''} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
                         </Link>
-                        )}
-                    })}
-                    </div>
-                  </div>
-                </ul>
-              </div>
 
-              {listSize > wrapperSize && //Button appears if the list of rooms longer than the wrapper
-                <div className={`${style.moveRightButton}`} onClick={moveRightClickHandler}> 
-                  <img src="/arrowRight.svg"/> 
+                        {isStylePageExist && 
+                          <Link href='/type'>
+                            <a className={`${asPath === '/type' ? style.active : ''} ${style.typeItem}`} onClick={() => closeMenuHandler()}>Interieurstil</a>
+                          </Link>
+                        }
+
+                        {rooms?.map((room) => {
+                      
+                          if (room) {
+                            const currentRoom = `/${room.toLowerCase()}`;
+                            return (
+                            <Link href={currentRoom} key={room}>
+                              <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
+                            </Link>
+                            )}
+                        })}
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+
+                  {listSize > wrapperSize && //Button appears if the list of rooms longer than the wrapper
+                    <div className={`${style.moveRightButton}`} onClick={moveRightClickHandler}> 
+                      <img src="/arrowRight.svg"/> 
+                    </div>
+                  }
+                  
                 </div>
-              }
-              
-            </div>
-          </Fade>
-        }
+              </Fade>
+            }
+        </>
+      }
     </header>
   )
 }

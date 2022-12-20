@@ -68,8 +68,8 @@ export default function FinalRoom({ roomName, style }) {
       return [item.modificationName, card]
     }
   })
-console.log('room', room)
-console.log('roomType', roomType)
+// console.log('room', room)
+// console.log('roomType', roomType)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>

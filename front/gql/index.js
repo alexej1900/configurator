@@ -1,16 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const headerSettings = gql`
+export const mainSettings = gql`
 query MyQuery {
   entries {
     ... on rooms_default_Entry {
       title
     }
   }
-}`;
-
-export const mainSettings = gql`
-query MyQuery {
   globalSets(handle: "settings") {
     ... on settings_GlobalSet {
       name
@@ -38,8 +34,39 @@ query MyQuery {
       }
     }
   }
-}
-`;
+}`;
+
+// export const mainSettings = gql`
+// query MyQuery {
+//   globalSets(handle: "settings") {
+//     ... on settings_GlobalSet {
+//       name
+//       settings {
+//         ... on settings_BlockType {
+//           brandLogo {
+//             url
+//             height
+//             width
+//           }
+//           headerBackgroundColor
+//           headerBackgroundPicture {
+//             url
+//             height
+//             width
+//           }
+//           welcomePageBg
+//           additionalBrandColor
+//           mainBrandColor
+//           colorSelected
+//           ctaSecondary
+//           fontForTitles
+//           fontForDescriptions
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
 
 export const introScreen = gql`
 query MyQuery {

@@ -24,10 +24,10 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
 
   const visibleData = dataByStyle?.filter((data) => data.modificationVisibility);
   const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility);
-
+  
   useEffect(() => {
     visibleData.length === 0 && setIsActiveModVisible(false);
-    dispatch(changeActiveMod(visibleData[0].modificationName));
+    dispatch(changeActiveMod(visibleData[0]?.modificationName));
   }, []);
 
   const changeInfoVisibility = () => {
