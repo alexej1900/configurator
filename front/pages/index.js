@@ -16,6 +16,7 @@ import { changeApartSize, changeIsStyleRoomState, setBrandSettings, setRooms } f
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
+import Spinner from '../components/ui/spinner';
 
 export default function Home() {
   const [link, setLink] = useState(false);
@@ -57,6 +58,7 @@ console.log('index');
   const { data, error, loading } = useQuery(introScreen);
   // if (loading) return <p>Loading...</p>;
   if (loading) return <LoadingSpinner full={true}/>;
+  // if (loading) return <Spinner/>;
   if(error) return <p> Error</p>;
 
   const welcomeScreen = data.globalSets[0].welcomeScreen[0];

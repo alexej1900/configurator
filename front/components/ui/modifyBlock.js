@@ -128,7 +128,7 @@ export default function ModifyBlock({
       modificationNumber: modifications[`${modificationName}`].index,
       activeOption: modifications[`${modificationName}`].option ? modifications[`${modificationName}`].option.index : undefined,
     } 
-    : roomType !== "schlafzimmer" ? {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0,} // if style lines are not separated, replace to commented code below (3 lines)
+    : roomType !== "schlafzimmer" ? {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: styleId,} // if style lines are not separated, replace to commented code below (3 lines)
     
                                   : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
                                     ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 

@@ -19,7 +19,7 @@ import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
 
 export default function Type() {
-    console.log('Type')
+
     const [styleId, setStyleId] = useState(0);
     const [isScroll, setIsScroll] = useState(false);
 
@@ -33,6 +33,9 @@ export default function Type() {
         setStyleId(apartStyle.style);
     }, [])
 
+    console.log('apartStyle', apartStyle)
+    console.log('styleId', styleId)
+
     const {data, error, loading} = useQuery(typePage);
     // if (loading) return <p> Loading ... </p>;
     if (loading) return <LoadingSpinner full={true}/>;
@@ -45,12 +48,12 @@ export default function Type() {
 
         setStyleId(id);
         currentStyle = data.entry.styles[id];
-        dispatch(changeApartStyle(id, currentStyle.image[0].url, currentStyle.styleTitle));
+        dispatch(changeApartStyle(id, currentStyle.image[0], currentStyle.styleTitle));
         dispatch(resetRoomTypeState());
     }
 
     const setStyleTypeHandle = () => {
-        dispatch(changeApartStyle(styleId, currentStyle.image[0].url, currentStyle.styleTitle));
+        dispatch(changeApartStyle(styleId, currentStyle.image[0], currentStyle.styleTitle));
     }
 
     return (
