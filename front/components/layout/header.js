@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 
 import { useState, useEffect, useLayoutEffect, useRef} from 'react';
 
-import { useQuery } from '@apollo/client';
-import { mainSettings } from '../../gql/index';
+import getSettings from '../../pages/api/getSettings';
+import setVariables from '../../utils/setVariables';
 
 import { changeMenuState } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,7 +25,7 @@ export default function Header () {
   const [shiftSize, setShiftSize] = useState(0);
 
   const checkStylePage = checkIsStylePageExist();
-
+  const settings = getSettings();
   const listRef = useRef(null);
 
   const dispatch = useDispatch();
@@ -44,6 +44,12 @@ export default function Header () {
   useEffect(() => {
     updateSize();
   });
+
+  useEffect(() => {
+    settings.then((data) => {
+      setVariables(data.settings);
+    })
+  }, [settings]);
 
   useLayoutEffect(() => {
     window.addEventListener('resize', updateSize);

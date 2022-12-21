@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 
-import setVariables from './../utils/setVariables';
 import getSettings from './api/getSettings';
 import getLinkWithoutTypeRoom from './api/getLinkWithoutTypeRoom';
 import checkIsStylePageExist from './api/checkIsStylePageExist';
@@ -39,7 +38,6 @@ console.log('index');
       const headerBg = data.settings?.headerBackgroundColor;
       pageBg = data?.welcomePageBg ? settings.welcomePageBg : '';
 
-      setVariables(data.settings);
       dispatch(setRooms(data.rooms));
       dispatch(setBrandSettings(logo, headerBgPicture, headerBg));
     })
