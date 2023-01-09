@@ -194,18 +194,18 @@ export default function ContactForm() {
       <section className={`${styles.contactForm}`}>
         <div className={styles.text__inner}>
           <div className={styles.contactForm_header}>
-            <img src='./summary.svg' alt="summary" className={styles.contactForm_icon}/> 
-            <h3>Konfigurator abschliessen</h3>
+            {/* <img src='./summary.svg' alt="summary" className={styles.contactForm_icon}/>  */}
+            <h3>Herzlichen Glückwunsch! Sie sind Ihrer Traumwohnung einen Schritt näher.</h3>
           </div>
           <div className={styles.formular}>
-            <p >Sie können sich Ihre Konfiguration ganz einfach per PDF auf Ihre Emailadresse senden.</p> 
-            <p >Sollten Sie eine neue Konfiguration starten wollen, löschen Sie bitte Ihre Browserdaten.</p>
+            <p >Speichern Sie die Zusammenfassung der Materialisierung Ihrer Wohnung für sich als PDF für eine persönliche Besprechung oder senden Sie Ihre konkrete Anfrage direkt an uns per Formular.</p> 
+            <p >Anschliessend wird Sie unser Vermarkter für die weiteren Schritte kontaktieren.</p>
             
             {loading ? <LoadingSpinner/> :
               <form className={styles.form}> 
                 
                 <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-                  <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+                  <span>Vielen Dank für Ihr Interesse an einem Eigenheim im Appenzeller Huus. Unser Vermarkter wird mit Ihnen Kontakt aufnehmen.</span>
                 </div>
                 
                 <input 
@@ -249,7 +249,7 @@ export default function ContactForm() {
               </form>
             }
               <button 
-                className={`${styles.submitBtn}`} 
+                className={`${styles.mailBtn}`} 
                 onClick={ (e) =>  emailSendingHandler(e)} 
                 disabled={showSuccess}
                 title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
@@ -258,7 +258,7 @@ export default function ContactForm() {
                 {loading ? 'Senden...' : 'Kontakte per Email zusenden '}
               </button>
               <button 
-                className={`${styles.saveBtn}`} 
+                className={`${styles.pdfBtn}`} 
                 onClick={(e) => {
                   e.preventDefault();
                   saveAsPdfHandler(true);
@@ -268,7 +268,7 @@ export default function ContactForm() {
                  Konfiguration als PDF speichern
                 </button>
               <button 
-                className={`${styles.saveBtn}`} 
+                className={`${styles.shareBtn}`} 
                 onClick={(e) => {
                   e.preventDefault();
                   submitHandler();
@@ -277,9 +277,10 @@ export default function ContactForm() {
               >
                 Link weiterleiten
               </button>
-            
           </div>
-          
+
+          <p>Sie möchten die Wohnung nochmal komplett neu zusammenstellen? </p>
+          <p>Kein Problem. Nutzen Sie einfach den Reset Button und Sie gelangen zurück auf die Startseite. </p>
             <button 
               className={`${styles.resetBtn}`} 
               onClick={() => setIsPopup(true)}

@@ -119,7 +119,8 @@ console.log('apartStyle', apartStyle)
 
 				<div className={`${styles.container} ${styles.notice}`}>
 					{/* <div className={`${styles.notice}`}> */}
-						<p> Ihre Konfiguration können Sie hier über die Bearbeitungsfunktion bei jeder Auswahl ändern.</p>
+						<p> Ihr individuelles Eigenheim wird mit folgenden Materialen für Sie erstellt. </p>
+						<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
 					{/* </div> */}
 				</div>
 

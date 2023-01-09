@@ -43,6 +43,7 @@
   padding: 1rem 0;
   background-color: var(--color__secondary_20);
   border-top: 2px solid var(--color__secondary);
+  margin-bottom: 1rem;
 
   p {
     padding: 0 2.4rem;
@@ -162,7 +163,10 @@
 }
 
 .saveBtn,
-.resetBtn {
+.resetBtn,
+.shareBtn,
+.mailBtn,
+.pdfBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,6 +203,47 @@
 
   &__next {
     min-width: 18rem;
+  }
+}
+
+.mailBtn {
+  &:after {
+    content: '';
+    background: url('/mail.svg');
+    display: inline-block;
+    position: relative;
+    top: .4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+  }
+}
+
+.pdfBtn {
+  &:after {
+    content: '';
+    background: url('/pdf.svg');
+    display: inline-block;
+    position: relative;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+  }
+}
+
+.shareBtn {
+  &:after {
+    content: '';
+    background: url('/share.svg');
+    display: inline-block;
+    position: relative;
+    top: 0.1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
   }
 }
 
