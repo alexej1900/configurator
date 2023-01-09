@@ -14,12 +14,12 @@ export default function Footer() {
             <p>Sennweidstrasse 35</p>
             <p>6312 SteinhausenSwitzerland</p><br />
             <p>+41 41 748 44 11</p><br />
-            <a className={styles.mail} href="mailto:info@calydo.com">info@calydo.com</a>
+            {/* <a className={styles.mail} href="mailto:info@calydo.com">info@calydo.com</a> */}
           </div>
           <div className={`${styles.logo__container} ${styles.footer__block}`}>
 
             <p>Entwickelt von</p>
-            <img src={'/logo.svg'} layout="fixed" />
+            <a href="https://www.calydo.com/" target="_blank"><img src={'/logo.svg'} layout="fixed" /></a>
           </div>
           <div className={`${styles.contacts} ${styles.footer__block}`}>
             <div className={styles.social}>

@@ -101,7 +101,7 @@ export default function ContactForm({ onConfirm, onCancel }) {
               <form method="post" className={styles.form} onSubmit={(e) => submitContactForm(e)}> 
 
                 <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-                  <span>Ihre Kontakte wurden an das Unternehmen gesendet</span>
+                  <span>Vielen Dank für Ihr Interesse an einem Eigenheim im Appenzeller Huus. Unser Vermarkter wird mit Ihnen Kontakt aufnehmen.</span>
                 </div>      
 
                 <input type="hidden" name="user_link" value={link}/>  
