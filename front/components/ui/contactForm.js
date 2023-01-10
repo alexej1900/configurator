@@ -145,10 +145,11 @@ export default function ContactForm({ onConfirm, onCancel }) {
                 />
                 {errors.phone ? <div className={styles.errors}>{errors.phone}</div> : null}
 
-                <div className={`${styles.form_buttons}`}>
+                {!showSuccess && <div className={`${styles.form_buttons}`}>
                   <button className={`${styles.form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechnen</button>
                   <button type="submit" className={`${styles.form_button} ${styles.button__confirm}`} disabled={!checkObjIsEmpty(errors) || loading}>Bestätigen</button>
                 </div>
+                }
               </form>
             }
           </div>
