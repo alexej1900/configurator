@@ -239,6 +239,7 @@ export default function ModifyBlock({
                         item.modificationTitle, 
                         item.modificationStyle,
                         item.modificationDescr,
+                        item.modsAdditionalPrice,
                       );
                         setChecked(true);
                         setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0);

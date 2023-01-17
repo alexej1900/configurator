@@ -18,6 +18,7 @@ import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , 
 
 import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
+import { additional } from '../build/static/chunks/node_modules_canvg_lib_index_es_js';
 
 let ROOM_TYPE;
 
@@ -84,9 +85,9 @@ export default function Room() {
 
     const modifyData = data.entry.mods[0].modificationsTypes;
 
-    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle) => {
-        // console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle})
-        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, modGroupTitle, largeImage, mainStyle));
+    const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle) => {
+        // console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle})
+        dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle));
         dispatch(changeActivePin(modName));
     }
 
@@ -164,7 +165,7 @@ export default function Room() {
                 modifyData={modifyData}
                 setLargeImage={setLargeImage}
                 activeStyle = { 
-                    (index, modName, featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, modGroupTitle, mainStyle)
+                    (index, modName, featuredImage, styleTitle, subtitle, additionalPrice, modGroupTitle, mainStyle) => changeType(index, modName,  featuredImage, styleTitle, subtitle, additionalPrice, modGroupTitle, mainStyle)
                 }
                 currentRoom={ROOM_TYPE}
                 title={data.entry.title} 

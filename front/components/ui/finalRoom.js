@@ -30,7 +30,6 @@ export default function FinalRoom({ roomName, style }) {
   const { roomType } = useSelector(state => state);
   
   const { data, loading, error } = useQuery(RoomData(roomName));
-  // if (loading) return <p> Loading...</p>
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
@@ -65,8 +64,10 @@ export default function FinalRoom({ roomName, style }) {
         featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
         styleTitle : item.modificationItemExample[0].modificationStyle, 
         subtitle : item.modificationItemExample[0].modificationTitle, 
-        description : item.modificationItemExample[0].modificationDescr
+        description : item.modificationItemExample[0].modificationDescr,
+        additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
       }
+      
       return [item.modificationName, card]
     }
   })
@@ -85,8 +86,8 @@ export default function FinalRoom({ roomName, style }) {
       <div className={`${styles.summary__room_data}`}>
         {allOptions.map((data, index)=> {
 
-          const {modGroupTitle, featuredImage, styleTitle, subtitle, description} = data[1];
-
+          const {modGroupTitle, featuredImage, styleTitle, subtitle, description, additionalPrice} = data[1];
+          // console.log('data[1]', data[1])
           if (!checkObjIsEmpty(data[1])) 
           return (
             <div key={index} className={`${data[1].option ? styles.fullLine : styles.halfLine}`}>
@@ -105,6 +106,7 @@ export default function FinalRoom({ roomName, style }) {
                     title={styleTitle} 
                     subtitle={subtitle} 
                     description={description}
+                    additionalPrice={additionalPrice}
                     image={{url: featuredImage, width: '80px', height: '80px', layout: "fixed"}}
                     type="small" 
                     final={true}

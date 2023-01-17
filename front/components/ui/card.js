@@ -13,6 +13,7 @@ export default function Card({
     recommended, 
     subtitle, 
     description,
+    additionalPrice,
     selectCard, 
     active, 
     checked, 
@@ -68,6 +69,7 @@ export default function Card({
                             <h5 className={styles.card__title}>{title}</h5>
                             <p className={styles.card__description}>{subtitle}</p>
                             <p className={styles.card__description}>{description}</p>
+                            {final ? <p className={styles.card__description}>{additionalPrice ? `+ ${additionalPrice} CHF zum Grundpreis` : ''}</p> : null}
                         </div>
                     </div>
                 </div>

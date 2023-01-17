@@ -60,7 +60,7 @@ export default function Summary () {
     dispatch(changeSidebarState(false));
     return () => dispatch(changeSidebarState(true));
   }, []);
-console.log('apartStyle', apartStyle)
+// console.log('apartStyle', apartStyle)
   return (
 		<>
 			<div className={styles.summary} id="summary">
