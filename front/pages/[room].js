@@ -18,7 +18,6 @@ import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , 
 
 import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
-import { additional } from '../build/static/chunks/node_modules_canvg_lib_index_es_js';
 
 let ROOM_TYPE;
 
