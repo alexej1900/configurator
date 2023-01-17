@@ -249,7 +249,7 @@ export default function ContactForm() {
               </form>
             }
               <button 
-                className={`${styles.mailBtn}`} 
+                className={`${styles.mailBtn} ${styles.btn}`} 
                 onClick={ (e) =>  emailSendingHandler(e)} 
                 disabled={showSuccess}
                 title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
@@ -258,17 +258,17 @@ export default function ContactForm() {
                 {loading ? 'Senden...' : 'Kontakte per Email zusenden '}
               </button>
               <button 
-                className={`${styles.pdfBtn}`} 
+                className={`${styles.pdfBtn} ${styles.btn}`} 
                 onClick={(e) => {
                   e.preventDefault();
                   saveAsPdfHandler(true);
                 }} 
                 title='Sie können alle Einstellungen in einer PDF-Datei speichern'
               >
-                 Konfiguration als PDF speichern
-                </button>
+                Konfiguration als PDF speichern
+              </button>
               <button 
-                className={`${styles.shareBtn}`} 
+                className={`${styles.shareBtn} ${styles.btn}`} 
                 onClick={(e) => {
                   e.preventDefault();
                   submitHandler();
@@ -282,7 +282,7 @@ export default function ContactForm() {
           <p>Sie möchten die Wohnung nochmal komplett neu zusammenstellen? </p>
           <p>Kein Problem. Nutzen Sie einfach den Reset Button und Sie gelangen zurück auf die Startseite. </p>
             <button 
-              className={`${styles.resetBtn}`} 
+              className={`${styles.resetBtn} ${styles.btn}`} 
               onClick={() => setIsPopup(true)}
               title='RESET YOUR DATA'
             >

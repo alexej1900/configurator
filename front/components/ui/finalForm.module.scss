@@ -168,7 +168,7 @@
 .mailBtn,
 .pdfBtn {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   // flex: 1 0 60%;
   width: 32rem;
@@ -190,7 +190,7 @@
     content: '';
     background: url('/save1.svg');
     display: inline-block;
-    position: relative;
+    // position: relative;
     width: 2.6rem;
     height: 2.6rem;
     background-repeat: no-repeat;
@@ -211,7 +211,7 @@
     content: '';
     background: url('/mail.svg');
     display: inline-block;
-    position: relative;
+    // position: relative;
     top: .4rem;
     width: 2.4rem;
     height: 2.4rem;
@@ -225,7 +225,7 @@
     content: '';
     background: url('/pdf.svg');
     display: inline-block;
-    position: relative;
+    // position: relative;
     width: 2.6rem;
     height: 2.6rem;
     background-repeat: no-repeat;
@@ -238,7 +238,7 @@
     content: '';
     background: url('/share.svg');
     display: inline-block;
-    position: relative;
+    // position: relative;
     top: 0.1rem;
     width: 2.4rem;
     height: 2.4rem;
