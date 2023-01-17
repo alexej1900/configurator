@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod } from '../../redux/actions/index';
+import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod, changeRoomType } from '../../redux/actions/index';
 
 import Card from './card';
 import CheckIcon from './checkIcon';
@@ -27,11 +27,13 @@ export default function ModifyBlock({
   const [checked, setChecked] = useState(false);
   const [isInLine, setIsInLine] = useState(!activeMod);
   const [onlyIndividual, setOnlyIndividual] = useState(false);
+  const [disabledCards, setDisabledCards] = useState([]);
   const [activeModification, setActiveModification] = useState(
     {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0}
     );
 
   const individualPrices = useSelector(state => state.apartPrice.individual);
+  const roomState = useSelector(state => state.roomType)[roomType];
   const style = useSelector(state => state.apartStyle);
 
   const dispatch = useDispatch();
@@ -67,6 +69,19 @@ export default function ModifyBlock({
   let activeIndex = 0;
 
   const modifications = getModifications(roomType);
+
+
+  useEffect(() => {
+    if (modifications && modifications[`${modificationName}`]) {
+      setChecked(true);
+      setIsInLine(false);
+    } 
+  }, []);
+
+  useEffect(() => {
+    changeActiveModification();
+    setDisabledCardList();
+  }, [modifications]);
 
   const listSwitchHandler = () => {
     setCollapsed(!collapsed ); 
@@ -112,14 +127,7 @@ export default function ModifyBlock({
     dispatch(changeApartPrice(cardItem.modificationName, price));
   }
 
-  useEffect(() => {
-    if (modifications && modifications[`${modificationName}`]) {
-      setChecked(true);
-      setIsInLine(false);
-    } 
-  }, []);
-
-  useEffect(() => {
+  const changeActiveModification = () => {
     const activeMod = (modifications && modifications[`${modificationName}`]) 
     ? {
       modificationImage: [{url: modifications[`${modificationName}`].featuredImage, width: '80px', height: '50px'}],
@@ -133,11 +141,38 @@ export default function ModifyBlock({
                                   : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
                                     ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
                                     : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
+  
+    setActiveModification(activeMod);
+  }
+
+  const checkIsCardDisable = (item) => {
+    let cardIsDisabled = false;
+    const modificationsKeys = roomState && Object.keys(roomState.modifications);
+    const modificationsKeysCorrected = modificationsKeys && modificationsKeys
+      .map((key) => key.toLowerCase()
+        .replaceAll('ü', 'u').replaceAll('ö', 'o').replaceAll('ä', 'a') //replacing german letters
+        .replaceAll('ü', 'u').replaceAll('ö', 'o').replaceAll('ä', 'a') //replacing swiss-german letters
+      );
+
+    item?.setDisabling?.forEach((disableParam) => {
+
+    if (modificationsKeysCorrected?.includes(disableParam.disableIf)) {
+      const index = modificationsKeysCorrected.indexOf(disableParam.disableIf);
+      if (cardIsDisabled) return cardIsDisabled;
+      cardIsDisabled = roomState.modifications[`${modificationsKeys[index]}`].index == +disableParam.value;
+      }
+    })
     
+    return cardIsDisabled;
+  }
 
-    setActiveModification(activeMod)
+  const setDisabledCardList = () => {
+    const disabledCards = cardItem.modificationItemExample.map((item)=>{
+      return checkIsCardDisable(item)
+    });
 
-  }, [modifications]);
+    setDisabledCards(disabledCards);
+  }
 
   activeIndex = activeModification.modificationNumber;
 
@@ -181,6 +216,7 @@ export default function ModifyBlock({
                 description={!onlyIndividual ? activeModification.modificationDescr : ''}
                 active = 'true'
                 collapsed={collapsed}
+                disable = {disabledCards[activeModification.index]}
               />
             : cardItem.modificationItemExample.map((item, index)=>{
 
@@ -193,6 +229,7 @@ export default function ModifyBlock({
                 return (
                   <div key={index} className={`${styles.card__block}`}>
                     <Card
+                      key={index}
                       selectCard= {() => {
                         activeStyle(
                         index, 
@@ -203,7 +240,7 @@ export default function ModifyBlock({
                         item.modificationDescr,
                       );
                         setChecked(true);
-                        setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0)
+                        setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0);
                       }
                     }
                       type='small'
@@ -212,6 +249,7 @@ export default function ModifyBlock({
                       title={modificationTitle}
                       description={item.modificationDescr}
                       active = {activeIndex === index}
+                      disable = {disabledCards[index]}
                     /> 
                   </div>
                 )

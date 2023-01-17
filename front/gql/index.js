@@ -173,6 +173,10 @@ export const RoomData = (slug) => {
                     recommendedModification
                     modsAdditionalPrice
                     mainStyle
+                    setDisabling {
+                      disableIf
+                      value
+                    }
                   }
                 }
                 modificationPin {

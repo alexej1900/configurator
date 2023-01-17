@@ -77,7 +77,6 @@ export default function Room() {
     }, [path]);
     
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
-    // if (loading) return <p> Loading...</p>
     if (loading) return <LoadingSpinner full={true}/>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
 

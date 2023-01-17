@@ -18,13 +18,14 @@ export default function Card({
     checked, 
     collapsed, 
     final, 
+    disable
 }) {
 
     const dispatch = useDispatch();
 
     const cardClickHandler = () => {
-        selectCard();
-        checked && checked();
+       !disable && selectCard();
+       !disable && checked && checked();
     }
 
     const styleCardClickHandler = () => {
@@ -33,11 +34,21 @@ export default function Card({
         checked && checked();
     }
 
+    // console.log('title', title, disable);
+
     const CardType = () => {
         if (type === 'small') {
             return (
                 <div 
-                    className={`${styles.card} ${styles.small} ${active && styles.active} ${collapsed && styles.collapsed} ${recommended ? styles.recommended : ''} ${final && styles.final}`} 
+                    className={`
+                        ${styles.card} 
+                        ${styles.small} 
+                        ${active && styles.active} 
+                        ${collapsed && styles.collapsed} 
+                        ${recommended ? styles.recommended : ''} 
+                        ${final && styles.final}
+                        ${disable && styles.disable}
+                    `} 
                     onClick={cardClickHandler}
                 >
                     <div className={`row`} >
