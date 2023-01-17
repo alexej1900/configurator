@@ -20,7 +20,7 @@ import Spinner from '../components/ui/spinner';
 
 export default function Home() {
   const [link, setLink] = useState(false);
-console.log('index');
+// console.log('index');
   const dispatch = useDispatch();
 
   const apartSize = useSelector((state) => state.apartSize);

@@ -78,6 +78,16 @@
   form {
     position: relative;
 
+    .form__text {
+      margin-bottom: 1rem;
+
+      p {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 135%;
+      }
+    }
+
     .btn {
       margin: 3rem auto;
       border: none;

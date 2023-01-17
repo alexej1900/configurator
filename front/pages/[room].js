@@ -95,7 +95,6 @@ export default function Room() {
     }
 
     const pinClickHandler = (modName) => {
-        console.log('modName', modName)
         dispatch(changeSidebarState(true));
         dispatch(changeRoomVisibility(false))
         openModificationsList(modName);
@@ -109,6 +108,7 @@ export default function Room() {
     }
     
     const onCancel = () => {
+        console.log('cancel')
         setIsPopup(false);
     }
 
@@ -177,6 +177,7 @@ export default function Room() {
         {isPopup && <Popup 
             children={<ContactForm onConfirm={onConfirm} onCancel={onCancel}/>}
             buttonIsVisible={false}
+            onCancel={onCancel}
         />}
         </>
     );

@@ -102,7 +102,12 @@ export default function ContactForm({ onConfirm, onCancel }) {
 
                 <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
                   <span>Vielen Dank für Ihr Interesse an einem Eigenheim im Appenzeller Huus. Unser Vermarkter wird mit Ihnen Kontakt aufnehmen.</span>
-                </div>      
+                </div>  
+
+                <div className={`${styles.form__text}`}  >
+                  <p>Gerne unterstützen wir Sie bei Fragen.</p>
+                  <p>Sie können uns gerne telefonisch kontaktieren oder Sie senden und über das Formular eine Mitteilung.</p>
+                </div>     
 
                 <input type="hidden" name="user_link" value={link}/>  
                 <input type="hidden" name="fromEmail" value={'info@immokonfigurator.com'}/>      

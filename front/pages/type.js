@@ -33,8 +33,8 @@ export default function Type() {
         setStyleId(apartStyle.style);
     }, [])
 
-    console.log('apartStyle', apartStyle)
-    console.log('styleId', styleId)
+    // console.log('apartStyle', apartStyle)
+    // console.log('styleId', styleId)
 
     const {data, error, loading} = useQuery(typePage);
     // if (loading) return <p> Loading ... </p>;
