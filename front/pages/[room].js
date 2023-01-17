@@ -95,6 +95,7 @@ export default function Room() {
     }
 
     const pinClickHandler = (modName) => {
+        console.log('modName', modName)
         dispatch(changeSidebarState(true));
         dispatch(changeRoomVisibility(false))
         openModificationsList(modName);

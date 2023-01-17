@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod, changeRoomType } from '../../redux/actions/index';
+import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod, changeActivePin } from '../../redux/actions/index';
 
 import Card from './card';
 import CheckIcon from './checkIcon';
@@ -89,6 +89,7 @@ export default function ModifyBlock({
     setActiveMod();
 
     dispatch(changeActiveMod(modificationName));
+    dispatch(changeActivePin(modificationName));
   }
 
   const optionsClickHandler = (price) => {

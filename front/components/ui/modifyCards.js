@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { changeActiveMod } from '../../redux/actions/index';
+import { changeActiveMod, changeActivePin } from '../../redux/actions/index';
 
 import ModifyBlock from './modifyBlock';
 import CardGroup from './cardGroup';
@@ -27,8 +27,12 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   
   useEffect(() => {
     visibleData.length === 0 && setIsActiveModVisible(false);
-    dispatch(changeActiveMod(visibleData[0]?.modificationName));
   }, []);
+
+  useEffect(() => {
+    (visibleData.length - 1) < activeMod && setActiveMod(0);
+    dispatch(changeActivePin(visibleData[0]?.modificationName));
+  }, [roomType]);
 
   const changeInfoVisibility = () => {
     setIsInfoVisible(!isInfoVisible);
