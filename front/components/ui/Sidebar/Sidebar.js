@@ -106,12 +106,11 @@ export default function Sidebar({
         if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
             const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
             // console.log('styleImage', styleImage)
-            dispatch(setStyleImage(styleImage))
+            dispatch(setStyleImage(styleImage));
         }
         
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(currentRoom, newActiveImage));
-        // console.log('newActiveImage', newActiveImage)
         // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
     }
 

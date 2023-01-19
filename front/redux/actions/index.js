@@ -7,6 +7,13 @@ export const changeMenuState = (action) => dispatch => {
   });
 };
 
+export const changeLoadingState = (loading) => {
+  return {
+    type: 'TOGGLE_LOADING',
+    loading,
+  };
+};
+
 export const changeSidebarState = (action) => dispatch => {
 
   dispatch({

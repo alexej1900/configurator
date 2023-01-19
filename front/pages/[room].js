@@ -6,7 +6,6 @@ import Sidebar from '../components/ui/Sidebar/Sidebar';
 import PinsList from '../components/ui/pinsList';
 import ScrollIcon from '../components/ui/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
-import Popup from '../components/ui/popup';
 import ContactForm from '../components/ui/contactForm';
 
 import { useRouter } from 'next/router';
@@ -14,7 +13,7 @@ import { useQuery } from '@apollo/client';
 import { RoomData } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , changeRoomVisibility} from '../redux/actions/index';
+import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , changeRoomVisibility, changeLoadingState} from '../redux/actions/index';
 
 import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
@@ -36,16 +35,19 @@ export default function Room() {
 
     const { apartSize, apartStyle, generalStates, roomType } = useSelector((state) => state);
     const sidebarState = generalStates.open;
-
+    const isImageload = generalStates.loading;
     const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
-// console.log('generalStates', generalStates)
 // console.log('roomState', roomState)
 // console.log('ROOM_TYPE', ROOM_TYPE)
 
     useEffect(() => {
         setStyleId(apartStyle.style);
     }, []);
+
+    useEffect(() => {
+        dispatch(changeLoadingState(true));
+    }, [largeImage]);
 
     const moveImageFunction = async() => {
         for (let x = 0; x <= 600; x += 25) {
@@ -101,7 +103,7 @@ export default function Room() {
         dispatch(changeActiveMod(modName));
     }
 
-    //popup functions
+    //popup function
     
     const onCancel = () => {
         setIsPopup(false);
@@ -119,7 +121,7 @@ export default function Room() {
                 onEndScroll={() => setIsScroll(false)}
                 id={'image__wrapper'}
             >
-                <div className={styles.full} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
+                <div className={`${styles.full} ${isImageload && styles.blur}`} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
                     <Image 
                         src={largeImage ? largeImage.url : activeImage.url} 
                         layout='fill' 
@@ -127,16 +129,19 @@ export default function Room() {
                         style={{width: "100vw", height: "100vh"}}
                         // width={activeImage.width}
                         // height={activeImage.height}
+                        onLoadingComplete={() => dispatch(changeLoadingState(false))}
                         priority 
+                        // loading='eager'
                         // quality={100}
-                        placeholder="blur"
-                        blurDataURL={'/component.png'}
                         alt="Main image"
                     />
-                </div>
-                {/* <img className={styles.full} src={largeImage ? largeImage.url : activeImage.url} id='fullImage' />*/}
 
-                {isPinsVisible && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler} />}
+                    {/* {isImageload && <div className={`${styles.loader__wrapper}`}><LoadingSpinner full={true}/></div>} */}
+                </div>
+
+                
+
+                {isPinsVisible  && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler} />}
                 
             </ScrollContainer>
 
@@ -170,11 +175,6 @@ export default function Room() {
         </div>
 
         {isPopup && <ContactForm onCancel={onCancel}/>}
-        {/* <Popup 
-            children={<ContactForm onConfirm={onConfirm} onCancel={onCancel}/>}
-            buttonIsVisible={false}
-            onCancel={onCancel}
-        /> */}
         </>
     );
 }

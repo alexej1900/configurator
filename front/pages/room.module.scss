@@ -13,6 +13,22 @@
   }
 }
 
+// .loader__wrapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 1000;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+
+//   @media (max-width: 768px) {
+//     width: calc(100vw + 42rem);
+//   }
+// }
+
 .image {
 
   &__main {
@@ -91,6 +107,12 @@
 
     @media (max-width: 1500px) { // 1500 = width of big image in px
       min-width: 1500px !important;
+    }
+  }
+
+  &.blur {
+    img {
+      filter: blur(.3rem);
     }
   }
 }

@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod, changeActivePin } from '../../redux/actions/index';
+import { 
+  changeRoomFormatIndividual, 
+  changeApartPrice, 
+  changeApartIndividualPrice, 
+  changeActiveMod, 
+  changeActivePin, 
+} from '../../redux/actions/index';
 
 import Card from './card';
 import CheckIcon from './checkIcon';
@@ -69,7 +75,6 @@ export default function ModifyBlock({
   let activeIndex = 0;
 
   const modifications = getModifications(roomType);
-
 
   useEffect(() => {
     if (modifications && modifications[`${modificationName}`]) {
@@ -175,6 +180,12 @@ export default function ModifyBlock({
     setDisabledCards(disabledCards);
   }
 
+  const selectCardHandler = (index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice) => {
+    activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice);
+    setChecked(true);
+    setModsPrice(modsAdditionalPrice ? modsAdditionalPrice : 0);
+  }
+
   activeIndex = activeModification.modificationNumber;
 
   return (
@@ -231,8 +242,7 @@ export default function ModifyBlock({
                   <div key={index} className={`${styles.card__block}`}>
                     <Card
                       key={index}
-                      selectCard= {() => {
-                        activeStyle(
+                      selectCard= {() => selectCardHandler(
                         index, 
                         cardItem.modificationName,
                         item.modificationImage && item.modificationImage[0].url, 
@@ -240,10 +250,7 @@ export default function ModifyBlock({
                         item.modificationStyle,
                         item.modificationDescr,
                         item.modsAdditionalPrice,
-                      );
-                        setChecked(true);
-                        setModsPrice(item.modsAdditionalPrice ? item.modsAdditionalPrice : 0);
-                      }
+                      )
                     }
                       type='small'
                       image={modificationImage[0]}

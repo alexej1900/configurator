@@ -1,6 +1,7 @@
 const initState = {
     open: true, 
     menu: false, 
+    loading: false,
     logo: '',
     headerImage: false,
     headerBg: false,
@@ -18,6 +19,8 @@ const generalStates = (state = initState, action) => {
             return state = {...state, open: action.open}
         case 'TOGGLE_MENU': 
             return state = {...state, menu: action.menuState}
+        case 'TOGGLE_LOADING': 
+            return state = {...state, loading: action.loading}
         case 'TOGGLE_PIN': 
             return state = {...state, pin: action.pin}
         case 'TOGGLE_ACTIVE_MOD': 
