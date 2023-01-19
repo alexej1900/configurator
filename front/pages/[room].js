@@ -102,13 +102,8 @@ export default function Room() {
     }
 
     //popup functions
-
-    const onConfirm = () => {
-        setIsPopup(false);
-    }
     
     const onCancel = () => {
-        console.log('cancel')
         setIsPopup(false);
     }
 
@@ -174,11 +169,12 @@ export default function Room() {
             <StyleChooseButtons room={ROOM_TYPE ? ROOM_TYPE : path} styleTypeSet={() => console.log()} />
         </div>
 
-        {isPopup && <Popup 
+        {isPopup && <ContactForm onCancel={onCancel}/>}
+        {/* <Popup 
             children={<ContactForm onConfirm={onConfirm} onCancel={onCancel}/>}
             buttonIsVisible={false}
             onCancel={onCancel}
-        />}
+        /> */}
         </>
     );
 }
