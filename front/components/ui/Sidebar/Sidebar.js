@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setStyleImage } from "../../../redux/actions/index";
+import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setStyleImage, changeLoadingState } from "../../../redux/actions/index";
 
 import StyleCards from '../styleCards';
 import ModifyCards from '../modifyCards';

@@ -45,9 +45,9 @@ export default function Room() {
         setStyleId(apartStyle.style);
     }, []);
 
-    useEffect(() => {
-        dispatch(changeLoadingState(true));
-    }, [largeImage]);
+    // useEffect(() => {
+    //     dispatch(changeLoadingState(true));
+    // }, [largeImage]);
 
     const moveImageFunction = async() => {
         for (let x = 0; x <= 600; x += 25) {

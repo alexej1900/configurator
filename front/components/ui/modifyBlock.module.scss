@@ -154,6 +154,10 @@
     height: 0px;
     overflow: hidden;
   }
+
+  input:checked + label:before {
+    background: none;
+  }
 }
 
 .card__blockWrapper {

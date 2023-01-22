@@ -7,6 +7,7 @@ import {
   changeApartIndividualPrice, 
   changeActiveMod, 
   changeActivePin, 
+  changeLoadingState
 } from '../../redux/actions/index';
 
 import Card from './card';
@@ -184,6 +185,7 @@ export default function ModifyBlock({
     activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice);
     setChecked(true);
     setModsPrice(modsAdditionalPrice ? modsAdditionalPrice : 0);
+    dispatch(changeLoadingState(true));
   }
 
   activeIndex = activeModification.modificationNumber;
@@ -221,7 +223,7 @@ export default function ModifyBlock({
                 type='small'
                 image={!onlyIndividual 
                   ? {url: activeModification.modificationImage[0].url, width: '80px', height: '50px', layout: "fixed"} 
-                  : {url: 'individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}
+                  : {url: '/individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}
                 }
                 subtitle={!onlyIndividual ? activeModification.modificationStyle : 'Individual'}
                 title={!onlyIndividual ? activeModification.modificationTitle : ''}
