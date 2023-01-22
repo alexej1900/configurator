@@ -29,7 +29,7 @@ export default function FinalRoom({ roomName, style }) {
   
   const { roomType } = useSelector(state => state);
 
-  console.log('roomType', roomType)
+  // console.log('roomType', roomType)
   
   const { data, loading, error } = useQuery(RoomData(roomName));
   if (loading) return <LoadingSpinner/>

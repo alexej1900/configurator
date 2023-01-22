@@ -98,7 +98,7 @@ export default function ModifyBlock({
     dispatch(changeActivePin(modificationName));
   }
 
-  const optionsClickHandler = (price) => {
+  const optionsClickHandler = (price) => {  // TO DO: check work of function
     activeStyle(
       activeIndex, 
       cardItem.modificationName,
@@ -185,7 +185,7 @@ export default function ModifyBlock({
     activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice);
     setChecked(true);
     setModsPrice(modsAdditionalPrice ? modsAdditionalPrice : 0);
-    dispatch(changeLoadingState(true));
+    cardItem.modificationVisibility && dispatch(changeLoadingState(true)); // if modification non visible, don't loads new big image
   }
 
   activeIndex = activeModification.modificationNumber;
