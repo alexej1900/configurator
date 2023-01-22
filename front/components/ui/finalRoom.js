@@ -28,6 +28,8 @@ export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   
   const { roomType } = useSelector(state => state);
+
+  console.log('roomType', roomType)
   
   const { data, loading, error } = useQuery(RoomData(roomName));
   if (loading) return <LoadingSpinner/>
@@ -103,11 +105,11 @@ export default function FinalRoom({ roomName, style }) {
                     </Link>
                   </div>
                   <Card 
-                    title={styleTitle} 
-                    subtitle={subtitle} 
-                    description={description}
-                    additionalPrice={additionalPrice}
-                    image={{url: featuredImage, width: '80px', height: '80px', layout: "fixed"}}
+                    title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
+                    subtitle={data[1].individualFormat ? "" : subtitle} 
+                    description={data[1].individualFormat ? "" :description}
+                    additionalPrice={data[1].individualFormat ? "" : additionalPrice}
+                    image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
                     type="small" 
                     final={true}
                     selectCard={() => null} 

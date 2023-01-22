@@ -38,7 +38,7 @@ export default function Room() {
     const isImageload = generalStates.loading;
     const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
-// console.log('roomState', roomState)
+// console.log('roomState', roomType)
 // console.log('ROOM_TYPE', ROOM_TYPE)
 
     useEffect(() => {
