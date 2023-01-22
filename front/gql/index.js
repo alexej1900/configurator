@@ -114,6 +114,66 @@ query MyQuery {
 }
 `;
 
+
+export const apartmentList = gql`
+query MyQuery {
+  globalSets(handle: "apartmentList") {
+    ... on apartmentList_GlobalSet {
+      id
+      name
+      apartmentList {
+        ... on apartmentList_BlockType {
+          id
+          apartmentId
+          areaBath
+          areaBath2
+          areaCorridor
+          areaGeneral
+          areaKitchen
+          areaKitchenFurniture
+          basePrice
+          apartmentImage {
+            url
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+
+
+
+
+export const apartmentItem = gql`
+query MyQuery($id: [QueryArgument]) {
+  globalSets(handle: "apartmentList") {
+    ... on apartmentList_GlobalSet {
+      apartmentList(orderBy: "apartmentId", id: $id) {
+        id
+        apartmentId
+        areaBath
+        areaBath2
+        areaCorridor
+        areaGeneral
+        areaKitchen
+        areaKitchenFurniture
+        basePrice
+        apartmentImage {
+          height
+          width
+          url
+        }
+      }
+    }
+  }
+}
+`;
+
+
 export const typePage = gql `
 query TypePage {
   entry(slug: "type") {

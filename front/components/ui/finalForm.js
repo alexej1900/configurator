@@ -150,16 +150,16 @@ export default function ContactForm() {
 
     const pdfDOC = new jsPDF("p", "mm", "a4"); 
 
-    pdfDOC.text(`Name: ${name}`, 20, 10);
-    pdfDOC.text(`Vorame: ${surname}`, 20, 20);
-    pdfDOC.text(`Email: ${email}`, 20, 30);
-    pdfDOC.text(`Telefonnummer: ${phone}`, 20, 40);
+    pdfDOC.text(`Name: ${formValue.name}`, 20, 10);
+    pdfDOC.text(`Vorame: ${formValue.surname}`, 20, 20);
+    pdfDOC.text(`Email: ${formValue.email}`, 20, 30);
+    pdfDOC.text(`Telefonnummer: ${formValue.phone}`, 20, 40);
     isContactReady && pdfDOC.text(`Rückruf: Ya`, 140, 40);
 
     pdfDOC.text(`Link to settings: ${link}`, 20, 50);
 
-    await getPdfPage(apartmentImage, pdfDOC, false, 50, 60, 2);
-    await getPdfPage(stats, pdfDOC, false, 50, 170, 2);
+    // await getPdfPage(apartmentImage, pdfDOC, false, 20, 60, 1);
+    await getPdfPage(stats, pdfDOC, false, 20, 70, 1);
 
 
     for (let i = 0; i < finalRooms.length; i++) {

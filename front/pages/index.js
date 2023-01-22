@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
 
 import getSettings from './api/getSettings';
 import getLinkWithoutTypeRoom from './api/getLinkWithoutTypeRoom';
@@ -9,7 +10,7 @@ import checkIsStylePageExist from './api/checkIsStylePageExist';
 
 import Button from '../components/ui/button';
 import FormToggle from '../components/ui/formToggle';
-import { introScreen } from '../gql/index';
+import { introScreen, apartmentItem } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
 import { changeApartSize, changeIsStyleRoomState, setBrandSettings, setRooms } from "../redux/actions/index";
@@ -22,6 +23,10 @@ export default function Home() {
   const [link, setLink] = useState(false);
 // console.log('index');
   const dispatch = useDispatch();
+
+  const router = useRouter();
+    // ROOM_TYPE = router.query.room;
+    const queryId = router.query.id;
 
   const apartSize = useSelector((state) => state.apartSize);
 
@@ -56,19 +61,29 @@ export default function Home() {
 
 
   const { data, error, loading } = useQuery(introScreen);
+  // const { data, error, loading } = useQuery(apartmentItem, {
+  //   variables: { id: queryId ? queryId : 27891 },
+  // });
   if (loading) return <LoadingSpinner full={true}/>;
   if(error) return <p> Error</p>;
+
+  // console.log('data', data);
 
   const welcomeScreen = data.globalSets[0].welcomeScreen[0];
   const apartmentImage = apartSize.size ==='large' ? welcomeScreen.bigRoomImage[0] : welcomeScreen.smallRoomImage[0];
 
+
+  // const apartmentData = data.globalSets[0].apartmentList[0]
+  // const apartmentImage = apartmentData.apartmentImage[0];
+  // console.log('apartmentData', apartmentData);
+  // console.log('queryId', queryId);
   return (
     <>
       <div className={styles.welcome} style={{background: pageBg}}>
         <div className={styles.welcome__inner}>
           <div className={`${styles.halfLine} ${styles.content}`}>
-            <h2 className={`${styles.title}`}>{welcomeScreen.introText}</h2>
-            <div className={styles.description} dangerouslySetInnerHTML={{ __html: welcomeScreen.paragraph }}></div>
+            <h2 className={`${styles.title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h2>
+            <div className={styles.description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten. In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, aus einem Schlafzimmer ein Wohnzimmer zu konfigurieren. Das Wohnzimmer verfügt im Gegensatz zum Schlafzimmer über eine heruntergesetzte Decke für eine gemütliche Atmosphäre.</div>
 
             <FormToggle 
               tab1={welcomeScreen.bigRoomTitle} 
