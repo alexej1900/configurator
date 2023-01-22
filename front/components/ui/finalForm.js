@@ -124,10 +124,9 @@ export default function ContactForm() {
     const type = "text/plain";
     const shortURl = await madeShortUrl(window.location.href);
     const blob = new Blob([shortURl], { type });
-    const data = [new ClipboardItem({ [type]: blob })];
-    navigator.clipboard.write(data);
 
-    alert(`Link ist:  ${shortURl}`);
+    const data = [new ClipboardItem({ [type]: blob })];
+    navigator.clipboard.write(data).then(() => {alert(`Link ist:  ${shortURl}`)});
   }
 
   const onConfirm = () => {

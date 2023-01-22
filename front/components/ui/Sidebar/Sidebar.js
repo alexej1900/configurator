@@ -104,8 +104,8 @@ export default function Sidebar({
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
         if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
-            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
-            // console.log('styleImage', styleImage)
+            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() +` küchenabdeckung 0` === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
+            console.log('styleImage', 'Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1))
             dispatch(setStyleImage(styleImage));
         }
         

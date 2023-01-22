@@ -113,6 +113,10 @@
   &.active {
     cursor: default;
     pointer-events: none;
+
+    &.collapsed {
+      pointer-events: all;
+    }
     
     &:after {
       content: '';

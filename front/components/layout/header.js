@@ -104,7 +104,7 @@ export default function Header () {
             <div className={style.menu}>
               <div className={style.menu__item}>
                 <img 
-                  src={menu ? "/close.svg" : "/hamburger.svg"} 
+                  src={menu ? "/close-black.svg" : "/hamburger.svg"} 
                   width="24" 
                   height="24" 
                   className={style.menu__open} 
