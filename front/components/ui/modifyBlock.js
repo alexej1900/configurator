@@ -244,7 +244,7 @@ export default function ModifyBlock({
                   <div key={index} className={`${styles.card__block}`}>
                     <Card
                       key={index}
-                      selectCard= {() => selectCardHandler(
+                      selectCard={() => selectCardHandler(
                         index, 
                         cardItem.modificationName,
                         item.modificationImage && item.modificationImage[0].url, 

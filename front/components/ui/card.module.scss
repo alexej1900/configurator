@@ -112,6 +112,7 @@
 
   &.active {
     cursor: default;
+    pointer-events: none;
     
     &:after {
       content: '';
